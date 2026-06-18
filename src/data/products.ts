@@ -1,10 +1,10 @@
 /**
- * Product catalog for TAKKA STEEL.
+ * Product catalog for Takka Steel.
  *
- * ⚠️ PLACEHOLDER DATA — categories are modeled on a typical Indonesian
- * "toko besi & baja". Replace names, descriptions, specs and image URLs
- * with the real catalog. Images currently use remote Unsplash photos via
- * a plain <img>; swap for local files in /public/products if preferred.
+ * Categories and items reflect Takka Steel's real product range: material
+ * baja ringan, sistem atap, struktur lantai, dan aksesoris/perkakas.
+ * Images currently use remote Unsplash photos via a plain <img>; swap for
+ * local files in /public/products when high-resolution photos are available.
  */
 
 export type Product = {
@@ -19,198 +19,228 @@ export type Product = {
 };
 
 export const productCategories = [
-  "Besi Beton",
   "Baja Ringan",
-  "Besi Hollow",
-  "Plat Baja",
-  "CNP & UNP",
-  "WF & H-Beam",
-  "Pipa Besi",
-  "Wiremesh",
-  "Atap & Genteng Metal",
-  "Aksesoris",
+  "Sistem Atap",
+  "Struktur Lantai",
+  "Aksesoris & Perkakas",
 ] as const;
 
 export const products: Product[] = [
   {
-    slug: "besi-beton-polos-ulir",
-    name: "Besi Beton (Polos & Ulir)",
-    category: "Besi Beton",
-    image:
-      "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=900&q=70",
-    summary:
-      "Besi beton SNI untuk tulangan struktur, tersedia tipe polos dan ulir berbagai diameter.",
-    description:
-      "Besi beton TAKKA STEEL diproduksi sesuai Standar Nasional Indonesia (SNI) untuk menjamin kekuatan tarik dan kelenturan tulangan beton bertulang. Cocok untuk pondasi, kolom, balok, dan pelat lantai pada proyek rumah tinggal maupun gedung bertingkat.",
-    specs: [
-      { label: "Diameter", value: "6 – 25 mm" },
-      { label: "Panjang", value: "12 m per batang" },
-      { label: "Tipe", value: "Polos (BjTP) & Ulir (BjTS)" },
-      { label: "Standar", value: "SNI" },
-    ],
-    uses: ["Pondasi & sloof", "Kolom & balok", "Pelat lantai", "Tangga beton"],
-  },
-  {
-    slug: "baja-ringan-truss-reng",
-    name: "Baja Ringan (Truss & Reng)",
+    slug: "takka-truss-cnp",
+    name: "TAKKA TRUSS (CNP 0.75)",
     category: "Baja Ringan",
     image:
       "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=70",
     summary:
-      "Rangka atap baja ringan anti karat, ringan namun kuat, untuk kuda-kuda dan reng.",
+      "Kanal C baja ringan profil CNP tebal 0,75 mm untuk rangka kuda-kuda atap yang kuat dan tahan karat.",
     description:
-      "Baja ringan galvalume/zincalume dengan lapisan anti karat untuk rangka atap yang tahan lama dan bebas rayap. Tersedia profil kanal C (truss) dan reng dengan ketebalan bervariasi sesuai beban atap.",
+      "TAKKA TRUSS adalah profil kanal C (CNP) baja ringan galvalume dengan ketebalan 0,75 mm sebagai rangka utama kuda-kuda atap. Ringan, presisi, anti rayap, dan tahan karat — pilihan ekonomis dan kuat untuk rangka atap hunian maupun komersial.",
     specs: [
-      { label: "Profil", value: "Kanal C75 / C100, Reng" },
-      { label: "Ketebalan", value: "0,75 – 1,00 mm" },
-      { label: "Lapisan", value: "Galvalume / Zincalume" },
-      { label: "Panjang", value: "6 m (custom tersedia)" },
+      { label: "Profil", value: "Kanal C (CNP)" },
+      { label: "Ketebalan", value: "0,75 mm" },
+      { label: "Lapisan", value: "Galvalume (AZ)" },
+      { label: "Panjang", value: "6 m per batang" },
     ],
-    uses: ["Kuda-kuda atap", "Reng penopang genteng", "Kanopi", "Mezzanine ringan"],
+    uses: ["Kuda-kuda atap", "Rangka baja ringan", "Kanopi", "Mezzanine ringan"],
   },
   {
-    slug: "besi-hollow",
-    name: "Besi Hollow",
-    category: "Besi Hollow",
+    slug: "reng-baja-ringan",
+    name: "Reng Baja Ringan",
+    category: "Baja Ringan",
+    image:
+      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=900&q=70",
+    summary:
+      "Reng baja ringan galvalume sebagai dudukan penutup atap di atas rangka truss.",
+    description:
+      "Reng baja ringan berfungsi sebagai penopang genteng atau penutup atap di atas rangka kuda-kuda. Material galvalume anti karat dengan profil presisi memastikan pemasangan rapi dan jarak reng yang konsisten.",
+    specs: [
+      { label: "Profil", value: "Reng (Omega/B)" },
+      { label: "Ketebalan", value: "0,40 – 0,45 mm" },
+      { label: "Lapisan", value: "Galvalume" },
+      { label: "Panjang", value: "6 m per batang" },
+    ],
+    uses: ["Dudukan genteng", "Penopang spandek", "Rangka atap", "Plafon ekspos"],
+  },
+  {
+    slug: "hollow-partisi-plafond",
+    name: "Hollow Partisi / Plafond",
+    category: "Baja Ringan",
     image:
       "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=900&q=70",
     summary:
-      "Besi hollow galvanis & hitam untuk rangka plafon, partisi, pagar, dan furnitur.",
+      "Besi hollow galvanis untuk rangka plafon gypsum dan partisi dinding interior.",
     description:
-      "Besi hollow berpenampang kotak/persegi panjang yang ringan dan presisi, ideal untuk rangka plafon gypsum, partisi, railing, hingga konstruksi dekoratif. Tersedia versi hitam dan galvanis tahan karat.",
+      "Besi hollow ringan dengan penampang kotak untuk rangka plafon gypsum/PVC dan partisi/sekat ruangan. Presisi, ringan, dan tahan karat — mempercepat pemasangan rangka interior.",
     specs: [
-      { label: "Ukuran", value: "20×20 s/d 40×80 mm" },
-      { label: "Ketebalan", value: "0,8 – 2,0 mm" },
-      { label: "Finishing", value: "Hitam / Galvanis" },
-      { label: "Panjang", value: "6 m per batang" },
+      { label: "Ukuran", value: "20×40 / 40×40 mm" },
+      { label: "Ketebalan", value: "0,30 – 0,40 mm" },
+      { label: "Finishing", value: "Galvanis" },
+      { label: "Panjang", value: "4 m per batang" },
     ],
-    uses: ["Rangka plafon", "Partisi & sekat", "Pagar & railing", "Furnitur besi"],
+    uses: ["Rangka plafon", "Partisi & sekat", "Drop ceiling", "Rangka interior"],
   },
   {
-    slug: "plat-baja",
-    name: "Plat Baja",
-    category: "Plat Baja",
-    image:
-      "https://images.unsplash.com/photo-1565891741441-64926e441838?auto=format&fit=crop&w=900&q=70",
-    summary:
-      "Plat baja lembaran (hitam, bordes/kembang) untuk fabrikasi dan struktur.",
-    description:
-      "Plat baja lembaran berkualitas untuk kebutuhan fabrikasi, base plate, tangga industri, dan pelapis lantai. Tersedia plat hitam polos dan plat bordes (kembang) anti selip.",
-    specs: [
-      { label: "Ketebalan", value: "1,2 – 25 mm" },
-      { label: "Ukuran", value: "4' × 8' / custom potong" },
-      { label: "Jenis", value: "Plat hitam & plat bordes" },
-      { label: "Layanan", value: "Potong sesuai ukuran" },
-    ],
-    uses: ["Base plate", "Tangga industri", "Pelat lantai anti selip", "Fabrikasi"],
-  },
-  {
-    slug: "cnp-unp",
-    name: "Kanal CNP & UNP",
-    category: "CNP & UNP",
-    image:
-      "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=900&q=70",
-    summary:
-      "Kanal C (CNP) dan kanal U (UNP) untuk gording, rangka, dan struktur ringan.",
-    description:
-      "Profil kanal CNP dan UNP untuk gording atap, rangka dinding, penyangga, dan berbagai struktur baja ringan-menengah. Material kuat dengan dimensi presisi.",
-    specs: [
-      { label: "CNP", value: "60 – 150 mm" },
-      { label: "UNP", value: "50 – 200 mm" },
-      { label: "Panjang", value: "6 m per batang" },
-      { label: "Standar", value: "SNI" },
-    ],
-    uses: ["Gording atap", "Rangka dinding", "Penyangga & bracket", "Struktur gudang"],
-  },
-  {
-    slug: "wf-h-beam",
-    name: "WF & H-Beam",
-    category: "WF & H-Beam",
-    image:
-      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=900&q=70",
-    summary:
-      "Baja profil WF (Wide Flange) dan H-Beam untuk struktur utama bangunan berat.",
-    description:
-      "Baja profil WF dan H-Beam sebagai elemen struktur utama gedung, gudang, pabrik, dan jembatan. Menahan beban besar dengan defleksi minimal. Tersedia berbagai dimensi sesuai perhitungan struktur.",
-    specs: [
-      { label: "WF", value: "150 – 400 mm" },
-      { label: "H-Beam", value: "100 – 400 mm" },
-      { label: "Panjang", value: "12 m per batang" },
-      { label: "Standar", value: "SNI / JIS" },
-    ],
-    uses: ["Kolom & balok baja", "Struktur gudang/pabrik", "Konstruksi jembatan", "Mezzanine"],
-  },
-  {
-    slug: "pipa-besi",
-    name: "Pipa Besi",
-    category: "Pipa Besi",
-    image:
-      "https://images.unsplash.com/photo-1416339306562-f3d12fefd36f?auto=format&fit=crop&w=900&q=70",
-    summary:
-      "Pipa besi hitam & galvanis untuk konstruksi, pagar, dan saluran.",
-    description:
-      "Pipa besi bulat dan kotak untuk kebutuhan konstruksi, railing, pagar, scaffolding, hingga saluran air non-tekanan. Tersedia versi hitam dan galvanis anti karat.",
-    specs: [
-      { label: "Diameter", value: '1/2" – 6"' },
-      { label: "Ketebalan", value: "1,5 – 4,0 mm" },
-      { label: "Finishing", value: "Hitam / Galvanis" },
-      { label: "Panjang", value: "6 m per batang" },
-    ],
-    uses: ["Pagar & railing", "Scaffolding", "Saluran air", "Rangka konstruksi"],
-  },
-  {
-    slug: "wiremesh",
-    name: "Wiremesh",
-    category: "Wiremesh",
-    image:
-      "https://images.unsplash.com/photo-1597844808175-bd6c95f1f6e2?auto=format&fit=crop&w=900&q=70",
-    summary:
-      "Wiremesh lembaran & roll untuk tulangan dak, lantai, dan jalan beton.",
-    description:
-      "Wiremesh (besi anyaman las) sebagai pengganti tulangan konvensional yang lebih cepat dipasang dan merata. Ideal untuk dak beton, lantai kerja, dan rigid pavement.",
-    specs: [
-      { label: "Diameter", value: "M4 – M10" },
-      { label: "Bentuk", value: "Lembaran & roll" },
-      { label: "Ukuran lembar", value: "2,1 × 5,4 m" },
-      { label: "Standar", value: "SNI" },
-    ],
-    uses: ["Dak & pelat lantai", "Rigid pavement jalan", "Lantai gudang", "Dinding precast"],
-  },
-  {
-    slug: "atap-genteng-metal",
-    name: "Atap & Genteng Metal",
-    category: "Atap & Genteng Metal",
+    slug: "atap-spandek-pasir",
+    name: "Atap Spandek Pasir",
+    category: "Sistem Atap",
     image:
       "https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&w=900&q=70",
     summary:
-      "Atap spandek, galvalum, dan genteng metal berpasir berbagai warna.",
+      "Spandek berlapis pasir yang meredam panas dan suara hujan, tampilan lebih estetis.",
     description:
-      "Beragam pilihan penutup atap: spandek, galvalum gelombang, dan genteng metal berpasir yang ringan, tahan karat, dan estetis. Tersedia banyak pilihan warna dan ketebalan.",
+      "Atap spandek pasir dilapisi batuan pasir pada permukaannya sehingga lebih efektif meredam panas dan kebisingan saat hujan dibandingkan spandek polos. Ringan, kuat, dan tersedia beragam warna.",
     specs: [
-      { label: "Jenis", value: "Spandek, Galvalum, Genteng Metal" },
-      { label: "Ketebalan", value: "0,25 – 0,40 mm" },
-      { label: "Warna", value: "Beragam (custom)" },
+      { label: "Ketebalan", value: "0,30 – 0,35 mm" },
+      { label: "Lebar efektif", value: "± 760 mm" },
+      { label: "Lapisan", value: "Batu pasir + cat" },
       { label: "Panjang", value: "Potong sesuai kebutuhan" },
     ],
-    uses: ["Atap rumah", "Atap gudang/pabrik", "Kanopi", "Carport"],
+    uses: ["Atap rumah", "Atap teras", "Kanopi", "Bangunan komersial"],
   },
   {
-    slug: "aksesoris-besi",
-    name: "Aksesoris & Material Pendukung",
-    category: "Aksesoris",
+    slug: "atap-spandek-polos",
+    name: "Atap Spandek Polos",
+    category: "Sistem Atap",
+    image:
+      "https://images.unsplash.com/photo-1605152276897-4f618f831968?auto=format&fit=crop&w=900&q=70",
+    summary:
+      "Spandek galvalume polos yang ringan, kuat, dan ekonomis untuk berbagai bangunan.",
+    description:
+      "Atap spandek polos dari galvalume gelombang yang ringan, tahan karat, dan ekonomis. Cocok untuk atap gudang, pabrik, garasi, hingga hunian dengan biaya material yang efisien.",
+    specs: [
+      { label: "Ketebalan", value: "0,25 – 0,40 mm" },
+      { label: "Lebar efektif", value: "± 760 / 1000 mm" },
+      { label: "Material", value: "Galvalume" },
+      { label: "Panjang", value: "Potong sesuai kebutuhan" },
+    ],
+    uses: ["Atap gudang", "Atap pabrik", "Carport", "Bangunan komersial"],
+  },
+  {
+    slug: "atap-metal-pasir",
+    name: "Atap Metal Pasir",
+    category: "Sistem Atap",
+    image:
+      "https://images.unsplash.com/photo-1635424710928-0544e8512eae?auto=format&fit=crop&w=900&q=70",
+    summary:
+      "Genteng metal berpasir ringan dengan tampilan menyerupai genteng konvensional.",
+    description:
+      "Genteng metal berpasir memberikan tampilan estetis menyerupai genteng tanah liat namun jauh lebih ringan dan tahan lama. Lapisan pasir meredam panas dan suara, ideal untuk atap hunian modern.",
+    specs: [
+      { label: "Ketebalan", value: "0,25 – 0,35 mm" },
+      { label: "Tipe", value: "Genteng metal berpasir" },
+      { label: "Warna", value: "Beragam pilihan" },
+      { label: "Modul", value: "Per lembar / multi-roof" },
+    ],
+    uses: ["Atap rumah tinggal", "Perumahan", "Renovasi atap", "Villa"],
+  },
+  {
+    slug: "alderon-single-layer",
+    name: "Atap Alderon Single Layer",
+    category: "Sistem Atap",
+    image:
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=70",
+    summary:
+      "Atap uPVC single layer yang kuat, anti karat, dan meredam panas.",
+    description:
+      "Atap uPVC Alderon single layer tahan terhadap korosi dan bahan kimia, tidak menghantarkan panas seperti logam, serta lebih senyap saat hujan. Pilihan premium untuk kanopi dan atap carport.",
+    specs: [
+      { label: "Material", value: "uPVC single layer" },
+      { label: "Tebal", value: "± 3 mm" },
+      { label: "Sifat", value: "Anti karat & korosi" },
+      { label: "Panjang", value: "Beragam ukuran" },
+    ],
+    uses: ["Kanopi", "Carport", "Atap teras", "Area basah"],
+  },
+  {
+    slug: "alderon-double-layer",
+    name: "Atap Alderon Double Layer",
+    category: "Sistem Atap",
+    image:
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=70",
+    summary:
+      "Atap uPVC double layer (rongga) dengan peredaman panas & suara maksimal.",
+    description:
+      "Atap uPVC Alderon double layer berongga (twinwall) memberikan insulasi panas dan peredaman suara terbaik di kelasnya. Kokoh, tahan lama, dan ideal untuk area yang membutuhkan kenyamanan ekstra.",
+    specs: [
+      { label: "Material", value: "uPVC double layer (twinwall)" },
+      { label: "Tebal", value: "± 10 mm" },
+      { label: "Keunggulan", value: "Insulasi panas & kedap suara" },
+      { label: "Panjang", value: "Beragam ukuran" },
+    ],
+    uses: ["Kanopi premium", "Atap rumah", "Foodcourt", "Area komersial"],
+  },
+  {
+    slug: "seng-rol-galvalum",
+    name: "Seng Rol Galvalum",
+    category: "Sistem Atap",
+    image:
+      "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&w=900&q=70",
+    summary:
+      "Seng galvalum bentuk roll/coil untuk kebutuhan atap dan talang custom.",
+    description:
+      "Seng galvalum dalam bentuk rol/coil yang dapat dipotong dan dibentuk sesuai kebutuhan, baik untuk lembaran atap, talang air, maupun flashing. Anti karat dan fleksibel untuk berbagai aplikasi.",
+    specs: [
+      { label: "Bentuk", value: "Roll / coil" },
+      { label: "Ketebalan", value: "0,25 – 0,40 mm" },
+      { label: "Material", value: "Galvalume" },
+      { label: "Layanan", value: "Potong sesuai ukuran" },
+    ],
+    uses: ["Lembaran atap", "Talang air", "Flashing", "Penutup dinding"],
+  },
+  {
+    slug: "bondeck-floordeck",
+    name: "Bondeck / Floordeck",
+    category: "Struktur Lantai",
+    image:
+      "https://images.unsplash.com/photo-1597844808175-bd6c95f1f6e2?auto=format&fit=crop&w=900&q=70",
+    summary:
+      "Pelat baja bergelombang sebagai bekisting permanen sekaligus tulangan lantai cor.",
+    description:
+      "Bondeck (floordeck) adalah pelat baja berprofil yang berfungsi sebagai bekisting permanen sekaligus tulangan bawah pada lantai beton bertingkat. Mempercepat pengecoran, menghemat material, dan menghasilkan dak yang lebih kuat.",
+    specs: [
+      { label: "Ketebalan", value: "0,70 – 1,00 mm" },
+      { label: "Tinggi gelombang", value: "± 50 mm" },
+      { label: "Lapisan", value: "Galvanis" },
+      { label: "Panjang", value: "Potong sesuai bentang" },
+    ],
+    uses: ["Dak lantai cor", "Mezzanine", "Lantai bertingkat", "Bangunan komersial"],
+  },
+  {
+    slug: "kawat-bendrat-loket-las",
+    name: "Kawat Bendrat, Loket & Las",
+    category: "Aksesoris & Perkakas",
     image:
       "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?auto=format&fit=crop&w=900&q=70",
     summary:
-      "Kawat las, kawat beton, paku, baut dynabolt, dan kelengkapan lainnya.",
+      "Aneka kawat konstruksi: bendrat pengikat tulangan, kawat loket, dan kawat las.",
     description:
-      "Pelengkap kebutuhan konstruksi Anda: kawat las, kawat beton (bendrat), paku, baut, dynabolt, elektroda, hingga perlengkapan teknik lainnya. Belanja besi dan kelengkapannya dalam satu tempat.",
+      "Kelengkapan kawat untuk kebutuhan konstruksi: kawat bendrat untuk mengikat tulangan besi, kawat loket (anyaman) untuk plesteran dan pagar, serta kawat las untuk pengelasan. Tersedia per kg maupun per rol.",
     specs: [
-      { label: "Kawat", value: "Las, beton/bendrat, seng" },
-      { label: "Pengencang", value: "Baut, dynabolt, paku" },
-      { label: "Lainnya", value: "Elektroda, alat teknik" },
-      { label: "Satuan", value: "Kg / pak / pcs" },
+      { label: "Kawat bendrat", value: "Pengikat tulangan" },
+      { label: "Kawat loket", value: "Anyaman, beragam lubang" },
+      { label: "Kawat las", value: "Untuk pengelasan" },
+      { label: "Satuan", value: "Kg / rol" },
     ],
-    uses: ["Pengikat tulangan", "Pengelasan", "Pemasangan struktur", "Finishing"],
+    uses: ["Pengikat tulangan", "Plesteran dinding", "Pagar & kandang", "Pengelasan"],
+  },
+  {
+    slug: "perkakas-material-pendukung",
+    name: "Perkakas & Material Pendukung",
+    category: "Aksesoris & Perkakas",
+    image:
+      "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=900&q=70",
+    summary:
+      "Dinabolt, skrup gypsum, gunting baja, mata bor, gerinda, cat besi/kayu, dan thinner.",
+    description:
+      "Lengkapi kebutuhan pertukangan Anda dalam satu tempat: dinabolt, skrup gypsum, gunting baja ringan, mata bor, mesin gerinda, cat besi/kayu, hingga thinner. Belanja material baja dan perkakas pendukungnya sekaligus di Takka Steel.",
+    specs: [
+      { label: "Pengencang", value: "Dinabolt, skrup gypsum" },
+      { label: "Alat potong", value: "Gunting baja, gerinda" },
+      { label: "Mata bor", value: "Beragam ukuran" },
+      { label: "Finishing", value: "Cat besi/kayu, thinner" },
+    ],
+    uses: ["Pemasangan rangka", "Pengeboran", "Pemotongan baja ringan", "Finishing"],
   },
 ];
 

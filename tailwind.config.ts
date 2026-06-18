@@ -8,28 +8,47 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // TAKKA STEEL brand palette — industrial steel + safety accent.
+        // ── TAKKA STEEL brand palette — Dark Navy + Vibrant Gold ──────────
         steel: {
-          50: "#f5f7fa",
-          100: "#e9edf2",
-          200: "#cdd6e0",
-          300: "#a3b2c4",
-          400: "#7388a2",
-          500: "#526a86",
-          600: "#3f536c",
-          700: "#344458",
-          800: "#1f2937",
-          900: "#141b26",
-          950: "#0b0f16",
+          50: "#f8f9fc",
+          100: "#e8edf5",
+          200: "#cdd6e6",
+          300: "#aab9d6",
+          400: "#8493b5",
+          500: "#64748b",
+          600: "#475173",
+          700: "#1e3a5f",
+          800: "#132743",
+          900: "#0b1a2f", // brand dark navy — footer, headings
+          950: "#050d1a",
         },
         accent: {
-          DEFAULT: "#e63a27", // forge red / safety orange-red
-          dark: "#b82a1b",
-          light: "#ff5b46",
+          DEFAULT: "#0b1a2f", // primary navy
+          dark: "#050d1a",
+          light: "#1e3a5f",
+        },
+        gold: {
+          DEFAULT: "#ffc107", // vibrant gold / yellow
+          dark: "#e0a800",
         },
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        // Montserrat for headings, Open Sans for body (brand brief).
+        sans: ["var(--font-body)", "system-ui", "sans-serif"],
+        body: ["var(--font-body)", "system-ui", "sans-serif"],
+        heading: ["var(--font-heading)", "system-ui", "sans-serif"],
+      },
+      backgroundImage: {
+        "navy-gradient": "linear-gradient(135deg, #1e3a5f 0%, #0b1a2f 100%)",
+        "gold-gradient": "linear-gradient(135deg, #ffc107 0%, #e0a800 100%)",
+      },
+      borderRadius: {
+        card: "8px", // corporate, not overly rounded
+      },
+      boxShadow: {
+        card: "0 2px 16px rgba(56, 78, 137, 0.08)",
+        "card-hover": "0 8px 32px rgba(56, 78, 137, 0.16)",
+        cta: "0 4px 24px rgba(212, 175, 55, 0.35)",
       },
       container: {
         center: true,

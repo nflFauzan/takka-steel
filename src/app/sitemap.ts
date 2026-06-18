@@ -3,7 +3,7 @@ import { products } from "@/data/products";
 import { articles } from "@/data/articles";
 
 // Update this to the real production domain before deploying.
-const BASE_URL = "https://takkasteel.example.com";
+const BASE_URL = "https://takkasteel.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = ["", "/tentang", "/produk", "/artikel", "/kontak"].map(

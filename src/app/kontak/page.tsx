@@ -2,128 +2,140 @@ import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader";
 import ContactForm from "@/components/ContactForm";
 import Icon from "@/components/Icon";
-import { company, waLink } from "@/data/company";
+import { company, waLink, defaultWaMessage } from "@/data/company";
 
 export const metadata: Metadata = {
   title: "Kontak",
-  description: `Hubungi ${company.name} untuk penawaran dan konsultasi kebutuhan material besi & baja Anda.`,
+  description: `Hubungi ${company.name} di ${company.address}. WhatsApp ${company.whatsappDisplay}, email ${company.email}. Jam buka Senin–Sabtu 08.00–17.00 WIB.`,
 };
 
 export default function KontakPage() {
   return (
     <>
-      <PageHeader
-        title="Hubungi Kami"
-        subtitle="Punya pertanyaan atau ingin meminta penawaran? Tim kami siap membantu Anda."
-        breadcrumb={[{ label: "Beranda", href: "/" }, { label: "Kontak" }]}
-      />
+      {/* Hero */}
+      <section className="relative flex min-h-[50vh] items-center justify-center bg-steel-900 text-center text-white pt-20 overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&w=1900&q=70"
+          alt="Gudang besi"
+          className="absolute inset-0 h-full w-full object-cover opacity-20 mix-blend-overlay"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-steel-950/80 to-steel-900" />
+        <div className="container-px relative z-10 max-w-3xl">
+          <h1 className="font-heading text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl">
+            Hubungi Kami
+          </h1>
+          <p className="mt-6 text-lg text-steel-300">
+            Kami siap melayani kebutuhan material besi dan baja Anda dengan kualitas SNI dan harga kompetitif. Konsultasikan proyek Anda bersama tim ahli kami.
+          </p>
+        </div>
+      </section>
 
-      <section className="section">
-        <div className="container-px grid gap-12 lg:grid-cols-2">
-          {/* Info */}
-          <div>
-            <span className="eyebrow">Informasi Kontak</span>
-            <h2 className="h2 mt-2">Mari Terhubung</h2>
-            <p className="mt-3 text-steel-600">
-              Hubungi kami melalui salah satu kanal berikut. Untuk respon
-              tercepat, gunakan WhatsApp.
-            </p>
-
-            <ul className="mt-8 space-y-5">
-              <ContactRow icon="pin" label="Alamat">
+      {/* Info Cards */}
+      <section className="-mt-16 relative z-20">
+        <div className="container-px">
+          <div className="grid gap-6 md:grid-cols-3">
+            {/* Card 1 */}
+            <div className="rounded-xl border border-steel-100 bg-white p-8 shadow-sm text-center md:text-left">
+              <span className="mx-auto md:mx-0 flex h-12 w-12 items-center justify-center rounded-xl bg-steel-50 text-accent mb-5 border border-steel-100">
+                <Icon name="pin" className="h-6 w-6" />
+              </span>
+              <h3 className="font-bold text-steel-900 mb-3">Alamat Kantor</h3>
+              <p className="text-sm text-steel-600 leading-relaxed">
                 {company.address}
-              </ContactRow>
-              <ContactRow icon="whatsapp" label="WhatsApp">
-                <a href={waLink()} target="_blank" rel="noopener noreferrer" className="hover:text-accent">
-                  +{company.whatsapp}
-                </a>
-              </ContactRow>
-              <ContactRow icon="phone" label="Telepon">
-                {company.phone}
-              </ContactRow>
-              <ContactRow icon="mail" label="Email">
-                <a href={`mailto:${company.email}`} className="hover:text-accent">
-                  {company.email}
-                </a>
-              </ContactRow>
-              <ContactRow icon="instagram" label="Instagram">
-                <a href={company.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-accent">
-                  {company.instagramHandle}
-                </a>
-              </ContactRow>
-            </ul>
-
-            <div className="mt-8 rounded-xl border border-steel-100 bg-steel-50 p-5">
-              <h3 className="flex items-center gap-2 font-bold text-steel-900">
-                <Icon name="clock" className="h-5 w-5 text-accent" />
-                Jam Operasional
-              </h3>
-              <ul className="mt-3 space-y-1.5 text-sm text-steel-600">
-                {company.operatingHours.map((h) => (
-                  <li key={h.day} className="flex justify-between">
-                    <span>{h.day}</span>
-                    <span className="font-medium text-steel-800">{h.hours}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          {/* Form */}
-          <div>
-            <div className="rounded-2xl border border-steel-100 bg-white p-6 shadow-sm md:p-8">
-              <h2 className="text-xl font-extrabold text-steel-900">
-                Kirim Pesan
-              </h2>
-              <p className="mt-1 text-sm text-steel-500">
-                Isi formulir di bawah ini dan kami akan menghubungi Anda kembali.
               </p>
-              <div className="mt-6">
-                <ContactForm />
+            </div>
+            {/* Card 2 */}
+            <div className="rounded-xl border border-steel-100 bg-white p-8 shadow-sm text-center md:text-left">
+              <span className="mx-auto md:mx-0 flex h-12 w-12 items-center justify-center rounded-xl bg-gold/10 text-gold mb-5 border border-gold/20">
+                <Icon name="phone" className="h-6 w-6" />
+              </span>
+              <h3 className="font-bold text-steel-900 mb-3">Kontak Admin</h3>
+              <div className="text-sm text-steel-600 space-y-2">
+                <p>Admin 1: {company.whatsappDisplay}</p>
+                <p>Admin 2: 0878-7395-3335</p>
+              </div>
+            </div>
+            {/* Card 3 */}
+            <div className="rounded-xl border border-steel-100 bg-white p-8 shadow-sm text-center md:text-left">
+              <span className="mx-auto md:mx-0 flex h-12 w-12 items-center justify-center rounded-xl bg-green-50 text-green-600 mb-5 border border-green-100">
+                <Icon name="mail" className="h-6 w-6" />
+              </span>
+              <h3 className="font-bold text-steel-900 mb-3">Email & Jam Kerja</h3>
+              <div className="text-sm text-steel-600 space-y-2">
+                <p>{company.email}</p>
+                <p className="mt-3 inline-block rounded bg-gold/10 px-3 py-1 font-semibold text-gold-dark">
+                  Senin - Sabtu, 08.00 - 17.00 WIB
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Map */}
-      <section className="pb-20">
-        <div className="container-px">
-          <div className="overflow-hidden rounded-2xl border border-steel-100 shadow-sm">
-            <iframe
-              src={company.mapsEmbedUrl}
-              title="Lokasi TAKKA STEEL"
-              width="100%"
-              height="420"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="block w-full"
-            />
+      {/* Map & Form */}
+      <section className="section bg-steel-50/50">
+        <div className="container-px grid gap-12 lg:grid-cols-2 items-start">
+          {/* Map Area */}
+          <div>
+            <h2 className="h2 text-steel-900">Lokasi Gudang Kami</h2>
+            <p className="mt-3 text-steel-600">
+              Kunjungi workshop kami untuk melihat kualitas stok material secara langsung. Kami berlokasi strategis di area Bogor.
+            </p>
+            <div className="mt-8 relative overflow-hidden rounded-2xl border-4 border-white shadow-md bg-steel-800 h-[450px]">
+              {/* Map Placeholder matching the dark style in the image */}
+              <div className="absolute inset-0 opacity-50" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=800&q=80')", backgroundSize: "cover", filter: "grayscale(100%) contrast(120%)" }}></div>
+              <div className="absolute inset-0 bg-steel-900/40 mix-blend-multiply"></div>
+              
+              <div className="absolute inset-0 flex items-center justify-center">
+                <a href={company.mapsUrl} target="_blank" rel="noopener noreferrer" className="btn bg-white text-steel-900 hover:bg-steel-50 shadow-lg px-6 py-3 rounded-md font-bold">
+                  <Icon name="pin" className="h-5 w-5 text-accent" /> Petunjuk Arah
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Form Area */}
+          <div>
+            <div className="rounded-2xl border border-steel-100 bg-white p-6 shadow-card md:p-8">
+              <h2 className="text-2xl font-extrabold text-steel-900">
+                Kirim Pesan
+              </h2>
+              <p className="mt-2 text-sm text-steel-500">
+                Hubungi kami melalui formulir di bawah ini untuk penawaran harga khusus.
+              </p>
+              
+              <form className="mt-8 space-y-5">
+                <div className="grid gap-5 md:grid-cols-2">
+                  <div>
+                    <label className="mb-1.5 block text-xs font-bold text-steel-900">Nama Lengkap <span className="text-red-500">*</span></label>
+                    <input type="text" placeholder="Masukkan nama Anda" className="w-full rounded-md border-0 bg-steel-50 px-4 py-3 text-sm focus:ring-2 focus:ring-accent" />
+                  </div>
+                  <div>
+                    <label className="mb-1.5 block text-xs font-bold text-steel-900">Nomor WhatsApp <span className="text-red-500">*</span></label>
+                    <input type="text" placeholder="0812..." className="w-full rounded-md border-0 bg-steel-50 px-4 py-3 text-sm focus:ring-2 focus:ring-accent" />
+                  </div>
+                </div>
+                <div>
+                  <label className="mb-1.5 block text-xs font-bold text-steel-900">Subjek <span className="text-red-500">*</span></label>
+                  <select className="w-full rounded-md border-0 bg-steel-50 px-4 py-3 text-sm focus:ring-2 focus:ring-accent">
+                    <option>Pilih Subjek</option>
+                    <option>Permintaan Harga</option>
+                    <option>Tanya Stok</option>
+                    <option>Lainnya</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="mb-1.5 block text-xs font-bold text-steel-900">Pesan Anda <span className="text-red-500">*</span></label>
+                  <textarea rows={4} placeholder="Tuliskan detail kebutuhan Anda di sini..." className="w-full rounded-md border-0 bg-steel-50 px-4 py-3 text-sm focus:ring-2 focus:ring-accent"></textarea>
+                </div>
+                <button type="button" className="btn-gold w-full py-3.5 text-base rounded-full">
+                  Kirim Pesan Sekarang
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
     </>
-  );
-}
-
-function ContactRow({
-  icon,
-  label,
-  children,
-}: {
-  icon: "pin" | "whatsapp" | "phone" | "mail" | "instagram";
-  label: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <li className="flex gap-4">
-      <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-accent/10 text-accent">
-        <Icon name={icon} className="h-5 w-5" />
-      </span>
-      <div>
-        <div className="text-xs uppercase tracking-wide text-steel-400">{label}</div>
-        <div className="text-steel-800">{children}</div>
-      </div>
-    </li>
   );
 }

@@ -4,6 +4,14 @@ import Icon from "./Icon";
 import { company, waLink } from "@/data/company";
 import { productCategories } from "@/data/products";
 
+function ColHeading({ children }: { children: React.ReactNode }) {
+  return (
+    <h3 className="text-base font-bold text-white">
+      {children}
+    </h3>
+  );
+}
+
 export default function Footer() {
   return (
     <footer className="mt-auto bg-steel-900 text-steel-300">
@@ -11,7 +19,7 @@ export default function Footer() {
         <div className="md:col-span-1">
           <Logo light />
           <p className="mt-4 text-sm leading-relaxed text-steel-400">
-            {company.shortDescription}
+            {company.tagline}. {company.shortDescription}
           </p>
           <div className="mt-5 flex gap-3">
             <a
@@ -19,7 +27,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="grid h-9 w-9 place-items-center rounded-md bg-steel-800 text-steel-200 transition hover:bg-accent hover:text-white"
+              className="grid h-9 w-9 place-items-center rounded-md bg-steel-800 text-steel-200 transition hover:bg-gold hover:text-steel-900"
             >
               <Icon name="instagram" className="h-5 w-5" />
             </a>
@@ -28,7 +36,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"
-              className="grid h-9 w-9 place-items-center rounded-md bg-steel-800 text-steel-200 transition hover:bg-accent hover:text-white"
+              className="grid h-9 w-9 place-items-center rounded-md bg-steel-800 text-steel-200 transition hover:bg-[#25D366] hover:text-white"
             >
               <Icon name="whatsapp" className="h-5 w-5" />
             </a>
@@ -36,9 +44,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
-            Navigasi
-          </h3>
+          <ColHeading>Navigasi</ColHeading>
           <ul className="mt-4 space-y-2 text-sm">
             <li><Link href="/" className="hover:text-white">Beranda</Link></li>
             <li><Link href="/tentang" className="hover:text-white">Tentang Kami</Link></li>
@@ -49,51 +55,60 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
-            Produk Unggulan
-          </h3>
+          <ColHeading>Produk Unggulan</ColHeading>
           <ul className="mt-4 space-y-2 text-sm">
-            {productCategories.slice(0, 6).map((c) => (
+            {productCategories.map((c) => (
               <li key={c}>
                 <Link href="/produk" className="hover:text-white">
                   {c}
                 </Link>
               </li>
             ))}
+            <li>
+              <a
+                href={company.tokopedia}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white"
+              >
+                {company.tokopediaName} (Tokopedia)
+              </a>
+            </li>
           </ul>
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
-            Kontak
-          </h3>
+          <ColHeading>Kontak</ColHeading>
           <ul className="mt-4 space-y-3 text-sm">
             <li className="flex gap-2.5">
-              <Icon name="pin" className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+              <Icon name="pin" className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
               <span>{company.address}</span>
             </li>
             <li className="flex gap-2.5">
-              <Icon name="phone" className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+              <Icon name="phone" className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
               <a href={waLink()} className="hover:text-white">
-                +{company.whatsapp} (WhatsApp)
+                {company.whatsappDisplay} (WhatsApp)
               </a>
             </li>
             <li className="flex gap-2.5">
-              <Icon name="mail" className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+              <Icon name="mail" className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
               <a href={`mailto:${company.email}`} className="hover:text-white">
                 {company.email}
               </a>
+            </li>
+            <li className="flex gap-2.5">
+              <Icon name="clock" className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+              <span>{company.hoursDisplay}</span>
             </li>
           </ul>
         </div>
       </div>
 
       <div className="border-t border-steel-800">
-        <div className="container-px flex flex-col items-center justify-between gap-2 py-5 text-xs text-steel-500 md:flex-row">
-          <p>
-            © {new Date().getFullYear()} {company.name}. Seluruh hak cipta dilindungi.
+        <div className="container-px flex flex-col items-center justify-center py-6 text-xs text-steel-500">
+          <p className="text-center">
+            © {new Date().getFullYear()} {company.name}. Distributor Bahan Bangunan & Besi Baja SNI. Seluruh hak cipta dilindungi.
           </p>
-          <p>Dibuat dengan Next.js & Tailwind CSS.</p>
         </div>
       </div>
     </footer>

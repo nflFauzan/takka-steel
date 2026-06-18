@@ -8,7 +8,7 @@ import { articles, formatDate } from "@/data/articles";
 export const metadata: Metadata = {
   title: "Artikel",
   description:
-    "Tips dan informasi seputar besi, baja, dan material konstruksi dari TAKKA STEEL.",
+    "Tips dan informasi seputar besi, baja, dan material konstruksi dari Takka Steel.",
 };
 
 export default function ArtikelPage() {

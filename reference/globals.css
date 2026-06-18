@@ -1,0 +1,247 @@
+/* ============================================================
+   globals.css — TAKKA STEEL
+   Import Google Fonts + CSS Variables brand colors
+   ============================================================ */
+
+/* ── GOOGLE FONTS ─────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── CSS VARIABLES ────────────────────────────────────────── */
+:root {
+  /* Brand Colors */
+  --color-navy:      #384E89;
+  --color-royal:     #3B5598;
+  --color-gold:      #D4AF37;
+  --color-steel:     #AAB9D6;
+  --color-dark:      #1A2340;
+  --color-offwhite:  #F8F9FC;
+  --color-gray:      #64748B;
+  --color-lightgray: #E8EDF5;
+
+  /* Typography */
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body:    'Open Sans', sans-serif;
+
+  /* Spacing */
+  --section-padding:    5rem;
+  --section-padding-sm: 3rem;
+}
+
+/* ── BASE STYLES ──────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: #1A2340;
+  background-color: #FFFFFF;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+/* ── UTILITY CLASSES ──────────────────────────────────────── */
+@layer utilities {
+
+  /* Section wrapper standar */
+  .section-padding {
+    @apply py-20 md:py-28;
+  }
+
+  .section-padding-sm {
+    @apply py-12 md:py-16;
+  }
+
+  .container-custom {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Heading styles */
+  .heading-xl {
+    @apply font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight;
+  }
+
+  .heading-lg {
+    @apply font-heading text-3xl sm:text-4xl font-bold tracking-tight;
+  }
+
+  .heading-md {
+    @apply font-heading text-2xl sm:text-3xl font-bold;
+  }
+
+  .heading-sm {
+    @apply font-heading text-xl sm:text-2xl font-semibold;
+  }
+
+  /* Section title dengan gold underline */
+  .section-title {
+    @apply font-heading text-3xl sm:text-4xl font-bold text-brand-dark mb-4;
+  }
+
+  .section-title::after {
+    content: '';
+    @apply block w-16 h-1 bg-brand-gold mt-3;
+  }
+
+  .section-title.centered::after {
+    @apply mx-auto;
+  }
+
+  /* Label / tag kecil di atas heading */
+  .section-label {
+    @apply text-brand-navy font-heading font-700 text-sm tracking-widest uppercase mb-3 block;
+  }
+
+  /* Tombol utama */
+  .btn-primary {
+    @apply bg-brand-navy text-white font-heading font-700 px-8 py-4
+           rounded-card hover:bg-brand-royal transition-all duration-200
+           shadow-card hover:shadow-card-hover inline-flex items-center gap-2;
+  }
+
+  /* Tombol WA */
+  .btn-whatsapp {
+    @apply bg-[#25D366] text-white font-heading font-700 px-8 py-4
+           rounded-card hover:bg-[#1DA851] transition-all duration-200
+           shadow-cta inline-flex items-center gap-2;
+  }
+
+  /* Tombol outline */
+  .btn-outline {
+    @apply border-2 border-brand-navy text-brand-navy font-heading font-700
+           px-8 py-4 rounded-card hover:bg-brand-navy hover:text-white
+           transition-all duration-200 inline-flex items-center gap-2;
+  }
+
+  /* Card produk */
+  .card-product {
+    @apply bg-white border border-brand-lightgray rounded-card p-6
+           hover:shadow-card-hover hover:border-brand-gold
+           transition-all duration-300 cursor-pointer;
+  }
+
+  /* Gold accent bar */
+  .gold-bar {
+    @apply w-12 h-1 bg-brand-gold;
+  }
+
+  /* Background alternating section */
+  .bg-section-alt {
+    @apply bg-brand-offwhite;
+  }
+
+  .bg-section-dark {
+    @apply bg-brand-dark text-white;
+  }
+
+  .bg-section-navy {
+    background: linear-gradient(135deg, #384E89 0%, #1A2340 100%);
+    @apply text-white;
+  }
+}
+
+/* ── WHATSAPP FLOATING BUTTON ─────────────────────────────── */
+.wa-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+  z-index: 999;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+}
+
+.wa-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(37, 211, 102, 0.65);
+}
+
+.wa-float svg {
+  width: 32px;
+  height: 32px;
+  fill: white;
+}
+
+/* Tooltip saat hover (desktop only) */
+.wa-float::before {
+  content: "Chat Sekarang";
+  position: absolute;
+  right: 72px;
+  background: #1A2340;
+  color: white;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.wa-float:hover::before {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .wa-float::before {
+    display: none;
+  }
+  .wa-float {
+    bottom: 20px;
+    right: 20px;
+    width: 54px;
+    height: 54px;
+  }
+}
+
+/* ── NAVBAR ───────────────────────────────────────────────── */
+.navbar-scrolled {
+  @apply shadow-navbar;
+  background-color: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(8px);
+}
+
+/* ── ANIMASI SCROLL REVEAL ────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── GOOGLE MAPS EMBED ────────────────────────────────────── */
+.maps-embed {
+  width: 100%;
+  height: 400px;
+  border: 0;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .maps-embed {
+    height: 280px;
+  }
+}

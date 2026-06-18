@@ -54,7 +54,7 @@ export async function POST(request: Request) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          content: `📩 *Pesan baru dari website TAKKA STEEL*\nNama: ${submission.name}\nWA: ${submission.phone}\nEmail: ${submission.email}\nPesan: ${submission.message}`,
+          content: `📩 *Pesan baru dari website Takka Steel*\nNama: ${submission.name}\nWA: ${submission.phone}\nEmail: ${submission.email}\nPesan: ${submission.message}`,
           submission,
         }),
       });

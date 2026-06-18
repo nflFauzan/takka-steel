@@ -21,6 +21,23 @@ Struktur situs terinspirasi dari company profile toko besi/baja pada umumnya
 - **SEO-ready**: metadata per halaman, Open Graph, dan `sitemap.xml` otomatis.
 - **Konten berbasis file** (`src/data/*`) — tanpa database, mudah diedit & di-commit.
 
+## 🛠️ Tech Stack
+
+| Teknologi | Versi | Keterangan |
+| --- | --- | --- |
+| [Next.js](https://nextjs.org/) | 14.x (App Router) | Framework React dengan SSR & SSG bawaan |
+| [React](https://react.dev/) | 18.3 | Library UI utama |
+| [TypeScript](https://www.typescriptlang.org/) | 5.5 | Type-safety untuk seluruh codebase |
+| [Tailwind CSS](https://tailwindcss.com/) | 3.4 | Utility-first CSS framework |
+| [PostCSS](https://postcss.org/) | 8.4 | Transformasi CSS (dipakai Tailwind) |
+| [ESLint](https://eslint.org/) | 8.57 | Linting & code quality |
+| [Sharp](https://sharp.pixelplumbing.com/) | 0.34 | Optimasi gambar Next.js |
+| [Vercel](https://vercel.com/) | — | Platform deploy yang direkomendasikan |
+
+> **Runtime**: Node.js 18.17+ · **Package Manager**: npm
+
+---
+
 ## 🚀 Menjalankan Secara Lokal
 
 Prasyarat: **Node.js 18.17+**.

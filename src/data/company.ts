@@ -1,37 +1,65 @@
 /**
- * Central company information for TAKKA STEEL.
- *
- * ⚠️ PLACEHOLDER DATA — replace the values below with the real company
- * details (address, phone numbers, email, social links, operating hours).
- * Everything here flows into the navbar, footer, contact page and metadata.
+ * Central company information for Takka Steel.
+ * This is the single source of truth — values flow into the navbar, footer,
+ * contact page, metadata, and structured data.
  */
 
 export const company = {
-  name: "TAKKA STEEL",
-  legalName: "TAKKA STEEL",
-  tagline: "Supplier Besi & Baja Terpercaya untuk Kebutuhan Konstruksi Anda",
+  name: "Takka Steel",
+  legalName: "Takka Steel",
+  tagline: "Pusat Baja dan Bahan Bangunan",
+  taglineLong:
+    "Lagi cari material baja yang lengkap, cepat, dan terpercaya? Takka Steel solusinya!",
   shortDescription:
-    "TAKKA STEEL adalah distributor besi, baja, dan bahan bangunan di Bogor. Kami menyediakan material berkualitas dengan harga bersaing dan pengiriman cepat ke lokasi proyek Anda.",
-  city: "Bogor",
-  // TODO: ganti dengan alamat asli
+    "Takka Steel adalah pusat penyedia material baja dan bahan bangunan di Kabupaten Bogor. Solusi lengkap untuk kebutuhan konstruksi dan pertukangan — produk lengkap, layanan cepat, dan harga kompetitif.",
+  city: "Kabupaten Bogor",
+
+  // ── Address ──────────────────────────────────────────────
   address:
-    "Jl. Raya Contoh No. 00, Kecamatan Contoh, Kabupaten Bogor, Jawa Barat 16000",
-  // TODO: ganti dengan koordinat / embed Google Maps asli
+    "Jl. Lkr. Laladon No.51, RT.01/RW.07, Laladon, Kec. Ciomas, Kabupaten Bogor, Jawa Barat 16610",
+  // Google Maps embed iframe src. Replace with the confirmed embed src from
+  // Google Maps → Share → Embed a map when available.
   mapsEmbedUrl:
-    "https://www.google.com/maps?q=Bogor,Jawa+Barat&output=embed",
-  mapsLink: "https://maps.google.com/?q=Bogor+Jawa+Barat",
-  email: "info@takkasteel.co.id", // TODO: email asli
-  // WhatsApp dalam format internasional tanpa "+" / spasi.
-  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "6281234567890",
-  phone: "(0251) 000-0000", // TODO: nomor telepon kantor asli
+    "https://www.google.com/maps?q=Takka+Steel+Jl.+Lkr.+Laladon+No.51+Ciomas+Bogor&output=embed",
+  mapsLink: "https://maps.app.goo.gl/PCLXHbXJ9EeEdikP8",
+
+  // ── Contact ──────────────────────────────────────────────
+  email: "takkasteelofficial@gmail.com",
+  // WhatsApp in international format, no "+" / spaces.
+  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "6289518611616",
+  whatsappDisplay: "0895-1861-1616",
+  phone: "0895-1861-1616",
+
+  // ── Social ───────────────────────────────────────────────
   instagram: "https://www.instagram.com/takkasteelofficial/",
   instagramHandle: "@takkasteelofficial",
+  tokopedia: "https://www.tokopedia.com/takka-steel",
+  tokopediaName: "Toko Takka Steel",
+
+  // ── Operating hours ──────────────────────────────────────
   operatingHours: [
-    { day: "Senin – Jumat", hours: "08.00 – 17.00 WIB" },
-    { day: "Sabtu", hours: "08.00 – 14.00 WIB" },
+    { day: "Senin – Sabtu", hours: "08.00 – 17.00 WIB" },
     { day: "Minggu & Hari Libur", hours: "Tutup" },
   ],
-  foundedYear: 2019, // TODO: tahun berdiri asli
+  hoursDisplay: "Senin – Sabtu, 08.00 – 17.00 WIB",
+
+  foundedYear: 2025,
+  foundedFull: "13 Januari 2025",
+
+  // ── Vision & mission ─────────────────────────────────────
+  vision:
+    "Menjadi toko bangunan terpercaya yang mengutamakan kualitas produk dan kepuasan pelanggan dalam setiap layanan yang diberikan.",
+  mission: [
+    "Menyediakan produk bangunan berkualitas tinggi dengan harga yang kompetitif.",
+    "Memberikan pelayanan terbaik dan solusi tepat untuk memenuhi kebutuhan pelanggan.",
+    "Terus berinovasi dalam penyediaan produk dan layanan untuk mendukung perkembangan dunia konstruksi.",
+  ],
+
+  // ── Geo coordinates (estimate — update with exact GPS) ────
+  geo: {
+    latitude: "-6.570",
+    longitude: "106.750",
+  },
 };
 
 /** Pre-filled WhatsApp chat link helper. */
@@ -42,4 +70,4 @@ export function waLink(message?: string) {
 }
 
 export const defaultWaMessage =
-  "Halo TAKKA STEEL, saya ingin menanyakan ketersediaan dan harga produk.";
+  "Halo Takka Steel, saya ingin menanyakan informasi produk dan harga.";
