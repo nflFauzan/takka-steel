@@ -1,19 +1,20 @@
-import Link from "next/link";
 import HeroVideo from "@/components/HeroVideo";
 import AboutSection from "@/components/AboutSection";
+import CategoryShowcase from "@/components/CategoryShowcase";
 import Reveal from "@/components/Reveal";
 import Icon, { type IconName } from "@/components/Icon";
+import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 import { company, waLink, defaultWaMessage } from "@/data/company";
-import { faqs } from "@/data/site";
+import { faqs, testimonials as clientTestimonials, partners } from "@/data/site";
 
 export default function HomePage() {
   return (
     <>
       <HeroVideo />
       <AboutSection />
-      <ProductCategories />
-      <WhyUsCards />
-      <TestimonialsDark />
+      <CategoryShowcase />
+      <OrderProcess />
+      <TestimonialsSection />
       <FaqSection />
       <LocationSection />
       <CtaBandDark />
@@ -21,134 +22,90 @@ export default function HomePage() {
   );
 }
 
-function ProductCategories() {
-  return (
-    <section className="section bg-white">
-      <div className="container-px">
-        <Reveal className="mb-12 text-center">
-          <h2 className="h2 text-steel-900">Kategori Produk</h2>
-          <div className="mx-auto mt-4 h-1 w-12 rounded-full bg-gold" />
-          <p className="mt-4 text-steel-600">
-            Material berkualitas tinggi untuk kebutuhan struktural dan penyelesaian akhir proyek Anda.
-          </p>
-        </Reveal>
-
-        {/* Bento Grid */}
-        <div className="grid gap-4 md:grid-cols-3 md:grid-rows-2 md:h-[500px]">
-          {/* Main Block */}
-          <Link href="/produk" className="group relative col-span-1 md:col-span-2 md:row-span-2 overflow-hidden rounded-xl bg-steel-900 min-h-[300px] md:min-h-0">
-            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=80" alt="Hollow & Besi" className="absolute inset-0 h-full w-full object-cover opacity-50 transition duration-700 group-hover:scale-105" />
-            <div className="absolute inset-0 bg-gradient-to-t from-steel-900 via-steel-900/40 to-transparent" />
-            <div className="absolute bottom-0 p-6 md:p-8">
-              <span className="mb-3 inline-block rounded bg-gold px-2.5 py-1 text-xs font-bold uppercase tracking-wide text-steel-900">Best Seller</span>
-              <h3 className="font-heading text-2xl font-bold text-white md:text-4xl">Hollow &amp; Besi</h3>
-              <p className="mt-2 text-steel-200">Beragam besi konstruksi, struktur baja SNI terjamin kualitasnya.</p>
-            </div>
-          </Link>
-
-          <Link href="/produk" className="group relative overflow-hidden rounded-xl bg-steel-800 min-h-[200px] md:min-h-0">
-            <img src="https://images.unsplash.com/photo-1621643916942-8c886a0bdfce?auto=format&fit=crop&w=600&q=80" alt="Baja Ringan" className="absolute inset-0 h-full w-full object-cover opacity-40 transition duration-500 group-hover:scale-105" />
-            <div className="absolute inset-0 bg-gradient-to-t from-steel-900 to-transparent" />
-            <div className="absolute bottom-0 p-5">
-              <h3 className="font-heading text-lg font-bold text-white">Baja Ringan</h3>
-              <p className="text-sm text-steel-300">CNP &amp; Reng</p>
-            </div>
-          </Link>
-
-          <Link href="/produk" className="group relative overflow-hidden rounded-xl bg-steel-800 min-h-[200px] md:min-h-0">
-            <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=600&q=80" alt="Atap UPVC & Spandek" className="absolute inset-0 h-full w-full object-cover opacity-40 transition duration-500 group-hover:scale-105" />
-            <div className="absolute inset-0 bg-gradient-to-t from-steel-900 to-transparent" />
-            <div className="absolute bottom-0 p-5">
-              <h3 className="font-heading text-lg font-bold text-white">Atap UPVC &amp; Spandek</h3>
-              <p className="text-sm text-steel-300">Kuat &amp; Tahan Lama</p>
-            </div>
-          </Link>
-        </div>
-        <div className="grid gap-4 mt-4 md:grid-cols-2 h-[200px]">
-          <Link href="/produk" className="group relative overflow-hidden rounded-xl bg-steel-800">
-            <img src="https://images.unsplash.com/photo-1590483736622-39fbdf419a4e?auto=format&fit=crop&w=800&q=80" alt="Wiremesh" className="absolute inset-0 h-full w-full object-cover opacity-40 transition duration-500 group-hover:scale-105" />
-            <div className="absolute inset-0 bg-gradient-to-t from-steel-900 to-transparent" />
-            <div className="absolute bottom-0 p-5">
-              <h3 className="font-heading text-lg font-bold text-white">Wiremesh</h3>
-              <p className="text-sm text-steel-300">Struktur Pengecoran</p>
-            </div>
-          </Link>
-          <Link href="/produk" className="group relative overflow-hidden rounded-xl bg-steel-800">
-            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" alt="Papan & Interior" className="absolute inset-0 h-full w-full object-cover opacity-40 transition duration-500 group-hover:scale-105" />
-            <div className="absolute inset-0 bg-gradient-to-t from-steel-900 to-transparent" />
-            <div className="absolute bottom-0 p-5">
-              <h3 className="font-heading text-lg font-bold text-white">Papan &amp; Interior</h3>
-              <p className="text-sm text-steel-300">GRC, Gypsum, &amp; Lisplank</p>
-            </div>
-          </Link>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function WhyUsCards() {
-  const points = [
-    { title: "Solusi Cepat Proyek", desc: "Dukungan penuh untuk skala industri." },
-    { title: "Kualitas SNI Terjamin", desc: "Produk bersertifikat resmi terpercaya." },
-    { title: "Armada Pengiriman", desc: "Tersedia berbagai pilihan pengiriman." },
-    { title: "Konsultasi Ahli", desc: "Tim profesional siap mendampingi Anda." },
+function OrderProcess() {
+  const steps: { num: string; icon: IconName; title: string; desc: string }[] = [
+    {
+      num: "01",
+      icon: "headset",
+      title: "Konsultasi & Pilih Material",
+      desc: "Hubungi tim kami via WhatsApp — sampaikan jenis, ukuran, dan jumlah material yang Anda butuhkan.",
+    },
+    {
+      num: "02",
+      icon: "wallet",
+      title: "Terima Penawaran",
+      desc: "Kami kirim penawaran harga terbaik beserta ketersediaan stok dengan cepat dan transparan.",
+    },
+    {
+      num: "03",
+      icon: "truck",
+      title: "Kirim ke Lokasi",
+      desc: "Material dikirim tepat waktu ke lokasi proyek Anda di Kabupaten Bogor dan sekitarnya.",
+    },
   ];
   return (
     <section className="section bg-steel-50">
       <div className="container-px">
-        <Reveal className="mb-12 text-center">
-          <span className="eyebrow">Nilai Lebih</span>
-          <h2 className="h2 mt-2">Mengapa Memilih TAKKA</h2>
+        <Reveal className="mb-14 text-center">
+          <span className="eyebrow">Mudah &amp; Cepat</span>
+          <h2 className="h2 mt-2">Cara Pesan di TAKKA</h2>
           <div className="mx-auto mt-4 h-1 w-12 rounded-full bg-gold" />
+          <p className="mx-auto mt-4 max-w-2xl text-steel-600">
+            Dari konsultasi sampai material tiba di lokasi — hanya tiga langkah sederhana.
+          </p>
         </Reveal>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {points.map((p, i) => (
-            <Reveal key={p.title} delay={i * 50}>
-              <div className="flex h-full flex-col items-center rounded-2xl bg-white p-8 text-center shadow-sm border border-steel-100 transition hover:shadow-card-hover">
-                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-accent text-white">
-                  <Icon name="check" className="h-6 w-6" />
+        <div className="relative grid gap-6 md:grid-cols-3">
+          {/* Connector line (desktop) */}
+          <div className="absolute left-0 right-0 top-9 hidden h-px bg-steel-200 md:block" aria-hidden />
+          {steps.map((s, i) => (
+            <Reveal key={s.title} delay={i * 90}>
+              <div className="group relative flex h-full flex-col items-center rounded-2xl border border-steel-100 bg-white p-8 text-center shadow-sm transition hover:shadow-card-hover">
+                <div className="relative mb-5">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-accent text-white ring-8 ring-steel-50 transition-colors duration-300 group-hover:bg-gold group-hover:text-steel-900">
+                    <Icon name={s.icon} className="h-7 w-7" />
+                  </div>
+                  <span className="absolute -right-1 -top-1 grid h-7 w-7 place-items-center rounded-full bg-gold text-xs font-extrabold text-steel-900 ring-4 ring-white">
+                    {s.num}
+                  </span>
                 </div>
-                <h3 className="mb-2 font-bold text-steel-900">{p.title}</h3>
-                <p className="text-sm text-steel-500">{p.desc}</p>
+                <h3 className="mb-2 font-bold text-steel-900">{s.title}</h3>
+                <p className="text-sm leading-relaxed text-steel-500">{s.desc}</p>
               </div>
             </Reveal>
           ))}
+        </div>
+        <div className="mt-12 text-center">
+          <a
+            href={waLink(defaultWaMessage)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-gold text-sm"
+          >
+            <Icon name="whatsapp" className="h-4 w-4" />
+            Mulai Konsultasi Sekarang
+          </a>
         </div>
       </div>
     </section>
   );
 }
 
-function TestimonialsDark() {
-  const items = [
-    { name: "Andi Wijaya", role: "Kontraktor Sipil", quote: "Pilihan produk terlengkap, respon cepat, dan pengiriman aman sampai tujuan." },
-    { name: "Budi Santoso", role: "Pemilik Toko Material", quote: "Harga sangat bersaing. Stok selalu ready untuk kebutuhan mendadak proyek kami." },
-    { name: "Citra Lestari", role: "Arsitek", quote: "Kualitas baja SNI sesuai standar yang kami tetapkan di spesifikasi proyek." },
-  ];
+function TestimonialsSection() {
   return (
-    <section className="section bg-white">
-      <div className="container-px">
-        <Reveal className="mb-12 text-center">
-          <h2 className="h2">Mengapa Klien Kami Mempercayai Kami</h2>
-          <p className="mt-3 text-steel-600">Lebih dari sekedar janji, bukti nyata dukungan material kami untuk puluhan proyek komersial dan residensial.</p>
-        </Reveal>
-        <div className="grid gap-6 md:grid-cols-3">
-          {items.map((t, i) => (
-            <Reveal key={t.name} delay={i * 80}>
-              <div className="flex h-full flex-col rounded-2xl bg-gradient-to-b from-steel-900 to-steel-950 p-8 text-white shadow-lg">
-                <div className="mb-4 text-gold text-xl">★★★★★</div>
-                <p className="flex-1 text-steel-300 italic mb-6">"{t.quote}"</p>
-                <div className="border-t border-white/10 pt-4">
-                  <div className="font-bold text-white">{t.name}</div>
-                  <div className="text-sm text-steel-400">{t.role}</div>
-                </div>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
+    <AnimatedTestimonials
+      badgeText="Dipercaya Klien"
+      title="Mengapa Klien Mempercayai Kami"
+      subtitle="Lebih dari sekadar janji — bukti nyata dukungan material kami untuk proyek komersial maupun hunian."
+      testimonials={clientTestimonials.map((t, i) => ({
+        id: i + 1,
+        name: t.name,
+        role: t.role,
+        content: t.quote,
+        rating: 5,
+      }))}
+      trustedCompanies={partners}
+      trustedCompaniesTitle="Dipercaya oleh mitra & kontraktor"
+    />
   );
 }
 

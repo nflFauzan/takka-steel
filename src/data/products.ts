@@ -247,3 +247,38 @@ export const products: Product[] = [
 export function getProduct(slug: string) {
   return products.find((p) => p.slug === slug);
 }
+
+/* ------------------------------------------------------------------ */
+/*  Category tiles — material range shown on the homepage showcase.    */
+/*  `image` is intentionally empty: the card renders a premium navy    */
+/*  placeholder tile until a REAL Takka photo is provided. To add a    */
+/*  photo, drop it in /public/products and set e.g.                    */
+/*  image: "/products/besi-beton.jpg" (or a full URL).                 */
+/* ------------------------------------------------------------------ */
+
+export type CategoryTile = {
+  name: string;
+  slug: string;
+  tagline: string;
+  image: string;
+};
+
+export const categoryTiles: CategoryTile[] = [
+  { name: "Besi Beton", slug: "besi-beton", tagline: "Tulangan polos & ulir SNI", image: "" },
+  { name: "Hollow", slug: "hollow", tagline: "Besi kotak galvanis & hitam", image: "" },
+  { name: "CNP & UNP", slug: "cnp-unp", tagline: "Kanal C & U profil baja", image: "" },
+  { name: "Plat", slug: "plat", tagline: "Plat besi & strip beragam tebal", image: "" },
+  { name: "Baja", slug: "baja", tagline: "Baja struktural & profil", image: "" },
+  { name: "Kawat Beton", slug: "kawat-beton", tagline: "Kawat bendrat pengikat tulangan", image: "" },
+  { name: "Kawat Seng", slug: "kawat-seng", tagline: "Kawat galvanis serbaguna", image: "" },
+  { name: "Kawat Duri", slug: "kawat-duri", tagline: "Pengaman pagar & area", image: "" },
+  { name: "Paku", slug: "paku", tagline: "Aneka ukuran & jenis", image: "" },
+  { name: "Semen", slug: "semen", tagline: "Semen merek terpercaya", image: "" },
+  { name: "Bata Ringan", slug: "bata-ringan", tagline: "Ringan, presisi, hemat", image: "" },
+  { name: "Pipa", slug: "pipa", tagline: "Pipa PVC, galvanis & besi", image: "" },
+  { name: "Wiremesh", slug: "wiremesh", tagline: "Tulangan praktis pengecoran", image: "" },
+  { name: "Pagar BRC", slug: "pagar-brc", tagline: "Pagar mesh siap pasang", image: "" },
+  { name: "Triplek", slug: "triplek", tagline: "Plywood & papan olahan", image: "" },
+  { name: "Alat Teknik", slug: "alat-teknik", tagline: "Perkakas & alat bantu proyek", image: "" },
+  { name: "Kunci Pas / Ring", slug: "kunci-pas-ring", tagline: "Kunci & perkakas tangan", image: "" },
+];
