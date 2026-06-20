@@ -87,7 +87,7 @@ export default function KontakPage() {
               <div className="absolute inset-0 bg-steel-900/40 mix-blend-multiply"></div>
               
               <div className="absolute inset-0 flex items-center justify-center">
-                <a href={company.mapsUrl} target="_blank" rel="noopener noreferrer" className="btn bg-white text-steel-900 hover:bg-steel-50 shadow-lg px-6 py-3 rounded-md font-bold">
+                <a href={company.mapsLink} target="_blank" rel="noopener noreferrer" className="btn bg-white text-steel-900 hover:bg-steel-50 shadow-lg px-6 py-3 rounded-md font-bold">
                   <Icon name="pin" className="h-5 w-5 text-accent" /> Petunjuk Arah
                 </a>
               </div>

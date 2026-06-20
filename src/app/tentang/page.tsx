@@ -39,10 +39,10 @@ export default function TentangPage() {
         <div className="container-px grid items-center gap-16 lg:grid-cols-2">
           <Reveal>
             <div className="border-l-4 border-gold pl-4 mb-6">
-               <span className="text-xs font-bold uppercase tracking-widest text-gold mb-1 block">TENTANG TAKKA STEEL</span>
-               <h2 className="font-heading text-3xl font-extrabold text-steel-900 leading-tight">
-                 Pusat Distribusi Baja Terpercaya di Jabodetabek
-               </h2>
+              <span className="text-xs font-bold uppercase tracking-widest text-gold mb-1 block">TENTANG TAKKA STEEL</span>
+              <h2 className="font-heading text-3xl font-extrabold text-steel-900 leading-tight">
+                Pusat Distribusi Baja Terpercaya di Jabodetabek
+              </h2>
             </div>
             <div className="space-y-4 text-steel-600 leading-relaxed text-sm">
               <p>
@@ -81,7 +81,7 @@ export default function TentangPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-heading font-black text-steel-900/50 text-[150px] md:text-[250px] tracking-tighter select-none z-0">
           VISION
         </div>
-        
+
         <div className="container-px relative z-10">
           <div className="text-center mb-12">
             <h2 className="font-heading text-3xl font-extrabold text-white">Visi & Misi Strategis</h2>
@@ -132,18 +132,18 @@ export default function TentangPage() {
             <div>
               <span className="text-xs font-bold uppercase tracking-widest text-steel-500 mb-1 block">INFRASTRUKTUR KAMI</span>
               <h2 className="font-heading text-3xl font-extrabold text-steel-900 leading-tight">
-                Kekuatan Armada &<br/>Pergudangan
+                Kekuatan Armada &<br />Pergudangan
               </h2>
             </div>
             <div className="flex gap-8">
-               <div className="text-right border-r border-steel-200 pr-8">
-                 <div className="text-3xl font-black text-steel-900">100%</div>
-                 <div className="text-xs font-bold text-steel-500 uppercase">Ready Stock SNI</div>
-               </div>
-               <div className="text-right">
-                 <div className="text-3xl font-black text-steel-900">24h</div>
-                 <div className="text-xs font-bold text-steel-500 uppercase">Delivery Response</div>
-               </div>
+              <div className="text-right border-r border-steel-200 pr-8">
+                <div className="text-3xl font-black text-steel-900">100%</div>
+                <div className="text-xs font-bold text-steel-500 uppercase">Ready Stock SNI</div>
+              </div>
+              <div className="text-right">
+                <div className="text-3xl font-black text-steel-900">24h</div>
+                <div className="text-xs font-bold text-steel-500 uppercase">Delivery Response</div>
+              </div>
             </div>
           </div>
 
@@ -176,10 +176,10 @@ export default function TentangPage() {
             <p className="text-sm text-steel-500 mt-2 max-w-lg mx-auto">Momen dari aktivitas pergudangan, muat barang, kolaborasi tim, hingga pengiriman ke lapangan.</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-             <img src="https://images.unsplash.com/photo-1504307651254-35680f356f58?auto=format&fit=crop&w=400&q=80" alt="Gallery" className="rounded-xl w-full aspect-square object-cover grayscale hover:grayscale-0 transition duration-300" />
-             <img src="https://images.unsplash.com/photo-1541888086925-920a0b6330ce?auto=format&fit=crop&w=400&q=80" alt="Gallery" className="rounded-xl w-full aspect-square object-cover grayscale hover:grayscale-0 transition duration-300" />
-             <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=400&q=80" alt="Gallery" className="rounded-xl w-full aspect-square object-cover grayscale hover:grayscale-0 transition duration-300" />
-             <img src="https://images.unsplash.com/photo-1532087532321-df627e3ff717?auto=format&fit=crop&w=400&q=80" alt="Gallery" className="rounded-xl w-full aspect-square object-cover grayscale hover:grayscale-0 transition duration-300" />
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356f58?auto=format&fit=crop&w=400&q=80" alt="Gallery" className="rounded-xl w-full aspect-square object-cover grayscale hover:grayscale-0 transition duration-300" />
+            <img src="https://images.unsplash.com/photo-1541888086925-920a0b6330ce?auto=format&fit=crop&w=400&q=80" alt="Gallery" className="rounded-xl w-full aspect-square object-cover grayscale hover:grayscale-0 transition duration-300" />
+            <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=400&q=80" alt="Gallery" className="rounded-xl w-full aspect-square object-cover grayscale hover:grayscale-0 transition duration-300" />
+            <img src="https://images.unsplash.com/photo-1532087532321-df627e3ff717?auto=format&fit=crop&w=400&q=80" alt="Gallery" className="rounded-xl w-full aspect-square object-cover grayscale hover:grayscale-0 transition duration-300" />
           </div>
         </div>
       </section>

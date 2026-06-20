@@ -10,17 +10,19 @@ import { company } from "@/data/company";
 export default function Logo({ light = false }: { light?: boolean }) {
   if (light) {
     return (
-      <Link href="/" className="inline-flex items-center gap-2.5">
+      <Link href="/" className="group inline-flex items-center gap-3">
         <Image
           src="/images/logo-mark.png"
           alt={company.name}
           width={816}
           height={769}
-          className="h-9 w-auto"
+          className="h-8 w-auto object-contain drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]"
           priority
         />
-        <span className="font-heading text-lg font-extrabold uppercase tracking-tight text-white">
-          Takka<span className="text-gold">Steel</span>
+        {/* Subtle vertical divider */}
+        <span className="hidden h-5 w-px bg-white/20 sm:block" aria-hidden="true" />
+        <span className="font-heading text-[15px] font-extrabold uppercase tracking-[0.08em] text-white sm:text-base">
+          Takka<span className="text-gold ml-[0.15em]">Steel</span>
         </span>
         <span className="sr-only">{company.name}</span>
       </Link>

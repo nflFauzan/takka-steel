@@ -1,4 +1,5 @@
 import Link from "next/link";
+import HeroVideo from "@/components/HeroVideo";
 import Reveal from "@/components/Reveal";
 import Icon, { type IconName } from "@/components/Icon";
 import { company, waLink, defaultWaMessage } from "@/data/company";
@@ -7,7 +8,7 @@ import { faqs } from "@/data/site";
 export default function HomePage() {
   return (
     <>
-      <Hero />
+      <HeroVideo />
       <TrustSection />
       <ProductCategories />
       <WhyUsCards />
@@ -16,38 +17,6 @@ export default function HomePage() {
       <LocationSection />
       <CtaBandDark />
     </>
-  );
-}
-
-function Hero() {
-  return (
-    <section className="relative flex min-h-[90vh] items-center justify-center overflow-hidden bg-steel-900 pt-20 text-center text-white">
-      <img
-        src="https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&w=1900&q=70"
-        alt="Gudang besi dan baja"
-        className="absolute inset-0 h-full w-full object-cover opacity-30 mix-blend-overlay"
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-steel-950/80 via-steel-900/80 to-steel-900" />
-      <div className="container-px relative z-10 flex flex-col items-center">
-        <span className="mb-6 rounded-full bg-gold px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-steel-900">
-          TAKKA STEEL
-        </span>
-        <h1 className="max-w-5xl font-heading text-4xl font-extrabold leading-[1.1] tracking-tight md:text-6xl lg:text-7xl">
-          Pusat Baja &amp; Bahan <br className="hidden md:block" /> Bangunan Terlengkap
-        </h1>
-        <p className="mt-6 max-w-2xl text-lg text-steel-200 md:text-xl">
-          Distributor material baja terpercaya untuk kontraktor, proyek industri, dan toko material bangunan di Bogor dan sekitarnya.
-        </p>
-        <div className="mt-10 flex flex-wrap justify-center gap-4">
-          <Link href="/produk" className="btn-gold text-base">
-            Lihat Produk
-          </Link>
-          <Link href="/kontak" className="btn border-2 border-white/30 text-white transition hover:bg-white hover:text-steel-900 text-base">
-            Hubungi Kami
-          </Link>
-        </div>
-      </div>
-    </section>
   );
 }
 
@@ -96,7 +65,7 @@ function ProductCategories() {
             Material berkualitas tinggi untuk kebutuhan struktural dan penyelesaian akhir proyek Anda.
           </p>
         </Reveal>
-        
+
         {/* Bento Grid */}
         <div className="grid gap-4 md:grid-cols-3 md:grid-rows-2 md:h-[500px]">
           {/* Main Block */}
@@ -109,7 +78,7 @@ function ProductCategories() {
               <p className="mt-2 text-steel-200">Beragam besi konstruksi, struktur baja SNI terjamin kualitasnya.</p>
             </div>
           </Link>
-          
+
           <Link href="/produk" className="group relative overflow-hidden rounded-xl bg-steel-800 min-h-[200px] md:min-h-0">
             <img src="https://images.unsplash.com/photo-1621643916942-8c886a0bdfce?auto=format&fit=crop&w=600&q=80" alt="Baja Ringan" className="absolute inset-0 h-full w-full object-cover opacity-40 transition duration-500 group-hover:scale-105" />
             <div className="absolute inset-0 bg-gradient-to-t from-steel-900 to-transparent" />
@@ -277,16 +246,16 @@ function LocationSection() {
                 </div>
               </li>
             </ul>
-            <a href={company.mapsUrl} target="_blank" rel="noreferrer" className="btn-gold mt-8 w-fit">
+            <a href={company.mapsLink} target="_blank" rel="noreferrer" className="btn-gold mt-8 w-fit">
               Petunjuk Arah <Icon name="arrow" className="h-4 w-4 ml-2" />
             </a>
           </div>
           <div className="h-[300px] lg:h-auto rounded-2xl overflow-hidden bg-steel-200 border-4 border-white shadow-md relative flex items-center justify-center">
-             <div className="text-center text-steel-500">
-               <Icon name="pin" className="h-10 w-10 mx-auto mb-2 text-steel-400" />
-               <p className="font-semibold">Peta Interaktif</p>
-               <p className="text-xs mt-1">Google Maps Integrasi</p>
-             </div>
+            <div className="text-center text-steel-500">
+              <Icon name="pin" className="h-10 w-10 mx-auto mb-2 text-steel-400" />
+              <p className="font-semibold">Peta Interaktif</p>
+              <p className="text-xs mt-1">Google Maps Integrasi</p>
+            </div>
           </div>
         </div>
       </div>

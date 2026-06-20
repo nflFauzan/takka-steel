@@ -35,79 +35,105 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-40 transition ${
+      className={`fixed inset-x-0 top-0 z-40 transition-all duration-300 ${
         scrolled || open
-          ? "bg-steel-900 shadow-md"
-          : "bg-steel-900/90 backdrop-blur"
+          ? "bg-steel-900/95 shadow-lg shadow-black/10 backdrop-blur-md border-b border-white/[0.06]"
+          : "bg-transparent backdrop-blur-sm"
       }`}
     >
-      <nav className="container-px flex h-20 items-center justify-between">
+      <nav className="container-px flex h-16 items-center justify-between">
         <Logo light={true} />
 
-        <ul className="hidden items-center gap-8 md:flex">
+        {/* Desktop nav links */}
+        <ul className="hidden items-center gap-1 md:flex">
           {links.map((l) => (
             <li key={l.href}>
               <Link
                 href={l.href}
-                className={`text-sm font-semibold transition hover:text-gold ${
-                  isActive(l.href) ? "border-b-[3px] border-gold py-2 text-gold" : "text-white/90"
+                className={`relative px-3.5 py-2 text-[13px] font-medium tracking-wide uppercase transition-colors duration-200 ${
+                  isActive(l.href)
+                    ? "text-gold"
+                    : "text-white/70 hover:text-white"
                 }`}
               >
                 {l.label}
+                {/* Active indicator dot */}
+                {isActive(l.href) && (
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[3px] w-5 rounded-full bg-gold" />
+                )}
               </Link>
             </li>
           ))}
         </ul>
 
+        {/* Desktop CTA */}
         <a
           href={waLink(defaultWaMessage)}
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-gold hidden md:inline-flex"
+          className="hidden md:inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-5 py-2 text-xs font-semibold uppercase tracking-wider text-gold transition-all duration-200 hover:bg-gold hover:text-steel-900 hover:border-gold"
         >
           Minta Penawaran
         </a>
 
+        {/* Mobile menu button */}
         <button
           onClick={() => setOpen((v) => !v)}
           aria-label="Buka menu"
           aria-expanded={open}
-          className="grid h-10 w-10 place-items-center rounded-md text-white hover:bg-steel-800 md:hidden"
+          className="grid h-9 w-9 place-items-center rounded-lg text-white/80 hover:text-white hover:bg-white/10 transition-colors md:hidden"
         >
           <div className="space-y-1.5">
             <span
-              className={`block h-0.5 w-6 bg-current transition ${open ? "translate-y-2 rotate-45" : ""}`}
+              className={`block h-[1.5px] w-5 bg-current transition-all duration-300 origin-center ${
+                open ? "translate-y-[7px] rotate-45" : ""
+              }`}
             />
-            <span className={`block h-0.5 w-6 bg-current transition ${open ? "opacity-0" : ""}`} />
             <span
-              className={`block h-0.5 w-6 bg-current transition ${open ? "-translate-y-2 -rotate-45" : ""}`}
+              className={`block h-[1.5px] w-5 bg-current transition-all duration-300 ${
+                open ? "scale-x-0 opacity-0" : ""
+              }`}
+            />
+            <span
+              className={`block h-[1.5px] w-5 bg-current transition-all duration-300 origin-center ${
+                open ? "-translate-y-[7px] -rotate-45" : ""
+              }`}
             />
           </div>
         </button>
       </nav>
 
       {/* Mobile menu */}
-      {open && (
-        <div className="border-t border-steel-800 bg-steel-900 md:hidden">
-          <ul className="container-px flex flex-col py-3">
+      <div
+        className={`overflow-hidden transition-all duration-300 ease-in-out md:hidden ${
+          open ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="border-t border-white/[0.06] bg-steel-900/98">
+          <ul className="container-px flex flex-col py-2">
             {links.map((l) => (
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className={`block rounded-md px-2 py-3 text-base font-semibold ${
-                    isActive(l.href) ? "text-gold" : "text-white/90"
+                  className={`flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium transition-colors ${
+                    isActive(l.href)
+                      ? "text-gold bg-gold/[0.06]"
+                      : "text-white/70 hover:text-white hover:bg-white/[0.04]"
                   }`}
                 >
+                  {isActive(l.href) && (
+                    <span className="h-1.5 w-1.5 rounded-full bg-gold flex-shrink-0" />
+                  )}
                   {l.label}
                 </Link>
               </li>
             ))}
-            <li className="pt-4">
+            <li className="pt-3 pb-2">
               <a
                 href={waLink(defaultWaMessage)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-gold w-full"
+                className="flex items-center justify-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-5 py-2.5 text-sm font-semibold text-gold transition-all duration-200 hover:bg-gold hover:text-steel-900"
               >
                 <Icon name="whatsapp" className="h-4 w-4" />
                 Hubungi via WhatsApp
@@ -115,7 +141,7 @@ export default function Navbar() {
             </li>
           </ul>
         </div>
-      )}
+      </div>
     </header>
   );
 }
