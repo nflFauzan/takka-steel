@@ -1,5 +1,6 @@
 import Link from "next/link";
 import HeroVideo from "@/components/HeroVideo";
+import AboutSection from "@/components/AboutSection";
 import Reveal from "@/components/Reveal";
 import Icon, { type IconName } from "@/components/Icon";
 import { company, waLink, defaultWaMessage } from "@/data/company";
@@ -9,7 +10,7 @@ export default function HomePage() {
   return (
     <>
       <HeroVideo />
-      <TrustSection />
+      <AboutSection />
       <ProductCategories />
       <WhyUsCards />
       <TestimonialsDark />
@@ -17,40 +18,6 @@ export default function HomePage() {
       <LocationSection />
       <CtaBandDark />
     </>
-  );
-}
-
-function TrustSection() {
-  return (
-    <section className="section bg-steel-50">
-      <div className="container-px grid items-center gap-12 lg:grid-cols-2">
-        <Reveal>
-          <h2 className="h2 text-steel-900">Membangun Kepercayaan Sejak 2025</h2>
-          <p className="mt-5 text-lg leading-relaxed text-steel-600">
-            Kepercayaan klien adalah aset terbesar kami. Dengan dedikasi untuk selalu memberikan material berkualitas standar nasional dan layanan prima, kami memastikan setiap proyek yang Anda jalankan dapat berdiri kokoh.
-          </p>
-          <p className="mt-4 text-steel-600">
-            Langkah demi langkah, Takka Steel berkembang dari distributor lokal menjadi mitra andalan bagi berbagai skala proyek.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <div className="flex items-center gap-3 rounded-lg bg-white px-5 py-3 shadow-sm font-semibold text-steel-800 border border-steel-100">
-              <Icon name="check" className="h-5 w-5 text-accent" /> Standar SNI
-            </div>
-            <div className="flex items-center gap-3 rounded-lg bg-white px-5 py-3 shadow-sm font-semibold text-steel-800 border border-steel-100">
-              <Icon name="check" className="h-5 w-5 text-accent" /> Pengiriman Cepat
-            </div>
-          </div>
-        </Reveal>
-        <Reveal delay={100} className="relative">
-          <div className="absolute -inset-4 rounded-2xl bg-gold/10 blur-xl"></div>
-          <img
-            src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80"
-            alt="Proses Konstruksi"
-            className="relative rounded-xl border-4 border-white shadow-xl h-[450px] w-full object-cover"
-          />
-        </Reveal>
-      </div>
-    </section>
   );
 }
 
