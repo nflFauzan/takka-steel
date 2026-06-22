@@ -1,5 +1,6 @@
 /**
- * Product catalog for Takka Steel.
+ * Product catalog for Takka Steel — single source of truth for the catalog
+ * grid, the featured bento, the spec comparison, and the product detail pages.
  *
  * Categories and items reflect Takka Steel's real product range: material
  * baja ringan, sistem atap, struktur lantai, dan aksesoris/perkakas.
@@ -7,10 +8,20 @@
  * local files in /public/products when high-resolution photos are available.
  */
 
+export type StockStatus = "ready" | "indent";
+
 export type Product = {
   slug: string;
   name: string;
   category: string;
+  /** Brand / line name shown as a small label (e.g. Alderon, Bondek). */
+  brand?: string;
+  /** Short navy badge: material or certification (e.g. SNI, Galvalume). */
+  badge?: string;
+  /** Availability — drives the gold stock badge. */
+  stock: StockStatus;
+  /** Flagged products surface in the featured bento. */
+  featured?: boolean;
   image: string;
   summary: string;
   description: string;
@@ -30,6 +41,10 @@ export const products: Product[] = [
     slug: "takka-truss-cnp",
     name: "TAKKA TRUSS (CNP 0.75)",
     category: "Baja Ringan",
+    brand: "TAKKA",
+    badge: "Galvalume",
+    stock: "ready",
+    featured: true,
     image:
       "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=70",
     summary:
@@ -48,6 +63,9 @@ export const products: Product[] = [
     slug: "reng-baja-ringan",
     name: "Reng Baja Ringan",
     category: "Baja Ringan",
+    brand: "Galvalume",
+    badge: "Galvalume",
+    stock: "ready",
     image:
       "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=900&q=70",
     summary:
@@ -66,6 +84,10 @@ export const products: Product[] = [
     slug: "hollow-partisi-plafond",
     name: "Hollow Partisi / Plafond",
     category: "Baja Ringan",
+    brand: "Galvanis",
+    badge: "Galvanis",
+    stock: "ready",
+    featured: true,
     image:
       "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=900&q=70",
     summary:
@@ -84,6 +106,10 @@ export const products: Product[] = [
     slug: "atap-spandek-pasir",
     name: "Atap Spandek Pasir",
     category: "Sistem Atap",
+    brand: "Spandek",
+    badge: "Peredam Panas",
+    stock: "ready",
+    featured: true,
     image:
       "https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&w=900&q=70",
     summary:
@@ -102,6 +128,9 @@ export const products: Product[] = [
     slug: "atap-spandek-polos",
     name: "Atap Spandek Polos",
     category: "Sistem Atap",
+    brand: "Spandek",
+    badge: "Galvalume",
+    stock: "ready",
     image:
       "https://images.unsplash.com/photo-1605152276897-4f618f831968?auto=format&fit=crop&w=900&q=70",
     summary:
@@ -120,6 +149,9 @@ export const products: Product[] = [
     slug: "atap-metal-pasir",
     name: "Atap Metal Pasir",
     category: "Sistem Atap",
+    brand: "Genteng Metal",
+    badge: "Berpasir",
+    stock: "ready",
     image:
       "https://images.unsplash.com/photo-1635424710928-0544e8512eae?auto=format&fit=crop&w=900&q=70",
     summary:
@@ -138,6 +170,9 @@ export const products: Product[] = [
     slug: "alderon-single-layer",
     name: "Atap Alderon Single Layer",
     category: "Sistem Atap",
+    brand: "Alderon",
+    badge: "uPVC",
+    stock: "ready",
     image:
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=70",
     summary:
@@ -156,6 +191,10 @@ export const products: Product[] = [
     slug: "alderon-double-layer",
     name: "Atap Alderon Double Layer",
     category: "Sistem Atap",
+    brand: "Alderon",
+    badge: "uPVC",
+    stock: "ready",
+    featured: true,
     image:
       "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=70",
     summary:
@@ -174,6 +213,9 @@ export const products: Product[] = [
     slug: "seng-rol-galvalum",
     name: "Seng Rol Galvalum",
     category: "Sistem Atap",
+    brand: "Galvalume",
+    badge: "Galvalume",
+    stock: "ready",
     image:
       "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&w=900&q=70",
     summary:
@@ -192,6 +234,10 @@ export const products: Product[] = [
     slug: "bondeck-floordeck",
     name: "Bondeck / Floordeck",
     category: "Struktur Lantai",
+    brand: "Bondek",
+    badge: "SNI",
+    stock: "ready",
+    featured: true,
     image:
       "https://images.unsplash.com/photo-1597844808175-bd6c95f1f6e2?auto=format&fit=crop&w=900&q=70",
     summary:
@@ -210,6 +256,9 @@ export const products: Product[] = [
     slug: "kawat-bendrat-loket-las",
     name: "Kawat Bendrat, Loket & Las",
     category: "Aksesoris & Perkakas",
+    brand: "Kawat",
+    badge: "Per Kg / Rol",
+    stock: "ready",
     image:
       "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?auto=format&fit=crop&w=900&q=70",
     summary:
@@ -228,6 +277,9 @@ export const products: Product[] = [
     slug: "perkakas-material-pendukung",
     name: "Perkakas & Material Pendukung",
     category: "Aksesoris & Perkakas",
+    brand: "Perkakas",
+    badge: "Pelengkap",
+    stock: "ready",
     image:
       "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=900&q=70",
     summary:
@@ -247,6 +299,109 @@ export const products: Product[] = [
 export function getProduct(slug: string) {
   return products.find((p) => p.slug === slug);
 }
+
+/** Flagship products shown in the featured bento at the top of the catalog. */
+export const featuredProducts = products.filter((p) => p.featured);
+
+/** Stock labels for the gold availability badge. */
+export const stockLabel: Record<StockStatus, string> = {
+  ready: "Ready Stock",
+  indent: "Indent",
+};
+
+/* ------------------------------------------------------------------ */
+/*  Spec comparison — side-by-side variants buyers actually weigh.      */
+/*  All values are pulled from the product specs above (no invented     */
+/*  numbers); `slug` links each option to its detail page.              */
+/* ------------------------------------------------------------------ */
+
+export type ComparisonOption = {
+  slug: string;
+  name: string;
+  tag: string;
+  recommended?: boolean;
+  bestFor: string;
+  rows: { label: string; value: string }[];
+};
+
+export type ComparisonGroup = {
+  id: string;
+  label: string;
+  title: string;
+  subtitle: string;
+  options: ComparisonOption[];
+};
+
+export const comparisonGroups: ComparisonGroup[] = [
+  {
+    id: "alderon",
+    label: "Atap Alderon",
+    title: "Alderon Single vs Double Layer",
+    subtitle:
+      "Dua tipe uPVC Alderon. Pilih sesuai kebutuhan insulasi panas dan kedap suara di area Anda.",
+    options: [
+      {
+        slug: "alderon-single-layer",
+        name: "Alderon Single Layer",
+        tag: "uPVC 1 lapis",
+        bestFor: "Kanopi, carport, dan teras dengan budget efisien.",
+        rows: [
+          { label: "Material", value: "uPVC single layer" },
+          { label: "Tebal", value: "± 3 mm" },
+          { label: "Insulasi", value: "Sedang" },
+          { label: "Sifat", value: "Anti karat & korosi" },
+        ],
+      },
+      {
+        slug: "alderon-double-layer",
+        name: "Alderon Double Layer",
+        tag: "uPVC twinwall",
+        recommended: true,
+        bestFor: "Atap rumah, foodcourt, dan area komersial yang butuh kenyamanan ekstra.",
+        rows: [
+          { label: "Material", value: "uPVC double layer (twinwall)" },
+          { label: "Tebal", value: "± 10 mm" },
+          { label: "Insulasi", value: "Maksimal, kedap suara" },
+          { label: "Sifat", value: "Anti karat & korosi" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "spandek",
+    label: "Atap Spandek",
+    title: "Spandek Polos vs Spandek Pasir",
+    subtitle:
+      "Spandek galvalume dengan dua finishing. Polos lebih ekonomis, pasir lebih meredam panas dan suara.",
+    options: [
+      {
+        slug: "atap-spandek-polos",
+        name: "Spandek Polos",
+        tag: "Galvalume polos",
+        bestFor: "Atap gudang, pabrik, dan carport dengan biaya material paling efisien.",
+        rows: [
+          { label: "Ketebalan", value: "0,25 - 0,40 mm" },
+          { label: "Lapisan", value: "Galvalume polos" },
+          { label: "Peredaman", value: "Standar" },
+          { label: "Lebar efektif", value: "± 760 / 1000 mm" },
+        ],
+      },
+      {
+        slug: "atap-spandek-pasir",
+        name: "Spandek Pasir",
+        tag: "Lapis batu pasir",
+        recommended: true,
+        bestFor: "Atap rumah dan teras yang ingin lebih sejuk dan senyap saat hujan.",
+        rows: [
+          { label: "Ketebalan", value: "0,30 - 0,35 mm" },
+          { label: "Lapisan", value: "Batu pasir + cat" },
+          { label: "Peredaman", value: "Panas & suara lebih baik" },
+          { label: "Lebar efektif", value: "± 760 mm" },
+        ],
+      },
+    ],
+  },
+];
 
 /* ------------------------------------------------------------------ */
 /*  Category tiles — material range shown on the homepage showcase.    */

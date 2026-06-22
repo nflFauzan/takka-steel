@@ -2,204 +2,330 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import Icon from "@/components/Icon";
-import { company } from "@/data/company";
+import { company, waLink, defaultWaMessage } from "@/data/company";
+import { productCategories } from "@/data/products";
+import { valueProps, testimonials } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Tentang Kami",
-  description: `Mengenal ${company.name}, pusat baja & bahan bangunan terpercaya di ${company.city}. Visi, misi, dan komitmen kami.`,
+  description: `Mengenal ${company.name}, pusat baja ringan, atap, bondeck & bahan bangunan di Ciomas, ${company.city}. Melayani kebutuhan eceran hingga proyek.`,
+};
+
+/* Material range per category — derived from the real catalog (products.ts). */
+const CATEGORY_BLURB: Record<(typeof productCategories)[number], string> = {
+  "Baja Ringan": "Truss CNP, reng galvalume, hollow partisi & plafon.",
+  "Sistem Atap": "Spandek pasir & polos, metal pasir, Alderon uPVC, seng galvalum.",
+  "Struktur Lantai": "Bondeck / floordeck untuk dak lantai cor bertingkat.",
+  "Aksesoris & Perkakas": "Kawat bendrat, dinabolt, mata bor, gerinda, cat & thinner.",
 };
 
 export default function TentangPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative flex min-h-[45vh] items-center justify-center bg-steel-900 text-center text-white pt-20 overflow-hidden">
+      {/* ── Hero ─────────────────────────────────────────────── */}
+      <section className="relative flex min-h-[42vh] items-center overflow-hidden bg-steel-900 pt-28 pb-16 text-white">
+        {/* TODO: ganti dengan foto asli gudang/toko Takka Steel */}
         <img
           src="https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&w=1900&q=70"
-          alt="Gudang besi"
-          className="absolute inset-0 h-full w-full object-cover opacity-20 mix-blend-overlay"
+          alt="Stok material baja Takka Steel"
+          className="absolute inset-0 h-full w-full object-cover opacity-15"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-steel-950 to-steel-900/60" />
-        <div className="container-px relative z-10 max-w-3xl">
-          <div className="mb-4 flex justify-center gap-2 text-xs font-bold text-steel-400">
+        <div className="absolute inset-0 bg-gradient-to-r from-steel-950 via-steel-950/85 to-steel-900/40" />
+        <div className="container-px relative z-10">
+          <nav className="mb-4 flex gap-2 text-xs font-bold text-steel-400">
             <Link href="/" className="hover:text-white">Home</Link>
             <span>/</span>
             <span className="text-white">Tentang Kami</span>
+          </nav>
+          <div className="flex items-center gap-3">
+            <span className="h-px w-8 bg-gold" />
+            <span className="eyebrow">Tentang Takka Steel</span>
           </div>
-          <h1 className="font-heading text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl uppercase">
-            Tentang Kami
+          <h1 className="mt-4 max-w-3xl font-heading text-4xl font-extrabold leading-[1.05] tracking-tight md:text-5xl lg:text-6xl">
+            Material baja yang lengkap, dekat, dan bisa diandalkan.
           </h1>
-          <p className="mt-4 text-lg text-steel-300">
-            Dedikasi dalam menyuplai besi dan baja konstruksi berkualitas tinggi untuk pembangunan infrastruktur yang berkelanjutan.
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-steel-300 md:text-lg">
+            Pusat baja ringan, atap, bondeck, dan bahan bangunan di Ciomas,
+            Kabupaten Bogor. Melayani kebutuhan eceran hingga proyek.
           </p>
         </div>
       </section>
 
+      {/* ── Siapa Kami ───────────────────────────────────────── */}
       <section className="section bg-white">
-        <div className="container-px grid items-center gap-16 lg:grid-cols-2">
+        <div className="container-px grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
           <Reveal>
-            <div className="border-l-4 border-gold pl-4 mb-6">
-              <span className="text-xs font-bold uppercase tracking-widest text-gold mb-1 block">TENTANG TAKKA STEEL</span>
-              <h2 className="font-heading text-3xl font-extrabold text-steel-900 leading-tight">
-                Pusat Distribusi Baja Terpercaya di Jabodetabek
-              </h2>
-            </div>
-            <div className="space-y-4 text-steel-600 leading-relaxed text-sm">
+            <h2 className="font-heading text-3xl font-extrabold leading-tight text-steel-900 md:text-4xl">
+              Satu tempat untuk semua kebutuhan baja & bangunan Anda
+            </h2>
+            <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-steel-600">
               <p>
-                {company.name} adalah pusat penyedia material baja dan bahan
-                bangunan yang berlokasi strategis. Hadir sebagai jawaban atas kebutuhan
-                material konstruksi industri, kontraktor, dan end-user untuk proyek berskala kecil
-                hingga besar dengan spesifikasi standar SNI dan sertifikasi pabrik.
+                {company.name} berdiri pada {company.foundedFull} di Ciomas,
+                Kabupaten Bogor, sebagai pusat material baja ringan, sistem atap,
+                struktur lantai, dan bahan bangunan. Produk lengkap dalam satu
+                tempat, dari kebutuhan eceran untuk renovasi rumah hingga pasokan
+                untuk proyek kontraktor.
               </p>
               <p>
-                Dengan fasilitas pergudangan modern dan jaringan rantai pasok yang luas, kami memastikan
-                ketersediaan produk unggulan secara konsisten. Tim ahli kami siap memberikan solusi
-                konstruksi yang tepat, efisien, dan ekonomis untuk menunjang kesuksesan proyek Anda.
+                Sebagai usaha yang terus berkembang, fokus kami sederhana: stok
+                yang siap, harga yang transparan, dan pengiriman tepat waktu ke
+                wilayah Bogor dan sekitarnya. Kami juga senang membantu menghitung
+                kebutuhan material sebelum Anda membeli.
               </p>
             </div>
+
+            {/* Honest grounding facts (replaces the old fictional QC quote) */}
+            <dl className="mt-8 grid grid-cols-2 gap-px overflow-hidden border border-steel-200 bg-steel-200 sm:grid-cols-3">
+              <div className="bg-white p-4">
+                <dt className="text-xs font-semibold uppercase tracking-wide text-steel-500">Berdiri</dt>
+                <dd className="mt-1 font-heading text-lg font-extrabold text-steel-900">{company.foundedFull}</dd>
+              </div>
+              <div className="bg-white p-4">
+                <dt className="text-xs font-semibold uppercase tracking-wide text-steel-500">Lokasi</dt>
+                <dd className="mt-1 font-heading text-lg font-extrabold text-steel-900">Ciomas, Bogor</dd>
+              </div>
+              <div className="bg-white p-4">
+                <dt className="text-xs font-semibold uppercase tracking-wide text-steel-500">Melayani</dt>
+                <dd className="mt-1 font-heading text-lg font-extrabold text-steel-900">Eceran &amp; Proyek</dd>
+              </div>
+            </dl>
           </Reveal>
-          <Reveal delay={100} className="relative">
-            <div className="rounded-2xl overflow-hidden bg-steel-100 aspect-[4/5] md:aspect-square relative shadow-lg border-4 border-white">
+
+          <Reveal delay={120} className="relative">
+            {/* TODO: ganti dengan foto asli toko/gudang/tim Takka Steel */}
+            <div
+              className="relative aspect-[4/5] w-full overflow-hidden bg-steel-100 md:aspect-square"
+              style={{ clipPath: "polygon(8% 0, 100% 0, 100% 92%, 0 100%)" }}
+            >
               <img
-                src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1000&q=80"
-                alt="Tim Takka Steel"
+                src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=1100&q=80"
+                alt="Stok material baja ringan dan atap di gudang Takka Steel"
                 className="h-full w-full object-cover"
               />
+              <div className="absolute inset-0 bg-gradient-to-tr from-steel-950/70 via-transparent to-transparent" />
             </div>
-            {/* Floating badge */}
-            <div className="absolute -bottom-6 -right-6 md:bottom-8 md:-left-8 bg-steel-950 p-6 rounded-xl text-white shadow-2xl max-w-[250px] border border-steel-800">
-              <p className="font-bold leading-snug">"Kualitas besi adalah pondasi kepercayaan."</p>
-              <p className="text-xs text-steel-400 mt-2">— Tim Quality Control TAKKA</p>
+            <span className="absolute left-0 top-0 h-16 w-1 bg-gold" />
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ── Apa yang Kami Sediakan ───────────────────────────── */}
+      <section className="section bg-steel-950 text-white">
+        <div className="container-px">
+          <div className="max-w-2xl">
+            <h2 className="font-heading text-3xl font-extrabold leading-tight md:text-4xl">
+              Empat lini produk, satu alamat
+            </h2>
+            <p className="mt-4 text-steel-300">
+              Mulai dari rangka atap hingga aksesoris pemasangan, semua bisa
+              dibelanjakan sekaligus tanpa berpindah toko.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-px overflow-hidden border border-steel-800 bg-steel-800 sm:grid-cols-2">
+            {productCategories.map((cat, i) => (
+              <Reveal key={cat} delay={i * 80} className="bg-steel-900">
+                <Link
+                  href="/produk"
+                  className="group flex h-full items-start gap-5 p-7 transition-colors hover:bg-steel-800"
+                >
+                  <span className="font-heading text-2xl font-black text-gold/80">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div className="flex-1">
+                    <h3 className="font-heading text-xl font-bold text-white">{cat}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-steel-400">
+                      {CATEGORY_BLURB[cat]}
+                    </p>
+                    <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-gold transition-transform group-hover:translate-x-1">
+                      Lihat produk
+                      <Icon name="arrow" className="h-4 w-4" />
+                    </span>
+                  </div>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Kenapa Takka Steel ───────────────────────────────── */}
+      <section className="section bg-white">
+        <div className="container-px">
+          <h2 className="max-w-2xl font-heading text-3xl font-extrabold leading-tight text-steel-900 md:text-4xl">
+            Kenapa pelanggan memilih kami
+          </h2>
+          <div className="mt-10 grid gap-x-10 gap-y-8 sm:grid-cols-2">
+            {valueProps.map((v, i) => (
+              <Reveal
+                key={v.title}
+                delay={i * 80}
+                className="flex gap-5 border-t border-steel-200 pt-6"
+              >
+                <span className="grid h-12 w-12 shrink-0 place-items-center bg-steel-900 text-gold">
+                  <Icon name={v.icon as never} className="h-6 w-6" />
+                </span>
+                <div>
+                  <h3 className="font-heading text-lg font-bold text-steel-900">{v.title}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-steel-600">{v.description}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Visi & Misi (real data) ──────────────────────────── */}
+      <section className="section bg-steel-50">
+        <div className="container-px grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+          <Reveal>
+            <div className="flex items-center gap-3">
+              <span className="h-px w-8 bg-gold" />
+              <span className="eyebrow">Visi &amp; Misi</span>
+            </div>
+            <p className="mt-5 font-heading text-2xl font-extrabold leading-snug text-steel-900 md:text-[1.75rem]">
+              {company.vision}
+            </p>
+          </Reveal>
+
+          <Reveal delay={120}>
+            <ol className="divide-y divide-steel-200 border-y border-steel-200">
+              {company.mission.map((m, i) => (
+                <li key={i} className="flex items-start gap-5 py-5">
+                  <span className="grid h-8 w-8 shrink-0 place-items-center bg-gold font-heading text-sm font-black text-steel-900">
+                    {i + 1}
+                  </span>
+                  <p className="text-[15px] leading-relaxed text-steel-700">{m}</p>
+                </li>
+              ))}
+            </ol>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ── Apa Kata Pelanggan ───────────────────────────────── */}
+      {/* ⚠️ PLACEHOLDER — ganti dengan testimoni nyata bila sudah ada. */}
+      <section className="section bg-white">
+        <div className="container-px">
+          <h2 className="max-w-2xl font-heading text-3xl font-extrabold leading-tight text-steel-900 md:text-4xl">
+            Apa kata pelanggan kami
+          </h2>
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {testimonials.map((t, i) => (
+              <Reveal
+                key={t.name}
+                delay={i * 90}
+                className="flex h-full flex-col border-t-2 border-t-gold bg-steel-50 p-7"
+              >
+                <p className="flex-1 text-[15px] leading-relaxed text-steel-700">
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+                <div className="mt-6 border-t border-steel-200 pt-4">
+                  <p className="font-bold text-steel-900">{t.name}</p>
+                  <p className="mt-0.5 text-sm text-steel-500">{t.role}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Info Praktis: Kunjungi Kami ──────────────────────── */}
+      <section className="section bg-steel-50">
+        <div className="container-px grid gap-10 lg:grid-cols-2 lg:gap-14">
+          <Reveal>
+            <h2 className="font-heading text-3xl font-extrabold leading-tight text-steel-900 md:text-4xl">
+              Kunjungi atau hubungi kami
+            </h2>
+            <p className="mt-4 text-steel-600">
+              Datang langsung untuk melihat stok, atau pesan dari mana saja. Kami
+              melayani pembelian eceran maupun grosir untuk proyek.
+            </p>
+
+            <dl className="mt-8 space-y-6">
+              <div className="flex gap-4">
+                <span className="grid h-11 w-11 shrink-0 place-items-center bg-steel-900 text-gold">
+                  <Icon name="pin" className="h-5 w-5" />
+                </span>
+                <div>
+                  <dt className="font-bold text-steel-900">Alamat Toko</dt>
+                  <dd className="mt-1 text-sm leading-relaxed text-steel-600">{company.address}</dd>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <span className="grid h-11 w-11 shrink-0 place-items-center bg-steel-900 text-gold">
+                  <Icon name="clock" className="h-5 w-5" />
+                </span>
+                <div>
+                  <dt className="font-bold text-steel-900">Jam Operasional</dt>
+                  <dd className="mt-1 space-y-0.5 text-sm text-steel-600">
+                    {company.operatingHours.map((h) => (
+                      <p key={h.day}>
+                        <span className="font-semibold text-steel-800">{h.day}:</span> {h.hours}
+                      </p>
+                    ))}
+                  </dd>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <span className="grid h-11 w-11 shrink-0 place-items-center bg-steel-900 text-gold">
+                  <Icon name="phone" className="h-5 w-5" />
+                </span>
+                <div>
+                  <dt className="font-bold text-steel-900">Cara Pesan</dt>
+                  <dd className="mt-1 text-sm leading-relaxed text-steel-600">
+                    WhatsApp {company.whatsappDisplay}, lewat{" "}
+                    <a href={company.tokopedia} target="_blank" rel="noopener noreferrer" className="font-semibold text-steel-900 underline decoration-gold underline-offset-2">
+                      {company.tokopediaName}
+                    </a>
+                    , atau datang langsung ke toko.
+                  </dd>
+                </div>
+              </div>
+            </dl>
+          </Reveal>
+
+          <Reveal delay={120}>
+            {/* Real Google Maps embed — not a placeholder */}
+            <div className="h-full min-h-[340px] w-full overflow-hidden border border-steel-200 bg-steel-100">
+              <iframe
+                title={`Lokasi ${company.name}`}
+                src={company.mapsEmbedUrl}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="h-full min-h-[340px] w-full"
+              />
             </div>
           </Reveal>
         </div>
       </section>
 
-      {/* Vision & mission */}
-      <section className="section relative bg-steel-950 overflow-hidden">
-        {/* Large BG Text */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-heading font-black text-steel-900/50 text-[150px] md:text-[250px] tracking-tighter select-none z-0">
-          VISION
-        </div>
-
-        <div className="container-px relative z-10">
-          <div className="text-center mb-12">
-            <h2 className="font-heading text-3xl font-extrabold text-white">Visi & Misi Strategis</h2>
-            <div className="mx-auto mt-4 h-1 w-12 rounded-full bg-gold" />
+      {/* ── CTA ──────────────────────────────────────────────── */}
+      <section className="bg-steel-950 py-16 text-white">
+        <div className="container-px flex flex-col items-start justify-between gap-8 border-t-2 border-t-gold pt-12 md:flex-row md:items-center">
+          <div className="max-w-xl">
+            <h2 className="font-heading text-2xl font-extrabold leading-tight md:text-3xl">
+              Butuh material untuk proyek atau renovasi?
+            </h2>
+            <p className="mt-3 text-steel-400">
+              Kirimkan jenis, ukuran, dan jumlah yang Anda butuhkan. Kami bantu
+              siapkan penawaran harga terbaiknya.
+            </p>
           </div>
-
-          <div className="grid gap-6 lg:grid-cols-[1fr_2fr]">
-            <Reveal>
-              <div className="h-full rounded-2xl bg-steel-900 p-8 shadow-xl border border-steel-800/50">
-                <span className="grid h-12 w-12 place-items-center rounded-xl bg-steel-800 text-gold border border-steel-700">
-                  <Icon name="link" className="h-6 w-6" />
-                </span>
-                <h3 className="mt-6 text-xl font-bold text-white mb-4">Visi Kami</h3>
-                <p className="text-steel-300 leading-relaxed">{company.vision} Menjadi pusat penyedia material bangunan terlengkap dan paling terpercaya di Indonesia dengan mengutamakan standar SNI dan efisiensi distribusi.</p>
-              </div>
-            </Reveal>
-            <Reveal delay={100} className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-1">
-              <div className="rounded-xl bg-steel-900/80 backdrop-blur p-6 border border-steel-800 flex gap-5 items-start">
-                <div className="text-gold font-bold">01</div>
-                <div>
-                  <h4 className="font-bold text-white mb-1">Produk & Harga Kompetitif</h4>
-                  <p className="text-sm text-steel-400">Menyediakan material baja dengan standar tinggi, dipadukan dengan penawaran harga terbaik yang transparan dari produsen langsung.</p>
-                </div>
-              </div>
-              <div className="rounded-xl bg-steel-900/80 backdrop-blur p-6 border border-steel-800 flex gap-5 items-start">
-                <div className="text-gold font-bold">02</div>
-                <div>
-                  <h4 className="font-bold text-white mb-1">Fokus pada Pelayanan</h4>
-                  <p className="text-sm text-steel-400">Membangun budaya layanan konsumen yang proaktif, responsif, serta memberikan solusi tepat bagi kebutuhan material spesifik proyek.</p>
-                </div>
-              </div>
-              <div className="rounded-xl bg-steel-900/80 backdrop-blur p-6 border border-steel-800 flex gap-5 items-start">
-                <div className="text-gold font-bold">03</div>
-                <div>
-                  <h4 className="font-bold text-white mb-1">Inovasi Berkelanjutan</h4>
-                  <p className="text-sm text-steel-400">Terus mengembangkan efisiensi operasional dan sistem pergudangan digital untuk mempercepat waktu respons pengiriman material.</p>
-                </div>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Armada & Fasilitas */}
-      <section className="section bg-steel-50">
-        <div className="container-px">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
-            <div>
-              <span className="text-xs font-bold uppercase tracking-widest text-steel-500 mb-1 block">INFRASTRUKTUR KAMI</span>
-              <h2 className="font-heading text-3xl font-extrabold text-steel-900 leading-tight">
-                Kekuatan Armada &<br />Pergudangan
-              </h2>
-            </div>
-            <div className="flex gap-8">
-              <div className="text-right border-r border-steel-200 pr-8">
-                <div className="text-3xl font-black text-steel-900">100%</div>
-                <div className="text-xs font-bold text-steel-500 uppercase">Ready Stock SNI</div>
-              </div>
-              <div className="text-right">
-                <div className="text-3xl font-black text-steel-900">24h</div>
-                <div className="text-xs font-bold text-steel-500 uppercase">Delivery Response</div>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-2">
-            <div className="rounded-2xl bg-steel-900 overflow-hidden relative aspect-video shadow-md">
-              <img src="https://images.unsplash.com/photo-1580983556488-87b64f331904?auto=format&fit=crop&w=800&q=80" alt="Armada Truk" className="absolute inset-0 h-full w-full object-cover opacity-60" />
-              <div className="absolute inset-0 bg-gradient-to-t from-steel-950 to-transparent"></div>
-              <div className="absolute bottom-0 p-6">
-                <h3 className="font-bold text-white">Armada Distribusi</h3>
-                <p className="text-xs text-steel-300 mt-1">Truk engkel hingga tronton siap mengirim partai besar maupun eceran ke lokasi proyek secara aman.</p>
-              </div>
-            </div>
-            <div className="rounded-2xl bg-steel-900 overflow-hidden relative aspect-video shadow-md">
-              <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=800&q=80" alt="Gudang Indoor" className="absolute inset-0 h-full w-full object-cover opacity-60" />
-              <div className="absolute inset-0 bg-gradient-to-t from-steel-950 to-transparent"></div>
-              <div className="absolute bottom-0 p-6">
-                <h3 className="font-bold text-white">Pusat Pergudangan Indoor</h3>
-                <p className="text-xs text-steel-300 mt-1">Material baja terlindung dari cuaca hujan dan karat, memastikan kualitas besi tetap terjaga prima.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Gallery */}
-      <section className="section bg-white pb-24">
-        <div className="container-px">
-          <div className="text-center mb-10">
-            <h2 className="font-heading text-2xl font-extrabold text-steel-900">Dokumentasi Aktivitas</h2>
-            <p className="text-sm text-steel-500 mt-2 max-w-lg mx-auto">Momen dari aktivitas pergudangan, muat barang, kolaborasi tim, hingga pengiriman ke lapangan.</p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <img src="https://images.unsplash.com/photo-1504307651254-35680f356f58?auto=format&fit=crop&w=400&q=80" alt="Gallery" className="rounded-xl w-full aspect-square object-cover grayscale hover:grayscale-0 transition duration-300" />
-            <img src="https://images.unsplash.com/photo-1541888086925-920a0b6330ce?auto=format&fit=crop&w=400&q=80" alt="Gallery" className="rounded-xl w-full aspect-square object-cover grayscale hover:grayscale-0 transition duration-300" />
-            <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=400&q=80" alt="Gallery" className="rounded-xl w-full aspect-square object-cover grayscale hover:grayscale-0 transition duration-300" />
-            <img src="https://images.unsplash.com/photo-1532087532321-df627e3ff717?auto=format&fit=crop&w=400&q=80" alt="Gallery" className="rounded-xl w-full aspect-square object-cover grayscale hover:grayscale-0 transition duration-300" />
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="-mt-12 relative z-10 pb-16">
-        <div className="container-px">
-          <div className="rounded-2xl bg-steel-950 px-8 py-12 md:py-16 text-white shadow-xl border border-steel-800 flex flex-col md:flex-row items-center justify-between gap-8">
-            <div className="text-center md:text-left max-w-xl">
-              <h2 className="font-heading text-2xl md:text-3xl font-extrabold mb-2">Siap Memulai Proyek Anda?</h2>
-              <p className="text-steel-400 text-sm">Konsultasikan kebutuhan spesifikasi baja dan volume secara langsung dengan pakar material kami.</p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-              <Link href="/kontak" className="btn border border-white/20 hover:bg-white/10 rounded-full px-6">
-                <Icon name="mail" className="h-4 w-4" /> Hubungi Admin 1
-              </Link>
-              <Link href="/kontak" className="btn border border-white/20 hover:bg-white/10 rounded-full px-6">
-                <Icon name="mail" className="h-4 w-4" /> Hubungi Admin 2
-              </Link>
-            </div>
+          <div className="flex w-full flex-col gap-3 sm:flex-row md:w-auto">
+            <a
+              href={waLink(defaultWaMessage)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-gold"
+            >
+              <Icon name="whatsapp" className="h-4 w-4" />
+              Minta Penawaran
+            </a>
+            <Link href="/produk" className="btn border border-white/25 text-white hover:bg-white/10">
+              Lihat Produk
+              <Icon name="arrow" className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>
