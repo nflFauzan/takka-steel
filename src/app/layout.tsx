@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { company } from "@/data/company";
 
-const plusJakarta = Plus_Jakarta_Sans({
+const poppinsHeading = Poppins({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["600", "700", "800"],
   variable: "--font-heading",
   display: "swap",
 });
 
-const plusJakartaBody = Plus_Jakarta_Sans({
+const poppinsBody = Poppins({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600"],
   variable: "--font-body",
   display: "swap",
 });
@@ -25,25 +25,25 @@ const SITE_URL = "https://takkasteel.com";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Takka Steel — Pusat Baja & Bahan Bangunan Kabupaten Bogor",
-    template: "%s | Takka Steel — Distributor Baja Bogor",
+    default: "Takka Steel — Harga Minimum, Kualitas Premium",
+    template: "%s | Takka Steel — Distributor Baja Jabodetabek",
   },
   description:
-    "Takka Steel, pusat material baja ringan, atap spandek, bondeck, dan bahan bangunan di Kabupaten Bogor. Produk lengkap, harga kompetitif, pengiriman cepat. Hubungi 0895-1861-1616.",
+    "Takka Steel, pusat material baja & bahan bangunan. Harga minimum, kualitas premium. Melayani Jabodetabek & seluruh Indonesia. Hubungi 0895-1861-1616.",
   keywords: [
     "takka steel",
     "distributor baja bogor",
     "baja ringan ciomas bogor",
     "atap spandek bogor",
-    "bondeck bogor",
-    "material bangunan kabupaten bogor",
+    "material bangunan jabodetabek",
     "toko besi bogor",
-    "supplier baja ringan kabupaten bogor",
+    "supplier baja ringan indonesia",
+    "harga minimum kualitas premium",
   ],
   openGraph: {
-    title: "Takka Steel — Pusat Baja & Bahan Bangunan Bogor",
+    title: "Takka Steel — Harga Minimum, Kualitas Premium",
     description:
-      "Takka Steel, pusat material baja ringan, atap spandek, bondeck, dan bahan bangunan di Kabupaten Bogor. Produk lengkap, harga kompetitif, pengiriman cepat. Hubungi 0895-1861-1616.",
+      "Pusat material baja & bahan bangunan. Harga minimum, kualitas premium. Melayani Jabodetabek & seluruh Indonesia. Hubungi 0895-1861-1616.",
     type: "website",
     locale: "id_ID",
     siteName: company.name,
@@ -65,7 +65,7 @@ const jsonLd = {
   "@type": "HardwareStore",
   name: "Takka Steel",
   description:
-    "Pusat material baja dan bahan bangunan di Kabupaten Bogor",
+    "Harga Minimum, Kualitas Premium — pusat material baja dan bahan bangunan, melayani Jabodetabek & seluruh Indonesia",
   url: SITE_URL,
   telephone: "+6289518611616",
   email: company.email,
@@ -97,7 +97,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="id" className={`${plusJakarta.variable} ${plusJakartaBody.variable}`}>
+    <html lang="id" className={`${poppinsHeading.variable} ${poppinsBody.variable}`}>
       <body className="flex min-h-screen flex-col">
         <script
           type="application/ld+json"

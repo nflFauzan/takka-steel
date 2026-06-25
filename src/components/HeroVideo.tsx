@@ -106,16 +106,16 @@ export default function HeroVideo() {
       <div className="container-px relative z-10 w-full">
         <div className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-[0.22em] text-steel-300">
-            Supplier besi &amp; baja — Bogor
+            Pusat Baja &amp; Bahan Bangunan — Jabodetabek &amp; Seluruh Indonesia
           </span>
           <h1 className="display mt-5">
-            Stok lengkap.
+            Harga Minimum,
             <br />
-            Siap kirim hari ini.
+            Kualitas Premium.
           </h1>
           <p className="lead mt-6 max-w-xl text-steel-200">
-            Distributor material baja terpercaya untuk kontraktor, proyek
-            industri, dan toko bangunan di Bogor dan sekitarnya.
+            Distributor material baja &amp; bahan bangunan terpercaya. Stok
+            lengkap, siap kirim ke Jabodetabek &amp; seluruh wilayah Indonesia.
           </p>
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <Link href="/produk" className="btn-gold text-base">

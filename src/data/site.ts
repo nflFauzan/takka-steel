@@ -12,9 +12,9 @@ export const valueProps = [
   },
   {
     icon: "truck",
-    title: "Layanan Cepat",
+    title: "Pengiriman Luas",
     description:
-      "Respons cepat dan pengiriman tepat waktu ke seluruh wilayah Kabupaten Bogor dan sekitarnya.",
+      "Armada pengiriman sendiri siap mengantar material ke Jabodetabek dan seluruh wilayah Indonesia.",
   },
   {
     icon: "shield",
@@ -51,14 +51,13 @@ export const testimonials = [
   },
 ];
 
-// Placeholder partner names (rendered as text logos).
 export const partners = [
-  "Mitra Beton",
-  "Karya Mandiri",
-  "Cipta Graha",
-  "Bangun Jaya",
-  "Sentosa Konstruksi",
-  "Anugerah Steel",
+  "Makita",
+  "BD Elite",
+  "Ultima Roof",
+  "Akrilik",
+  "Alderon",
+  "Elefante",
 ];
 
 export const faqs = [

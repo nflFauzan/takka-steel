@@ -21,9 +21,9 @@ export default function ProdukPage() {
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="relative flex min-h-[60vh] items-center overflow-hidden bg-steel-900 pt-24 text-white">
         <img
-          src="https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&w=1900&q=70"
-          alt="Gudang material baja Takka Steel"
-          className="absolute inset-0 h-full w-full object-cover opacity-25"
+          src="/photos/kegiatan-3.jpg"
+          alt="Gudang material baja Takka Steel — Ciomas, Bogor"
+          className="absolute inset-0 h-full w-full object-cover opacity-30"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-steel-950 via-steel-950/90 to-steel-900/40" />
         <div className="container-px relative z-10">
@@ -40,8 +40,8 @@ export default function ProdukPage() {
               Material Konstruksi Lengkap, Siap Kirim
             </h1>
             <p className="mt-6 max-w-xl text-lg text-steel-300">
-              Distributor besi, baja ringan, atap, dan material konstruksi di Bogor. Ready stock, harga
-              bersaing, kirim cepat ke proyek Anda.
+              Distributor besi, baja ringan, atap, dan bahan bangunan terlengkap. Ready stock, harga
+              minimum, kirim cepat ke Jabodetabek &amp; seluruh Indonesia.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link href="#katalog" className="btn-gold">

@@ -164,9 +164,9 @@ const HIGHLIGHTS = [
 
 // Quantitative trust signals (grounded in the real catalog & brand claims).
 const STATS = [
-  { value: "12+", label: "Jenis Produk" },
-  { value: "4", label: "Kategori Material" },
-  { value: "100%", label: "Standar SNI" },
+  { value: "1.000+", label: "Pelanggan Dilayani" },
+  { value: "100+", label: "Kategori Produk" },
+  { value: "13+", label: "Tim Profesional" },
 ];
 
 const VALUES = [
@@ -177,10 +177,7 @@ const VALUES = [
   { icon: "handshake", title: "Kolaborasi", desc: "Bekerja sama dengan klien dan mitra untuk hasil terbaik." },
 ];
 
-// ⚠️ PLACEHOLDER — verified-displaying industrial warehouse stock photo.
-// Replace with a real Takka Steel photo (gudang stok / proyek / pengiriman).
-const IMG_SRC =
-  "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=1400&q=80";
+const IMG_SRC = "/photos/tim.jpg";
 
 /* ------------------------------------------------------------------ */
 /*  Component                                                          */
@@ -284,10 +281,9 @@ export default function AboutSection() {
               className="mt-5 max-w-xl text-[15px] leading-relaxed text-steel-600 lg:text-base"
               style={reveal(content.inView, 430)}
             >
-              Takka Steel adalah pusat material baja ringan, atap, bondeck, dan bahan
-              bangunan di Kabupaten Bogor. Produk lengkap berstandar SNI, harga
-              kompetitif, dan pengiriman cepat — mendukung kebutuhan dari renovasi
-              rumah hingga proyek skala besar.
+              Takka Steel adalah pusat material baja &amp; bahan bangunan terlengkap.
+              Harga minimum, kualitas premium. Melayani Jabodetabek &amp; seluruh
+              wilayah Indonesia — dari renovasi rumah hingga proyek skala besar.
             </p>
 
             {/* Compact differentiators (inline, not cards) */}

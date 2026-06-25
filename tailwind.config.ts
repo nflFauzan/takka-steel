@@ -8,28 +8,33 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // ── TAKKA STEEL brand palette — Dark Navy + Vibrant Gold ──────────
+        // ── TAKKA STEEL brand palette ─────────────────────────────────────
+        // Blue #104FA6 · Yellow #F5CE02 · White #EEEEEE · Black #131313
         steel: {
-          50: "#f8f9fc",
-          100: "#e8edf5",
-          200: "#cdd6e6",
-          300: "#aab9d6",
-          400: "#8493b5",
-          500: "#64748b",
-          600: "#475173",
-          700: "#1e3a5f",
-          800: "#132743",
-          900: "#0b1a2f", // brand dark navy — footer, headings
-          950: "#050d1a",
+          50:  "#f4f7fb",
+          100: "#e2eaf5",
+          200: "#c3d2ea",
+          300: "#96b0d8",
+          400: "#6488c0",
+          500: "#3d65a8",
+          600: "#2a518f",
+          700: "#1d4079",
+          800: "#163260",
+          900: "#0f2248",
+          950: "#0a1530",
         },
         accent: {
-          DEFAULT: "#0b1a2f", // primary navy
-          dark: "#050d1a",
-          light: "#1e3a5f",
+          DEFAULT: "#104FA6",
+          dark:    "#0d3d85",
+          light:   "#1a63c4",
         },
         gold: {
-          DEFAULT: "#ffc107", // vibrant gold / yellow
-          dark: "#e0a800",
+          DEFAULT: "#F5CE02",
+          dark:    "#d4af00",
+        },
+        brand: {
+          white: "#EEEEEE",
+          black: "#131313",
         },
       },
       fontFamily: {
@@ -39,8 +44,8 @@ const config: Config = {
         heading: ["var(--font-heading)", "system-ui", "sans-serif"],
       },
       backgroundImage: {
-        "navy-gradient": "linear-gradient(135deg, #1e3a5f 0%, #0b1a2f 100%)",
-        "gold-gradient": "linear-gradient(135deg, #ffc107 0%, #e0a800 100%)",
+        "navy-gradient": "linear-gradient(135deg, #1a63c4 0%, #0d3d85 100%)",
+        "gold-gradient": "linear-gradient(135deg, #F5CE02 0%, #d4af00 100%)",
       },
       borderRadius: {
         card: "8px", // corporate, not overly rounded

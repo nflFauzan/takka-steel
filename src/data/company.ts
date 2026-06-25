@@ -7,12 +7,14 @@
 export const company = {
   name: "Takka Steel",
   legalName: "Takka Steel",
-  tagline: "Pusat Baja dan Bahan Bangunan",
+  tagline: "Harga Minimum, Kualitas Premium",
   taglineLong:
-    "Lagi cari material baja yang lengkap, cepat, dan terpercaya? Takka Steel solusinya!",
+    "Pusat baja & bahan bangunan terlengkap — harga minimum, kualitas premium, melayani Jabodetabek & seluruh Indonesia.",
   shortDescription:
-    "Takka Steel adalah pusat penyedia material baja dan bahan bangunan di Kabupaten Bogor. Solusi lengkap untuk kebutuhan konstruksi dan pertukangan — produk lengkap, layanan cepat, dan harga kompetitif.",
+    "Takka Steel adalah pusat penyedia material baja dan bahan bangunan. Harga minimum, kualitas premium. Melayani Jabodetabek & seluruh wilayah Indonesia untuk kebutuhan eceran hingga proyek besar.",
   city: "Kabupaten Bogor",
+  founderName: "M Dafa Fakhrika",
+  serviceArea: "Jabodetabek & Seluruh Wilayah Indonesia",
 
   // ── Address ──────────────────────────────────────────────
   address:
@@ -29,6 +31,8 @@ export const company = {
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "6289518611616",
   whatsappDisplay: "0895-1861-1616",
   phone: "0895-1861-1616",
+  whatsapp2: "6287873953335",
+  whatsappDisplay2: "0878-7395-3335",
 
   // ── Social ───────────────────────────────────────────────
   instagram: "https://www.instagram.com/takkasteelofficial/",
@@ -62,9 +66,16 @@ export const company = {
   },
 };
 
-/** Pre-filled WhatsApp chat link helper. */
+/** Pre-filled WhatsApp chat link helper — Admin 1. */
 export function waLink(message?: string) {
   const base = `https://wa.me/${company.whatsapp}`;
+  if (!message) return base;
+  return `${base}?text=${encodeURIComponent(message)}`;
+}
+
+/** Pre-filled WhatsApp chat link helper — Admin 2. */
+export function waLink2(message?: string) {
+  const base = `https://wa.me/${company.whatsapp2}`;
   if (!message) return base;
   return `${base}?text=${encodeURIComponent(message)}`;
 }

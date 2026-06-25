@@ -15,8 +15,8 @@ export default function KontakPage() {
       {/* Hero */}
       <section className="relative flex min-h-[50vh] items-center justify-center bg-steel-900 text-center text-white pt-20 overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&w=1900&q=70"
-          alt="Gudang besi"
+          src="/photos/kegiatan-3.jpg"
+          alt="Gudang Takka Steel — Ciomas, Bogor"
           className="absolute inset-0 h-full w-full object-cover opacity-20 mix-blend-overlay"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-steel-950/80 to-steel-900" />
@@ -83,7 +83,7 @@ export default function KontakPage() {
             </p>
             <div className="mt-8 relative overflow-hidden rounded-2xl border-4 border-white shadow-md bg-steel-800 h-[450px]">
               {/* Map Placeholder matching the dark style in the image */}
-              <div className="absolute inset-0 opacity-50" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=800&q=80')", backgroundSize: "cover", filter: "grayscale(100%) contrast(120%)" }}></div>
+              <div className="absolute inset-0 opacity-50" style={{ backgroundImage: "url('/photos/kegiatan-2.jpg')", backgroundSize: "cover", filter: "grayscale(100%) contrast(120%)" }}></div>
               <div className="absolute inset-0 bg-steel-900/40 mix-blend-multiply"></div>
               
               <div className="absolute inset-0 flex items-center justify-center">

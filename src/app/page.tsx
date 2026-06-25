@@ -4,7 +4,7 @@ import CategoryShowcase from "@/components/CategoryShowcase";
 import Reveal from "@/components/Reveal";
 import Icon, { type IconName } from "@/components/Icon";
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
-import { company, waLink, defaultWaMessage } from "@/data/company";
+import { company, waLink, waLink2, defaultWaMessage } from "@/data/company";
 import { faqs, testimonials as clientTestimonials, partners } from "@/data/site";
 
 export default function HomePage() {
@@ -40,7 +40,7 @@ function OrderProcess() {
       num: "03",
       icon: "truck",
       title: "Kirim ke Lokasi",
-      desc: "Material dikirim tepat waktu ke lokasi proyek Anda di Kabupaten Bogor dan sekitarnya.",
+      desc: "Material dikirim tepat waktu ke lokasi proyek Anda di Jabodetabek dan seluruh Indonesia.",
     },
   ];
   return (
@@ -206,7 +206,7 @@ function CtaBandDark() {
             Hubungi Admin 1
           </a>
           <a
-            href={waLink(defaultWaMessage)}
+            href={waLink2(defaultWaMessage)}
             target="_blank"
             rel="noopener noreferrer"
             className="btn border-2 border-white/20 text-white hover:bg-white/10 text-base"

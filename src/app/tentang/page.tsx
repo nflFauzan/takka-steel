@@ -24,11 +24,10 @@ export default function TentangPage() {
     <>
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="relative flex min-h-[42vh] items-center overflow-hidden bg-steel-900 pt-28 pb-16 text-white">
-        {/* TODO: ganti dengan foto asli gudang/toko Takka Steel */}
         <img
-          src="https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&w=1900&q=70"
-          alt="Stok material baja Takka Steel"
-          className="absolute inset-0 h-full w-full object-cover opacity-15"
+          src="/photos/kegiatan-3.jpg"
+          alt="Gudang utama Takka Steel — Ciomas, Bogor"
+          className="absolute inset-0 h-full w-full object-cover opacity-20"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-steel-950 via-steel-950/85 to-steel-900/40" />
         <div className="container-px relative z-10">
@@ -45,8 +44,8 @@ export default function TentangPage() {
             Material baja yang lengkap, dekat, dan bisa diandalkan.
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-steel-300 md:text-lg">
-            Pusat baja ringan, atap, bondeck, dan bahan bangunan di Ciomas,
-            Kabupaten Bogor. Melayani kebutuhan eceran hingga proyek.
+            Pusat baja &amp; bahan bangunan terlengkap. Harga minimum, kualitas
+            premium. Melayani Jabodetabek &amp; seluruh wilayah Indonesia.
           </p>
         </div>
       </section>
@@ -69,20 +68,24 @@ export default function TentangPage() {
               <p>
                 Sebagai usaha yang terus berkembang, fokus kami sederhana: stok
                 yang siap, harga yang transparan, dan pengiriman tepat waktu ke
-                wilayah Bogor dan sekitarnya. Kami juga senang membantu menghitung
-                kebutuhan material sebelum Anda membeli.
+                Jabodetabek serta seluruh wilayah Indonesia. Kami juga senang
+                membantu menghitung kebutuhan material sebelum Anda membeli.
               </p>
             </div>
 
             {/* Honest grounding facts (replaces the old fictional QC quote) */}
-            <dl className="mt-8 grid grid-cols-2 gap-px overflow-hidden border border-steel-200 bg-steel-200 sm:grid-cols-3">
+            <dl className="mt-8 grid grid-cols-2 gap-px overflow-hidden border border-steel-200 bg-steel-200 sm:grid-cols-4">
               <div className="bg-white p-4">
                 <dt className="text-xs font-semibold uppercase tracking-wide text-steel-500">Berdiri</dt>
                 <dd className="mt-1 font-heading text-lg font-extrabold text-steel-900">{company.foundedFull}</dd>
               </div>
               <div className="bg-white p-4">
-                <dt className="text-xs font-semibold uppercase tracking-wide text-steel-500">Lokasi</dt>
-                <dd className="mt-1 font-heading text-lg font-extrabold text-steel-900">Ciomas, Bogor</dd>
+                <dt className="text-xs font-semibold uppercase tracking-wide text-steel-500">Pelanggan</dt>
+                <dd className="mt-1 font-heading text-lg font-extrabold text-steel-900">1.000+</dd>
+              </div>
+              <div className="bg-white p-4">
+                <dt className="text-xs font-semibold uppercase tracking-wide text-steel-500">Wilayah</dt>
+                <dd className="mt-1 font-heading text-base font-extrabold text-steel-900">Jabodetabek &amp; Seluruh Indonesia</dd>
               </div>
               <div className="bg-white p-4">
                 <dt className="text-xs font-semibold uppercase tracking-wide text-steel-500">Melayani</dt>
@@ -92,14 +95,13 @@ export default function TentangPage() {
           </Reveal>
 
           <Reveal delay={120} className="relative">
-            {/* TODO: ganti dengan foto asli toko/gudang/tim Takka Steel */}
             <div
               className="relative aspect-[4/5] w-full overflow-hidden bg-steel-100 md:aspect-square"
               style={{ clipPath: "polygon(8% 0, 100% 0, 100% 92%, 0 100%)" }}
             >
               <img
-                src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=1100&q=80"
-                alt="Stok material baja ringan dan atap di gudang Takka Steel"
+                src="/photos/kegiatan-1.jpg"
+                alt="Tim Takka Steel memuat material baja ke armada pengiriman"
                 className="h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-steel-950/70 via-transparent to-transparent" />
