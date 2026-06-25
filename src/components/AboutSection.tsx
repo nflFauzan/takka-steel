@@ -218,10 +218,10 @@ export default function AboutSection() {
     <section
       ref={sectionRef}
       aria-labelledby="about-heading"
-      className="relative w-full overflow-hidden bg-steel-50 lg:flex lg:h-screen lg:max-h-screen lg:min-h-[660px] lg:flex-col"
+      className="relative w-full overflow-hidden bg-steel-50 lg:flex lg:min-h-screen lg:flex-col"
     >
       {/* ── Top zone: editorial content (left) + bleeding image (right) ── */}
-      <div ref={content.ref} className="relative flex-1 lg:min-h-0">
+      <div ref={content.ref} className="relative flex-1">
         {/* Full-bleed steel image, right edge, with industrial diagonal cut */}
         <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[44%] lg:block">
           <div
@@ -246,7 +246,7 @@ export default function AboutSection() {
         </div>
 
         {/* Content */}
-        <div className="container-px relative z-10 flex h-full flex-col justify-center py-14 lg:py-0">
+        <div className="container-px relative z-10 flex h-full flex-col justify-center py-14 lg:py-24">
           <div className="lg:max-w-[50%]">
             {/* Eyebrow */}
             <div className="flex items-center gap-3" style={reveal(content.inView, 0, 14)}>
