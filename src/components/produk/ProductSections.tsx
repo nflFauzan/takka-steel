@@ -55,8 +55,8 @@ const brands = ["TAKKA", "Alderon", "Bondek", "Galvalume", "Jayaboard", "Knauf",
 
 const facts: { icon: IconName; title: string; desc: string }[] = [
   { icon: "shield", title: "Material Bermerek", desc: "Produk pilihan dari merek terpercaya, sebagian berstandar SNI." },
-  { icon: "box", title: "Ready Stock", desc: "Stok material utama tersedia langsung di depot Kabupaten Bogor." },
-  { icon: "truck", title: "Pengiriman Area", desc: "Antar ke lokasi proyek Bogor dan sekitarnya, tepat waktu." },
+  { icon: "box", title: "Ready Stock", desc: "Stok material tersedia langsung di gudang — siap diambil atau dikirim." },
+  { icon: "truck", title: "Pengiriman Luas", desc: "Antar ke lokasi proyek Jabodetabek & seluruh Indonesia, tepat waktu." },
   { icon: "headset", title: "Konsultasi Teknis", desc: "Dibantu hitung kebutuhan material proyek tanpa biaya." },
 ];
 
@@ -119,8 +119,7 @@ export function ProductBento() {
     <section className="bg-steel-50 py-16 md:py-20">
       <div className="container-px">
         <div className="mb-10 max-w-2xl">
-          <span className="eyebrow">Produk Andalan</span>
-          <h2 className="h2 mt-2 text-steel-900">Paling banyak dipesan untuk proyek</h2>
+          <h2 className="h2 text-steel-900">Paling banyak dipesan untuk proyek</h2>
           <p className="mt-3 text-steel-600">
             Material inti yang siap stok dan paling sering dipakai kontraktor maupun pemilik rumah.
           </p>
@@ -160,10 +159,6 @@ function BentoTile({ product, hero, reduce }: { product: Product; hero?: boolean
           className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-steel-950/90 via-steel-950/35 to-transparent" />
-        <div className="absolute left-3 top-3 flex gap-1.5">
-          <StockBadge product={product} />
-          {product.badge && <MaterialBadge label={product.badge} />}
-        </div>
         <div className="relative z-10 p-4 md:p-5">
           {product.brand && (
             <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-gold">{product.brand}</span>
@@ -172,7 +167,11 @@ function BentoTile({ product, hero, reduce }: { product: Product; hero?: boolean
             {product.name}
           </h3>
           {hero && <p className="mt-2 max-w-md text-sm leading-relaxed text-steel-200">{product.summary}</p>}
-          <span className="mt-3 inline-flex items-center gap-1 text-xs font-bold text-white">
+          <div className="mt-2 flex flex-wrap gap-1.5">
+            <StockBadge product={product} />
+            {product.badge && <MaterialBadge label={product.badge} />}
+          </div>
+          <span className="mt-2 inline-flex items-center gap-1 text-xs font-bold text-white">
             Lihat detail <Icon name="chevron" className="h-3.5 w-3.5 text-gold" />
           </span>
         </div>
@@ -325,10 +324,6 @@ function CatalogCard({ product }: { product: Product }) {
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-steel-950/30 to-transparent" />
-        <div className="absolute left-3 top-3 flex gap-1.5">
-          <StockBadge product={product} />
-          {product.badge && <MaterialBadge label={product.badge} />}
-        </div>
       </div>
       <div className="flex flex-1 flex-col p-5">
         <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-steel-400">
@@ -337,6 +332,10 @@ function CatalogCard({ product }: { product: Product }) {
         <h3 className="mt-1 font-heading font-bold text-steel-900 transition-colors group-hover:text-accent">
           {product.name}
         </h3>
+        <div className="mt-2 flex flex-wrap gap-1.5">
+          <StockBadge product={product} />
+          {product.badge && <MaterialBadge label={product.badge} />}
+        </div>
         <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-steel-500">{product.summary}</p>
         <span className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-accent">
           Lihat detail <Icon name="chevron" className="h-3.5 w-3.5" />

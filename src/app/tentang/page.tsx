@@ -2,22 +2,23 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import Icon from "@/components/Icon";
+import PhotoMarquee from "@/components/PhotoMarquee";
 import { company, waLink, defaultWaMessage } from "@/data/company";
-import { productCategories } from "@/data/products";
 import { valueProps, testimonials } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Tentang Kami",
-  description: `Mengenal ${company.name}, pusat baja ringan, atap, bondeck & bahan bangunan di Ciomas, ${company.city}. Melayani kebutuhan eceran hingga proyek.`,
+  description: `Mengenal ${company.name} — pusat baja & bahan bangunan terpercaya, didirikan ${company.founderName}. Melayani Jabodetabek & seluruh Indonesia.`,
 };
 
-/* Material range per category — derived from the real catalog (products.ts). */
-const CATEGORY_BLURB: Record<(typeof productCategories)[number], string> = {
-  "Baja Ringan": "Truss CNP, reng galvalume, hollow partisi & plafon.",
-  "Sistem Atap": "Spandek pasir & polos, metal pasir, Alderon uPVC, seng galvalum.",
-  "Struktur Lantai": "Bondeck / floordeck untuk dak lantai cor bertingkat.",
-  "Aksesoris & Perkakas": "Kawat bendrat, dinabolt, mata bor, gerinda, cat & thinner.",
-};
+const ACTIVITY_PHOTOS = [
+  { src: "/photos/kegiatan-3.jpg", alt: "Gudang utama Takka Steel di Ciomas, Bogor" },
+  { src: "/photos/kegiatan-1.jpg", alt: "Tim Takka Steel memuat material baja" },
+  { src: "/photos/kegiatan-4.jpg", alt: "Armada pengiriman siap berangkat dari gudang" },
+  { src: "/photos/kegiatan-2.jpg", alt: "Armada pengiriman Takka Steel di gudang" },
+  { src: "/photos/kegiatan-5.jpg", alt: "Armada pengiriman dalam perjalanan" },
+  { src: "/photos/tim.jpg", alt: "Tim profesional Takka Steel" },
+];
 
 export default function TentangPage() {
   return (
@@ -60,10 +61,10 @@ export default function TentangPage() {
             <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-steel-600">
               <p>
                 {company.name} berdiri pada {company.foundedFull} di Ciomas,
-                Kabupaten Bogor, sebagai pusat material baja ringan, sistem atap,
-                struktur lantai, dan bahan bangunan. Produk lengkap dalam satu
-                tempat, dari kebutuhan eceran untuk renovasi rumah hingga pasokan
-                untuk proyek kontraktor.
+                Kabupaten Bogor, sebagai pusat material baja &amp; bahan bangunan
+                terlengkap. Harga minimum, kualitas premium — melayani dari
+                kebutuhan eceran hingga pasokan proyek kontraktor skala besar,
+                ke Jabodetabek &amp; seluruh wilayah Indonesia.
               </p>
               <p>
                 Sebagai usaha yang terus berkembang, fokus kami sederhana: stok
@@ -111,42 +112,178 @@ export default function TentangPage() {
         </div>
       </section>
 
-      {/* ── Apa yang Kami Sediakan ───────────────────────────── */}
+      {/* ── Pendiri ──────────────────────────────────────────── */}
+      <section className="section bg-steel-50">
+        <div className="container-px grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16 lg:items-center">
+          <Reveal className="relative">
+            <div className="relative aspect-[4/5] w-full max-w-md overflow-hidden bg-steel-100">
+              <img
+                src="/photos/founder.jpg"
+                alt={`${company.founderName} — Founder Takka Steel`}
+                className="h-full w-full object-cover"
+              />
+              <span className="absolute -bottom-px left-0 h-1 w-24 bg-gold" />
+            </div>
+            <div className="absolute -bottom-4 -right-4 hidden h-32 w-32 border-2 border-gold lg:block" />
+          </Reveal>
+
+          <Reveal delay={120}>
+            <div className="flex items-center gap-3">
+              <span className="h-px w-8 bg-gold" />
+              <span className="eyebrow">Pendiri</span>
+            </div>
+            <h2 className="mt-4 font-heading text-3xl font-extrabold leading-tight text-steel-900 md:text-4xl">
+              Dibangun dengan integritas, dijalankan dengan dedikasi.
+            </h2>
+            <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-steel-600">
+              <p>
+                Takka Steel didirikan oleh <strong className="text-steel-900">{company.founderName}</strong>{" "}
+                pada {company.foundedFull} dengan satu visi sederhana: menjadi pusat
+                material baja &amp; bahan bangunan yang bisa diandalkan kontraktor,
+                pemborong, dan pemilik rumah — tanpa kompromi kualitas dan tanpa
+                permainan harga.
+              </p>
+              <p>
+                Dari sebuah gudang di Ciomas, Bogor, Takka Steel kini melayani
+                lebih dari 1.000 pelanggan di Jabodetabek dan berbagai wilayah
+                Indonesia. Visi itu tetap sama: <em>harga minimum, kualitas premium</em>.
+              </p>
+            </div>
+
+            <div className="mt-8 grid grid-cols-3 gap-px overflow-hidden border border-steel-200 bg-steel-200">
+              <div className="bg-white p-4">
+                <dt className="text-xs font-semibold uppercase tracking-wide text-steel-500">Founder</dt>
+                <dd className="mt-1 font-heading text-base font-extrabold text-steel-900">
+                  {company.founderName}
+                </dd>
+              </div>
+              <div className="bg-white p-4">
+                <dt className="text-xs font-semibold uppercase tracking-wide text-steel-500">Berdiri</dt>
+                <dd className="mt-1 font-heading text-base font-extrabold text-steel-900">
+                  {company.foundedFull}
+                </dd>
+              </div>
+              <div className="bg-white p-4">
+                <dt className="text-xs font-semibold uppercase tracking-wide text-steel-500">Lokasi</dt>
+                <dd className="mt-1 font-heading text-base font-extrabold text-steel-900">
+                  Ciomas, Bogor
+                </dd>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ── Tim Kami ─────────────────────────────────────────── */}
+      <section className="section bg-white">
+        <div className="container-px">
+          <div className="max-w-2xl">
+            <h2 className="font-heading text-3xl font-extrabold leading-tight text-steel-900 md:text-4xl">
+              Tim yang terspesialisasi di setiap tahap pesanan Anda
+            </h2>
+            <p className="mt-4 text-steel-600">
+              Staf gudang, admin, sales, dan kurir berseragam Takka Steel
+              bekerja setiap hari. Stok selalu tersedia, pesanan diproses
+              cepat, dan material sampai tepat waktu di lokasi proyek.
+            </p>
+          </div>
+
+          <Reveal delay={100} className="mt-10">
+            <div className="relative overflow-hidden">
+              <img
+                src="/photos/tim.jpg"
+                alt="Tim Takka Steel — staf gudang, admin, sales, dan kurir berseragam"
+                className="h-auto w-full object-cover"
+              />
+              <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-steel-950/70 to-transparent" />
+              <div className="absolute bottom-6 left-6 text-white sm:bottom-8 sm:left-8">
+                <p className="font-heading text-xl font-extrabold sm:text-2xl">Tim Takka Steel</p>
+                <p className="mt-1 text-sm text-steel-200">Senin–Sabtu, siap melayani Anda</p>
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Role breakdown — no headcount, specialization focus */}
+          <div className="mt-0 grid grid-cols-1 divide-y divide-steel-200 border border-steel-200 md:grid-cols-3 md:divide-x md:divide-y-0">
+            {[
+              {
+                icon: "box" as const,
+                title: "Staf Gudang",
+                desc: "Stok besar selalu tersedia, siap diambil atau dikirim hari yang sama.",
+              },
+              {
+                icon: "headset" as const,
+                title: "Sales & Admin",
+                desc: "Respons cepat untuk penawaran harga, konsultasi, dan konfirmasi pesanan.",
+              },
+              {
+                icon: "truck" as const,
+                title: "Kurir Berseragam",
+                desc: "Armada Takka Steel antar langsung ke lokasi proyek Anda.",
+              },
+            ].map((r) => (
+              <div key={r.title} className="flex gap-4 p-5">
+                <span className="grid h-10 w-10 shrink-0 place-items-center bg-steel-900 text-gold">
+                  <Icon name={r.icon} className="h-5 w-5" />
+                </span>
+                <div>
+                  <p className="font-bold text-steel-900">{r.title}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-steel-600">{r.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Armada & Pergudangan ─────────────────────────────── */}
       <section className="section bg-steel-950 text-white">
         <div className="container-px">
           <div className="max-w-2xl">
             <h2 className="font-heading text-3xl font-extrabold leading-tight md:text-4xl">
-              Empat lini produk, satu alamat
+              Stok besar, armada sendiri, kirim ke mana saja
             </h2>
             <p className="mt-4 text-steel-300">
-              Mulai dari rangka atap hingga aksesoris pemasangan, semua bisa
-              dibelanjakan sekaligus tanpa berpindah toko.
+              Kami mengoperasikan gudang sentral di Ciomas, Bogor, dengan armada
+              pengiriman bermerek Takka Steel. Bukan reseller — kami menyimpan
+              stok sendiri dan mengantar langsung ke lokasi Anda.
             </p>
           </div>
 
-          <div className="mt-10 grid gap-px overflow-hidden border border-steel-800 bg-steel-800 sm:grid-cols-2">
-            {productCategories.map((cat, i) => (
-              <Reveal key={cat} delay={i * 80} className="bg-steel-900">
-                <Link
-                  href="/produk"
-                  className="group flex h-full items-start gap-5 p-7 transition-colors hover:bg-steel-800"
-                >
-                  <span className="font-heading text-2xl font-black text-gold/80">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <div className="flex-1">
-                    <h3 className="font-heading text-xl font-bold text-white">{cat}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-steel-400">
-                      {CATEGORY_BLURB[cat]}
-                    </p>
-                    <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-gold transition-transform group-hover:translate-x-1">
-                      Lihat produk
-                      <Icon name="arrow" className="h-4 w-4" />
-                    </span>
-                  </div>
-                </Link>
-              </Reveal>
-            ))}
+          <div className="mt-10 grid gap-px overflow-hidden border border-steel-800 bg-steel-800 md:grid-cols-2 lg:grid-cols-3">
+            <Reveal className="relative aspect-[4/3] overflow-hidden bg-steel-900">
+              <img
+                src="/photos/kegiatan-2.jpg"
+                alt="Armada pengiriman Takka Steel siap muat"
+                className="h-full w-full object-cover"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-steel-950 to-transparent p-5">
+                <p className="font-heading text-lg font-bold text-white">Armada Bermerek</p>
+                <p className="mt-1 text-sm text-steel-300">Truk Takka Steel siap antar pesanan.</p>
+              </div>
+            </Reveal>
+            <Reveal delay={80} className="relative aspect-[4/3] overflow-hidden bg-steel-900">
+              <img
+                src="/photos/kegiatan-4.jpg"
+                alt="Material baja siap kirim dari gudang Takka Steel"
+                className="h-full w-full object-cover"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-steel-950 to-transparent p-5">
+                <p className="font-heading text-lg font-bold text-white">Gudang Sentral</p>
+                <p className="mt-1 text-sm text-steel-300">Stok lengkap di Ciomas, Bogor.</p>
+              </div>
+            </Reveal>
+            <Reveal delay={160} className="relative aspect-[4/3] overflow-hidden bg-steel-900 md:col-span-2 lg:col-span-1">
+              <img
+                src="/photos/kegiatan-5.jpg"
+                alt="Armada Takka Steel dalam perjalanan pengiriman"
+                className="h-full w-full object-cover"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-steel-950 to-transparent p-5">
+                <p className="font-heading text-lg font-bold text-white">Jangkauan Luas</p>
+                <p className="mt-1 text-sm text-steel-300">Jabodetabek &amp; seluruh Indonesia.</p>
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -205,9 +342,28 @@ export default function TentangPage() {
         </div>
       </section>
 
+      {/* ── Dokumentasi Aktivitas ────────────────────────────── */}
+      <section className="section overflow-hidden bg-white pb-0">
+        <div className="container-px">
+          <div className="max-w-2xl">
+            <h2 className="font-heading text-3xl font-extrabold leading-tight text-steel-900 md:text-4xl">
+              Lihat langsung kegiatan harian kami
+            </h2>
+            <p className="mt-4 text-steel-600">
+              Foto-foto asli dari gudang, tim, dan pengiriman Takka Steel —
+              bukti bahwa setiap pesanan diproses oleh orang sungguhan, bukan
+              hanya katalog di layar.
+            </p>
+          </div>
+        </div>
+        <div className="mt-10 pb-16">
+          <PhotoMarquee photos={ACTIVITY_PHOTOS} />
+        </div>
+      </section>
+
       {/* ── Apa Kata Pelanggan ───────────────────────────────── */}
       {/* ⚠️ PLACEHOLDER — ganti dengan testimoni nyata bila sudah ada. */}
-      <section className="section bg-white">
+      <section className="section bg-steel-50">
         <div className="container-px">
           <h2 className="max-w-2xl font-heading text-3xl font-extrabold leading-tight text-steel-900 md:text-4xl">
             Apa kata pelanggan kami

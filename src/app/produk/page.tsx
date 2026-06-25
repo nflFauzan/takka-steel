@@ -12,7 +12,7 @@ import { company, waLink, defaultWaMessage } from "@/data/company";
 export const metadata: Metadata = {
   title: "Katalog Produk",
   description:
-    "Katalog material konstruksi Takka Steel: baja ringan, sistem atap, struktur lantai, dan aksesoris. Ready stock dan siap kirim untuk proyek di Bogor dan sekitarnya.",
+    "Katalog material konstruksi Takka Steel: baja ringan, sistem atap, struktur lantai, dan aksesoris. Ready stock dan siap kirim ke Jabodetabek & seluruh Indonesia.",
 };
 
 export default function ProdukPage() {

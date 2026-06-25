@@ -63,7 +63,7 @@ export const partners = [
 export const faqs = [
   {
     q: "Apakah Takka Steel melayani pengiriman ke lokasi proyek?",
-    a: "Ya. Kami melayani pengiriman material ke seluruh wilayah Kabupaten Bogor dan sekitarnya. Biaya pengiriman menyesuaikan jarak dan volume pesanan — silakan hubungi kami untuk detailnya.",
+    a: "Ya. Kami melayani pengiriman material ke Jabodetabek dan seluruh wilayah Indonesia. Biaya pengiriman menyesuaikan jarak dan volume pesanan — silakan hubungi kami untuk detailnya.",
   },
   {
     q: "Berapa jam operasional toko?",
