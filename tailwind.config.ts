@@ -20,8 +20,8 @@ const config: Config = {
           600: "#2a518f",
           700: "#1d4079",
           800: "#163260",
-          900: "#0f2248",
-          950: "#0a1530",
+          900: "#104FA6",
+          950: "#0d3d85",
         },
         accent: {
           DEFAULT: "#104FA6",
@@ -44,15 +44,15 @@ const config: Config = {
         heading: ["var(--font-heading)", "system-ui", "sans-serif"],
       },
       backgroundImage: {
-        "navy-gradient": "linear-gradient(135deg, #1a63c4 0%, #0d3d85 100%)",
+        "navy-gradient": "linear-gradient(135deg, #104FA6 0%, #0d3d85 100%)",
         "gold-gradient": "linear-gradient(135deg, #F5CE02 0%, #d4af00 100%)",
       },
       borderRadius: {
         card: "8px", // corporate, not overly rounded
       },
       boxShadow: {
-        card: "0 2px 16px rgba(56, 78, 137, 0.08)",
-        "card-hover": "0 8px 32px rgba(56, 78, 137, 0.16)",
+        card: "0 2px 16px rgba(16, 79, 166, 0.08)",
+        "card-hover": "0 8px 32px rgba(16, 79, 166, 0.16)",
         cta: "0 4px 24px rgba(212, 175, 55, 0.35)",
       },
       container: {

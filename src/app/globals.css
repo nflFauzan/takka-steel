@@ -44,7 +44,7 @@ html {
   }
 
   .btn-dark {
-    @apply btn bg-steel-900 text-white hover:bg-accent focus:ring-steel-700;
+    @apply btn bg-steel-900 text-white hover:bg-steel-950 focus:ring-steel-700;
   }
 
   /* Gold CTA — used for high-emphasis accents. */
