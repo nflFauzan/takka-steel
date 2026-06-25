@@ -166,7 +166,7 @@ const HIGHLIGHTS = [
 const STATS = [
   { value: "1.000+", label: "Pelanggan Dilayani" },
   { value: "100+", label: "Kategori Produk" },
-  { value: "13+", label: "Tim Profesional" },
+  { value: "50+", label: "Tim Profesional" },
 ];
 
 const VALUES = [
