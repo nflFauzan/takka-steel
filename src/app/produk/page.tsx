@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Icon from "@/components/Icon";
+import PageHeader from "@/components/PageHeader";
 import {
   TrustStrip,
   ProductBento,
@@ -18,47 +19,11 @@ export const metadata: Metadata = {
 export default function ProdukPage() {
   return (
     <>
-      {/* ── Hero ─────────────────────────────────────────────── */}
-      <section className="relative flex min-h-[60vh] items-center overflow-hidden bg-steel-900 pt-24 text-white">
-        <img
-          src="/photos/kegiatan-3.jpg"
-          alt="Gudang material baja Takka Steel — Ciomas, Bogor"
-          className="absolute inset-0 h-full w-full object-cover opacity-30"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-steel-950 via-steel-950/90 to-steel-900/40" />
-        <div className="container-px relative z-10">
-          <div className="max-w-2xl">
-            <div className="mb-5 flex flex-wrap gap-2">
-              <span className="inline-flex items-center gap-1 rounded bg-gold px-2.5 py-1 text-xs font-bold uppercase tracking-wide text-steel-900">
-                <span className="h-1.5 w-1.5 rounded-full bg-steel-900/70" /> Ready Stock
-              </span>
-              <span className="rounded border border-white/25 px-2.5 py-1 text-xs font-bold uppercase tracking-wide text-white">
-                Material SNI
-              </span>
-            </div>
-            <h1 className="font-heading text-4xl font-extrabold leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
-              Material Konstruksi Lengkap, Siap Kirim
-            </h1>
-            <p className="mt-6 max-w-xl text-lg text-steel-300">
-              Distributor besi, baja ringan, atap, dan bahan bangunan terlengkap. Ready stock, harga
-              minimum, kirim cepat ke Jabodetabek &amp; seluruh Indonesia.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link href="#katalog" className="btn-gold">
-                Lihat Katalog <Icon name="arrow" className="ml-1 h-4 w-4" />
-              </Link>
-              <a
-                href={waLink(defaultWaMessage)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn border-2 border-white/25 text-white hover:bg-white/10"
-              >
-                <Icon name="whatsapp" className="h-5 w-5" /> Minta Penawaran
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageHeader
+        title="Katalog Produk"
+        subtitle="Distributor besi, baja ringan, atap, dan bahan bangunan terlengkap. Ready stock, harga minimum, kirim cepat ke Jabodetabek & seluruh Indonesia."
+        breadcrumb={[{ label: "Beranda", href: "/" }, { label: "Katalog Produk" }]}
+      />
 
       <TrustStrip />
       <ProductBento />

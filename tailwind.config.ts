@@ -10,6 +10,7 @@ const config: Config = {
       colors: {
         // ── TAKKA STEEL brand palette ─────────────────────────────────────
         // Blue #104FA6 · Yellow #F5CE02 · White #EEEEEE · Black #131313
+        white: "#EEEEEE",
         steel: {
           50:  "#f4f7fb",
           100: "#e2eaf5",
@@ -30,7 +31,7 @@ const config: Config = {
         },
         gold: {
           DEFAULT: "#F5CE02",
-          dark:    "#d4af00",
+          dark:    "#F5CE02",
         },
         brand: {
           white: "#EEEEEE",

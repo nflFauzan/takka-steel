@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import Icon from "@/components/Icon";
+import PageHeader from "@/components/PageHeader";
 import PhotoMarquee from "@/components/PhotoMarquee";
 import { company, waLink, defaultWaMessage } from "@/data/company";
 import { valueProps, testimonials } from "@/data/site";
@@ -23,33 +24,11 @@ const ACTIVITY_PHOTOS = [
 export default function TentangPage() {
   return (
     <>
-      {/* ── Hero ─────────────────────────────────────────────── */}
-      <section className="relative flex min-h-[42vh] items-center overflow-hidden bg-steel-900 pt-28 pb-16 text-white">
-        <img
-          src="/photos/kegiatan-3.jpg"
-          alt="Gudang utama Takka Steel — Ciomas, Bogor"
-          className="absolute inset-0 h-full w-full object-cover opacity-20"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-steel-950 via-steel-950/85 to-steel-900/40" />
-        <div className="container-px relative z-10">
-          <nav className="mb-4 flex gap-2 text-xs font-bold text-steel-400">
-            <Link href="/" className="hover:text-white">Home</Link>
-            <span>/</span>
-            <span className="text-white">Tentang Kami</span>
-          </nav>
-          <div className="flex items-center gap-3">
-            <span className="h-px w-8 bg-gold" />
-            <span className="eyebrow">Tentang Takka Steel</span>
-          </div>
-          <h1 className="mt-4 max-w-3xl font-heading text-4xl font-extrabold leading-[1.05] tracking-tight md:text-5xl lg:text-6xl">
-            Material baja yang lengkap, dekat, dan bisa diandalkan.
-          </h1>
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-steel-300 md:text-lg">
-            Pusat baja &amp; bahan bangunan terlengkap. Harga minimum, kualitas
-            premium. Melayani Jabodetabek &amp; seluruh wilayah Indonesia.
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        title="Material baja yang lengkap, dekat, dan bisa diandalkan."
+        subtitle="Pusat baja & bahan bangunan terlengkap. Harga minimum, kualitas premium. Melayani Jabodetabek & seluruh wilayah Indonesia."
+        breadcrumb={[{ label: "Beranda", href: "/" }, { label: "Tentang Kami" }]}
+      />
 
       {/* ── Siapa Kami ───────────────────────────────────────── */}
       <section className="section bg-white">

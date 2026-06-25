@@ -17,7 +17,7 @@ export default function PageHeader({
         className="pointer-events-none absolute inset-0 opacity-10"
         style={{
           backgroundImage:
-            "linear-gradient(135deg, rgba(255,255,255,.6) 1px, transparent 1px), linear-gradient(45deg, rgba(255,255,255,.6) 1px, transparent 1px)",
+            "linear-gradient(135deg, rgba(238,238,238,.6) 1px, transparent 1px), linear-gradient(45deg, rgba(238,238,238,.6) 1px, transparent 1px)",
           backgroundSize: "26px 26px",
         }}
       />

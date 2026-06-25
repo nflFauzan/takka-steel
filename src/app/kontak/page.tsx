@@ -12,26 +12,14 @@ export const metadata: Metadata = {
 export default function KontakPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative flex min-h-[50vh] items-center justify-center bg-steel-900 text-center text-white pt-20 overflow-hidden">
-        <img
-          src="/photos/kegiatan-3.jpg"
-          alt="Gudang Takka Steel — Ciomas, Bogor"
-          className="absolute inset-0 h-full w-full object-cover opacity-20 mix-blend-overlay"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-steel-950/80 to-steel-900" />
-        <div className="container-px relative z-10 max-w-3xl">
-          <h1 className="font-heading text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl">
-            Hubungi Kami
-          </h1>
-          <p className="mt-6 text-lg text-steel-300">
-            Kami siap melayani kebutuhan material besi dan baja Anda dengan kualitas SNI dan harga kompetitif. Konsultasikan proyek Anda bersama tim ahli kami.
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        title="Hubungi Kami"
+        subtitle="Kami siap melayani kebutuhan material besi dan baja Anda dengan kualitas SNI dan harga kompetitif. Konsultasikan proyek Anda bersama tim ahli kami."
+        breadcrumb={[{ label: "Beranda", href: "/" }, { label: "Kontak" }]}
+      />
 
       {/* Info Cards */}
-      <section className="-mt-16 relative z-20">
+      <section className="section pb-0">
         <div className="container-px">
           <div className="grid gap-6 md:grid-cols-3">
             {/* Card 1 */}

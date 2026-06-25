@@ -38,7 +38,9 @@ export default function Navbar() {
       className={`fixed inset-x-0 top-0 z-40 transition-all duration-300 ${
         scrolled || open
           ? "bg-steel-900/95 shadow-lg shadow-black/10 backdrop-blur-md border-b border-white/[0.06]"
-          : "bg-transparent backdrop-blur-sm"
+          : pathname === "/"
+          ? "bg-transparent backdrop-blur-sm"
+          : "bg-steel-900/80 backdrop-blur-md"
       }`}
     >
       <nav className="container-px flex h-16 items-center justify-between">
