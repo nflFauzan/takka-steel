@@ -39,7 +39,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        // Montserrat for headings, Open Sans for body (brand brief).
+        // Poppins for headings (brand primary), Open Sans for body (brand brief).
         sans: ["var(--font-body)", "system-ui", "sans-serif"],
         body: ["var(--font-body)", "system-ui", "sans-serif"],
         heading: ["var(--font-heading)", "system-ui", "sans-serif"],

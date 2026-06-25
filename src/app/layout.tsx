@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Poppins, Open_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { company } from "@/data/company";
 
+// Brand primary — Poppins (geometric sans) drives all headings & display type.
 const poppinsHeading = Poppins({
   subsets: ["latin"],
   weight: ["600", "700", "800"],
@@ -13,9 +14,10 @@ const poppinsHeading = Poppins({
   display: "swap",
 });
 
-const poppinsBody = Poppins({
+// Pairing — Open Sans (humanist sans) for body copy: superior small-size legibility.
+const openSansBody = Open_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-body",
   display: "swap",
 });
@@ -97,7 +99,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="id" className={`${poppinsHeading.variable} ${poppinsBody.variable}`}>
+    <html lang="id" className={`${poppinsHeading.variable} ${openSansBody.variable}`}>
       <body className="flex min-h-screen flex-col">
         <script
           type="application/ld+json"

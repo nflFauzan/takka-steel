@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* --font-heading and --font-body are injected by next/font (Poppins) via layout.tsx */
+/* --font-heading (Poppins) and --font-body (Open Sans) are injected by next/font via layout.tsx */
 
 html {
   scroll-behavior: smooth;
