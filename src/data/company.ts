@@ -59,10 +59,10 @@ export const company = {
     "Terus berinovasi dalam penyediaan produk dan layanan untuk mendukung perkembangan dunia konstruksi.",
   ],
 
-  // ── Geo coordinates (estimate — update with exact GPS) ────
+  // ── Geo coordinates (exact — from Google Maps place pin) ──
   geo: {
-    latitude: "-6.570",
-    longitude: "106.750",
+    latitude: "-6.5789964",
+    longitude: "106.7520805",
   },
 };
 

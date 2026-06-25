@@ -1,3 +1,4 @@
+import dynamic from "next/dynamic";
 import HeroVideo from "@/components/HeroVideo";
 import AboutSection from "@/components/AboutSection";
 import CategoryShowcase from "@/components/CategoryShowcase";
@@ -6,6 +7,16 @@ import Icon, { type IconName } from "@/components/Icon";
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 import { company, waLink, waLink2, defaultWaMessage } from "@/data/company";
 import { faqs, testimonials as clientTestimonials, partners } from "@/data/site";
+
+const InteractiveMap = dynamic(
+  () => import("@/components/ui/InteractiveMap"),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="flex h-full w-full animate-pulse items-center justify-center rounded-2xl bg-steel-100" />
+    ),
+  }
+);
 
 export default function HomePage() {
   return (
@@ -174,12 +185,14 @@ function LocationSection() {
               Petunjuk Arah <Icon name="arrow" className="h-4 w-4 ml-2" />
             </a>
           </div>
-          <div className="h-[300px] lg:h-auto rounded-2xl overflow-hidden bg-steel-200 border-4 border-white shadow-md relative flex items-center justify-center">
-            <div className="text-center text-steel-500">
-              <Icon name="pin" className="h-10 w-10 mx-auto mb-2 text-steel-400" />
-              <p className="font-semibold">Peta Interaktif</p>
-              <p className="text-xs mt-1">Google Maps Integrasi</p>
-            </div>
+          <div className="h-[300px] lg:h-[420px] rounded-2xl overflow-hidden border-4 border-white shadow-md">
+            <InteractiveMap
+              lat={parseFloat(company.geo.latitude)}
+              lng={parseFloat(company.geo.longitude)}
+              name={company.name}
+              address={company.address}
+              mapsLink={company.mapsLink}
+            />
           </div>
         </div>
       </div>
