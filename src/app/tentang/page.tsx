@@ -3,7 +3,7 @@ import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import Icon from "@/components/Icon";
 import PageHeader from "@/components/PageHeader";
-import PhotoMarquee from "@/components/PhotoMarquee";
+import { ZoomParallax } from "@/components/ui/zoom-parallax";
 import { company, waLink, defaultWaMessage } from "@/data/company";
 import { valueProps, testimonials } from "@/data/site";
 
@@ -12,22 +12,15 @@ export const metadata: Metadata = {
   description: `Mengenal ${company.name} — pusat baja & bahan bangunan terpercaya, didirikan ${company.founderName}. Melayani Jabodetabek & seluruh Indonesia.`,
 };
 
-const ACTIVITY_PHOTOS = [
-  { src: "/photos/kegiatan-3.jpg", alt: "Gudang utama Takka Steel di Ciomas, Bogor" },
-  { src: "/photos/kegiatan-1.jpg", alt: "Tim Takka Steel memuat material baja" },
-  { src: "/photos/kirim-istana.jpg", alt: "Pengiriman material baja oleh Takka Steel ke area Istana Bogor" },
-  { src: "/photos/rak-baja.jpg", alt: "Display rak besi hollow dan reng baja ringan di toko" },
-  { src: "/photos/kegiatan-4.jpg", alt: "Armada pengiriman siap berangkat dari gudang" },
-  { src: "/photos/display-alderon.jpg", alt: "Display sampel warna atap UPVC Alderon" },
-  { src: "/photos/kirim-hollow.jpg", alt: "Armada truk Takka Steel memuat besi hollow" },
-  { src: "/photos/kegiatan-2.jpg", alt: "Armada pengiriman Takka Steel di gudang" },
-  { src: "/photos/stok-grc.jpg", alt: "Stok papan GRC board melimpah di gudang" },
-  { src: "/photos/kirim-triplek.jpg", alt: "Pengiriman triplek menggunakan armada Takka Steel" },
-  { src: "/photos/kegiatan-5.jpg", alt: "Armada pengiriman dalam perjalanan" },
-  { src: "/photos/kirim-semen.jpg", alt: "Pengiriman semen dan pipa paralon ke lokasi proyek" },
-  { src: "/photos/kirim-wiremesh.jpg", alt: "Truk pengangkut wiremesh bersiap kirim" },
-  { src: "/photos/stok-wiremesh.jpg", alt: "Stok besi beton wiremesh di area luar gudang" },
-  { src: "/photos/tim.jpg", alt: "Tim profesional Takka Steel" },
+// Foto pertama (index 0) tampil di tengah & membesar memenuhi layar saat scroll.
+const PARALLAX_PHOTOS = [
+  { src: "/photos/gudang-utama.png", alt: "Gudang utama Takka Steel di Ciomas, Bogor" },
+  { src: "/photos/tim.jpg", alt: "Tim profesional Takka Steel berseragam" },
+  { src: "/photos/founder.jpg", alt: "Founder Takka Steel di depan toko" },
+  { src: "/photos/kegiatan-1.jpg", alt: "Tim Takka Steel memuat material baja ke armada" },
+  { src: "/photos/kirim-istana.jpg", alt: "Pengiriman material Takka Steel ke area Istana Bogor" },
+  { src: "/photos/kirim-wiremesh.jpg", alt: "Armada Takka Steel memuat besi wiremesh" },
+  { src: "/photos/display-alderon.jpg", alt: "Pengiriman pipa dan material bangunan oleh Takka Steel" },
 ];
 
 export default function TentangPage() {
@@ -39,14 +32,22 @@ export default function TentangPage() {
         breadcrumb={[{ label: "Beranda", href: "/" }, { label: "Tentang Kami" }]}
       />
 
-      {/* ── Siapa Kami ───────────────────────────────────────── */}
+      {/* ── ZoomParallax (21st.dev) ──────────────────────────── */}
+      <ZoomParallax images={PARALLAX_PHOTOS} />
+
+      {/* ── Tentang Takka Steel (text-only, centered) ────────── */}
       <section className="section bg-white">
-        <div className="container-px grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
-          <Reveal>
-            <h2 className="font-heading text-3xl font-extrabold leading-tight text-steel-900 md:text-4xl">
-              Satu tempat untuk semua kebutuhan baja & bangunan Anda
+        <div className="container-px">
+          <Reveal className="mx-auto max-w-[760px] text-center">
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-8 bg-gold" />
+              <span className="eyebrow">Tentang Takka Steel</span>
+              <span className="h-px w-8 bg-gold" />
+            </div>
+            <h2 className="mt-5 font-heading text-3xl font-extrabold leading-tight text-steel-900 md:text-[2.5rem] md:leading-[1.15]">
+              Satu tempat untuk semua kebutuhan baja &amp; bangunan Anda
             </h2>
-            <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-steel-600">
+            <div className="mt-7 space-y-5 text-base leading-relaxed text-steel-600 md:text-[17px]">
               <p>
                 {company.name} berdiri pada {company.foundedFull} di Ciomas,
                 Kabupaten Bogor, sebagai pusat material baja &amp; bahan bangunan
@@ -61,41 +62,28 @@ export default function TentangPage() {
                 membantu menghitung kebutuhan material sebelum Anda membeli.
               </p>
             </div>
+          </Reveal>
 
-            {/* Honest grounding facts (replaces the old fictional QC quote) */}
-            <dl className="mt-8 grid grid-cols-2 gap-px overflow-hidden border border-steel-200 bg-steel-200 sm:grid-cols-4">
-              <div className="bg-white p-4">
+          {/* Grounding facts — centered, elegant */}
+          <Reveal delay={120} className="mx-auto mt-12 max-w-3xl">
+            <dl className="grid grid-cols-2 gap-px overflow-hidden border border-steel-200 bg-steel-200 sm:grid-cols-4">
+              <div className="bg-white p-5 text-center">
                 <dt className="text-xs font-semibold uppercase tracking-wide text-steel-500">Berdiri</dt>
                 <dd className="mt-1 font-heading text-lg font-extrabold text-steel-900">{company.foundedFull}</dd>
               </div>
-              <div className="bg-white p-4">
+              <div className="bg-white p-5 text-center">
                 <dt className="text-xs font-semibold uppercase tracking-wide text-steel-500">Pelanggan</dt>
                 <dd className="mt-1 font-heading text-lg font-extrabold text-steel-900">1.000+</dd>
               </div>
-              <div className="bg-white p-4">
+              <div className="bg-white p-5 text-center">
                 <dt className="text-xs font-semibold uppercase tracking-wide text-steel-500">Wilayah</dt>
-                <dd className="mt-1 font-heading text-base font-extrabold text-steel-900">Jabodetabek &amp; Seluruh Indonesia</dd>
+                <dd className="mt-1 font-heading text-sm font-extrabold leading-snug text-steel-900">Jabodetabek &amp; Seluruh Indonesia</dd>
               </div>
-              <div className="bg-white p-4">
+              <div className="bg-white p-5 text-center">
                 <dt className="text-xs font-semibold uppercase tracking-wide text-steel-500">Melayani</dt>
                 <dd className="mt-1 font-heading text-lg font-extrabold text-steel-900">Eceran &amp; Proyek</dd>
               </div>
             </dl>
-          </Reveal>
-
-          <Reveal delay={120} className="relative">
-            <div
-              className="relative aspect-[4/5] w-full overflow-hidden bg-steel-100 md:aspect-square"
-              style={{ clipPath: "polygon(8% 0, 100% 0, 100% 92%, 0 100%)" }}
-            >
-              <img
-                src="/photos/kegiatan-1.jpg"
-                alt="Tim Takka Steel memuat material baja ke armada pengiriman"
-                className="h-full w-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-tr from-steel-950/70 via-transparent to-transparent" />
-            </div>
-            <span className="absolute left-0 top-0 h-16 w-1 bg-gold" />
           </Reveal>
         </div>
       </section>
@@ -327,25 +315,6 @@ export default function TentangPage() {
               ))}
             </ol>
           </Reveal>
-        </div>
-      </section>
-
-      {/* ── Dokumentasi Aktivitas ────────────────────────────── */}
-      <section className="section overflow-hidden bg-white pb-0">
-        <div className="container-px">
-          <div className="max-w-2xl">
-            <h2 className="font-heading text-3xl font-extrabold leading-tight text-steel-900 md:text-4xl">
-              Lihat langsung kegiatan harian kami
-            </h2>
-            <p className="mt-4 text-steel-600">
-              Foto-foto asli dari gudang, tim, dan pengiriman Takka Steel —
-              bukti bahwa setiap pesanan diproses oleh orang sungguhan, bukan
-              hanya katalog di layar.
-            </p>
-          </div>
-        </div>
-        <div className="mt-10 pb-16">
-          <PhotoMarquee photos={ACTIVITY_PHOTOS} />
         </div>
       </section>
 
