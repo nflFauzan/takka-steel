@@ -12,7 +12,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence, useReducedMotion, type Variants } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import Icon, { type IconName } from "@/components/Icon";
 import {
   products,
@@ -99,86 +99,127 @@ export function TrustStrip() {
 }
 
 /* ====================================================================== */
-/*  FEATURED BENTO                                                         */
+/*  FEATURED GALLERY — infinite editorial marquee                         */
 /* ====================================================================== */
 
-const bentoContainer: Variants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.08 } },
-};
-const bentoItem: Variants = {
-  hidden: { opacity: 0, y: 22 },
-  visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 90, damping: 16 } },
-};
-
+/**
+ * Continuous right-to-left marquee. The track renders the card set TWICE and
+ * the CSS keyframe (globals.css → `marquee-x`) translates it by -50%, so the
+ * second copy lands exactly where the first began — a seamless, never-snapping
+ * loop. Hovering the viewport pauses the animation (CSS `:hover` preserves the
+ * current offset, so it resumes in place on mouse-leave). Movement is pure
+ * GPU translate3d; per-card hover handles the lift / zoom / shadow.
+ *
+ * `--marquee-duration` scales with the number of cards so density (not card
+ * count) sets the perceived speed; bigger number = slower, more premium drift.
+ */
 export function ProductBento() {
-  const reduce = useReducedMotion();
   const items = featuredProducts;
   if (items.length === 0) return null;
-  const [hero, ...rest] = items;
+
+  // ~7s of travel per card keeps the drift slow and editorial regardless of
+  // how many flagship products are configured.
+  const duration = `${Math.max(items.length * 7, 40)}s`;
+  const loop = [...items, ...items]; // duplicated set → seamless wrap
 
   return (
-    <section className="bg-steel-50 py-16 md:py-20">
+    <section className="overflow-hidden bg-steel-50 py-20 md:py-28">
       <div className="container-px">
-        <div className="mb-10 max-w-2xl">
-          <h2 className="h2 text-steel-900">Paling banyak dipesan untuk proyek</h2>
-          <p className="mt-3 text-steel-600">
+        <div className="max-w-xl">
+          <span className="inline-flex items-center gap-2 rounded-full border border-steel-200 bg-white px-3 py-1 text-[11px] font-bold uppercase tracking-[0.18em] text-steel-500">
+            <span className="h-1.5 w-1.5 rounded-full bg-gold" />
+            Produk Unggulan
+          </span>
+          <h2 className="mt-4 font-heading text-3xl font-extrabold leading-[1.05] tracking-tight text-steel-900 md:text-5xl">
+            Paling banyak dipesan <span className="text-accent">untuk proyek</span>
+          </h2>
+          <p className="mt-4 text-steel-600">
             Material inti yang siap stok dan paling sering dipakai kontraktor maupun pemilik rumah.
           </p>
         </div>
+      </div>
 
-        <motion.div
-          variants={reduce ? undefined : bentoContainer}
-          initial={reduce ? false : "hidden"}
-          whileInView={reduce ? undefined : "visible"}
-          viewport={{ once: true, amount: 0.15 }}
-          className="grid grid-cols-2 gap-4 lg:grid-cols-4 lg:auto-rows-[210px]"
+      {/* Full-bleed viewport so the track extends past the page gutters and the
+          edge cards crop into a natural "peek". `group/gal` drives the spotlight:
+          hovering anywhere dims every card except the active one. The vertical
+          padding gives the scaled-up card room before `overflow-hidden` clips. */}
+      <div className="marquee-viewport group/gal relative mt-14 overflow-hidden py-12">
+        {/* Edge fades — soften the crop into the background for an editorial feel. */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-20 w-16 bg-gradient-to-r from-steel-50 to-transparent md:w-28" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-20 w-16 bg-gradient-to-l from-steel-50 to-transparent md:w-28" />
+
+        <div
+          className="marquee-track flex w-max gap-6 md:gap-8"
+          style={{ ["--marquee-duration" as string]: duration }}
         >
-          <BentoTile product={hero} reduce={reduce} hero />
-          {rest.map((p) => (
-            <BentoTile key={p.slug} product={p} reduce={reduce} />
+          {loop.map((p, i) => (
+            <GalleryCard
+              key={`${p.slug}-${i}`}
+              product={p}
+              ariaHidden={i >= items.length}
+            />
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
 }
 
-function BentoTile({ product, hero, reduce }: { product: Product; hero?: boolean; reduce: boolean | null }) {
+function GalleryCard({ product, ariaHidden }: { product: Product; ariaHidden: boolean }) {
   return (
-    <motion.div
-      variants={reduce ? undefined : bentoItem}
-      className={`group relative ${hero ? "col-span-2 min-h-[280px] lg:row-span-2 lg:min-h-0" : "min-h-[190px]"}`}
+    <Link
+      href={`/produk/${product.slug}`}
+      aria-hidden={ariaHidden}
+      tabIndex={ariaHidden ? -1 : undefined}
+      /* Spotlight unit. When the gallery (group/gal) is hovered or focused, every
+         card dims + desaturates; the active card overrides that with `!` and
+         lifts/scales over its neighbours (centre origin, raised z-index). */
+      className="group/card relative block w-[280px] shrink-0 rounded-3xl transition-all duration-500 ease-out focus:outline-none focus-visible:outline-none sm:w-[320px] lg:w-[360px]
+        group-hover/gal:opacity-50 group-hover/gal:saturate-[0.8]
+        group-focus-within/gal:opacity-50 group-focus-within/gal:saturate-[0.8]
+        hover:z-10 hover:-translate-y-1.5 hover:scale-[1.05] hover:!opacity-100 hover:!saturate-100
+        focus-visible:z-10 focus-visible:-translate-y-1.5 focus-visible:scale-[1.05] focus-visible:!opacity-100 focus-visible:!saturate-100"
     >
-      <Link
-        href={`/produk/${product.slug}`}
-        className="relative flex h-full w-full flex-col justify-end overflow-hidden rounded-2xl shadow-card transition-shadow hover:shadow-card-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2"
-      >
+      <div className="relative aspect-[3/4] overflow-hidden rounded-3xl bg-steel-100 shadow-card ring-1 ring-steel-900/5 transition-shadow duration-500 ease-out group-hover/card:shadow-card-hover group-focus-visible/card:ring-2 group-focus-visible/card:ring-gold">
         <img
           src={product.image}
-          alt={product.name}
+          alt={ariaHidden ? "" : product.name}
           loading="lazy"
-          className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover/card:scale-[1.04] group-focus-visible/card:scale-[1.04]"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-steel-950/90 via-steel-950/35 to-transparent" />
-        <div className="relative z-10 p-4 md:p-5">
+        <div className="absolute inset-0 bg-gradient-to-t from-steel-950/45 via-transparent to-transparent" />
+
+        {/* Editorial category pills, top-left (brand + category). */}
+        <div className="absolute left-4 top-4 flex flex-wrap gap-2">
           {product.brand && (
-            <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-gold">{product.brand}</span>
+            <span className="rounded-full bg-white/90 px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-steel-800 backdrop-blur">
+              {product.brand}
+            </span>
           )}
-          <h3 className={`font-heading font-extrabold leading-tight text-white drop-shadow ${hero ? "text-2xl md:text-3xl" : "text-base"}`}>
-            {product.name}
-          </h3>
-          {hero && <p className="mt-2 max-w-md text-sm leading-relaxed text-steel-200">{product.summary}</p>}
-          <div className="mt-2 flex flex-wrap gap-1.5">
-            <StockBadge product={product} />
-            {product.badge && <MaterialBadge label={product.badge} />}
-          </div>
-          <span className="mt-2 inline-flex items-center gap-1 text-xs font-bold text-white">
-            Lihat detail <Icon name="chevron" className="h-3.5 w-3.5 text-gold" />
+          <span className="rounded-full bg-steel-900/80 px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white backdrop-blur">
+            {product.category}
           </span>
         </div>
-      </Link>
-    </motion.div>
+
+        {/* "View" disc — decorative affordance, fades + scales in on hover/focus. */}
+        <div className="pointer-events-none absolute inset-0 grid place-items-center">
+          <span
+            aria-hidden="true"
+            className="grid h-[88px] w-[88px] scale-90 place-items-center rounded-full border border-white/30 bg-steel-950/55 text-[11px] font-bold uppercase tracking-[0.18em] text-white opacity-0 backdrop-blur-sm transition-all duration-300 ease-out group-hover/card:scale-100 group-hover/card:opacity-100 group-focus-visible/card:scale-100 group-focus-visible/card:opacity-100"
+          >
+            View
+          </span>
+        </div>
+      </div>
+
+      {/* Meta below the image — title + category only (editorial, no shop cues). */}
+      <div className="mt-5 px-1">
+        <h3 className="truncate font-heading text-lg font-extrabold tracking-tight text-steel-900 transition-colors group-hover/card:text-accent">
+          {product.name}
+        </h3>
+        <p className="mt-1 text-sm text-steel-500">{product.category}</p>
+      </div>
+    </Link>
   );
 }
 
