@@ -102,7 +102,7 @@ export function AnimatedTestimonials({
           initial="hidden"
           animate={controls}
           variants={containerVariants}
-          className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 lg:gap-20"
+          className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-12 lg:gap-20"
         >
           {/* Left: heading + dot navigation */}
           <motion.div variants={itemVariants}>
@@ -127,54 +127,59 @@ export function AnimatedTestimonials({
             </div>
           </motion.div>
 
-          {/* Right: rotating testimonial cards */}
+          {/* Right: rotating testimonial cards (tallest-card-as-spacer technique) */}
           <motion.div
             variants={itemVariants}
-            className="relative min-h-[340px] md:min-h-[360px]"
+            className="relative w-full"
           >
-            {testimonials.map((t, index) => (
-              <motion.div
-                key={t.id}
-                className="absolute inset-0"
-                initial={{ opacity: 0, x: 60 }}
-                animate={{
-                  opacity: activeIndex === index ? 1 : 0,
-                  x: activeIndex === index ? 0 : 60,
-                  scale: activeIndex === index ? 1 : 0.95,
-                }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-                style={{
-                  zIndex: activeIndex === index ? 10 : 0,
-                  pointerEvents: activeIndex === index ? "auto" : "none",
-                }}
-              >
-                <div className="flex h-full flex-col rounded-2xl bg-gradient-to-b from-steel-900 to-steel-950 p-8 text-white shadow-xl">
-                  <StarRow count={t.rating} />
-                  <div className="relative mt-6 flex-1">
-                    <span className="absolute -left-1 -top-5 font-heading text-6xl leading-none text-gold/25">
-                      &ldquo;
-                    </span>
-                    <p className="relative text-lg font-medium leading-relaxed text-steel-100">
-                      {t.content}
-                    </p>
-                  </div>
-                  <div className="mt-6 h-px w-full bg-white/10" />
-                  <div className="mt-5 flex items-center gap-4">
-                    <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-gold/30 bg-gold/15 font-bold text-gold">
-                      {getInitials(t.name)}
-                    </span>
-                    <div>
-                      <div className="font-bold text-white">{t.name}</div>
-                      <div className="text-sm text-steel-400">{t.role}</div>
+            {testimonials.map((t, index) => {
+              const isActive = activeIndex === index;
+              return (
+                <motion.div
+                  key={t.id}
+                  // Non-active cards: invisible spacer that still contributes to height
+                  // Active card: sits on top via absolute positioning
+                  className={
+                    isActive
+                      ? "relative z-10"
+                      : "invisible absolute inset-0 z-0"
+                  }
+                  animate={{
+                    opacity: isActive ? 1 : 0,
+                    x: isActive ? 0 : 60,
+                    scale: isActive ? 1 : 0.95,
+                  }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                  style={{ pointerEvents: isActive ? "auto" : "none" }}
+                >
+                  <div className="flex flex-col rounded-2xl bg-gradient-to-b from-steel-900 to-steel-950 p-6 text-white shadow-xl md:p-8">
+                    <StarRow count={t.rating} />
+                    <div className="relative mt-6 flex-1">
+                      <span className="absolute -left-1 -top-5 font-heading text-6xl leading-none text-gold/25">
+                        &ldquo;
+                      </span>
+                      <p className="relative text-base font-medium leading-relaxed text-steel-100 md:text-lg">
+                        {t.content}
+                      </p>
+                    </div>
+                    <div className="mt-6 h-px w-full bg-white/10" />
+                    <div className="mt-5 flex items-center gap-4">
+                      <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-gold/30 bg-gold/15 font-bold text-gold">
+                        {getInitials(t.name)}
+                      </span>
+                      <div>
+                        <div className="font-bold text-white">{t.name}</div>
+                        <div className="text-sm text-steel-400">{t.role}</div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
 
-            {/* Decorative accents */}
-            <div className="absolute -bottom-6 -left-6 -z-10 h-24 w-24 rounded-2xl bg-gold/10" />
-            <div className="absolute -right-6 -top-6 -z-10 h-24 w-24 rounded-2xl bg-steel-900/5" />
+            {/* Decorative accents — hidden on mobile to prevent overflow */}
+            <div className="absolute -bottom-6 -left-6 -z-10 hidden h-24 w-24 rounded-2xl bg-gold/10 md:block" />
+            <div className="absolute -right-6 -top-6 -z-10 hidden h-24 w-24 rounded-2xl bg-steel-900/5 md:block" />
           </motion.div>
         </motion.div>
 

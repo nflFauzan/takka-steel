@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     url: SITE_URL,
     images: [
       {
-        url: "/images/og-takka-steel.png",
+        url: "/images/og-takka-steel.webp",
         width: 1200,
         height: 630,
         alt: "Takka Steel — Pusat Baja & Bahan Bangunan",

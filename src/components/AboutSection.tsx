@@ -177,7 +177,7 @@ const VALUES = [
   { icon: "handshake", title: "Kolaborasi", desc: "Bekerja sama dengan klien dan mitra untuk hasil terbaik." },
 ];
 
-const IMG_SRC = "/photos/tim.jpg";
+const IMG_SRC = "/photos/tim.webp";
 
 /* ------------------------------------------------------------------ */
 /*  Component                                                          */

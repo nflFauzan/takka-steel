@@ -14,13 +14,13 @@ export const metadata: Metadata = {
 
 // Foto pertama (index 0) tampil di tengah & membesar memenuhi layar saat scroll.
 const PARALLAX_PHOTOS = [
-  { src: "/photos/gudang-utama.png", alt: "Gudang utama Takka Steel di Ciomas, Bogor" },
-  { src: "/photos/tim.jpg", alt: "Tim profesional Takka Steel berseragam" },
-  { src: "/photos/founder.jpg", alt: "Founder Takka Steel di depan toko" },
-  { src: "/photos/kegiatan-1.jpg", alt: "Tim Takka Steel memuat material baja ke armada" },
-  { src: "/photos/kirim-istana.jpg", alt: "Pengiriman material Takka Steel ke area Istana Bogor" },
-  { src: "/photos/kirim-wiremesh.jpg", alt: "Armada Takka Steel memuat besi wiremesh" },
-  { src: "/photos/display-alderon.jpg", alt: "Pengiriman pipa dan material bangunan oleh Takka Steel" },
+  { src: "/photos/gudang-utama.webp", alt: "Gudang utama Takka Steel di Ciomas, Bogor" },
+  { src: "/photos/tim.webp", alt: "Tim profesional Takka Steel berseragam" },
+  { src: "/photos/founder.webp", alt: "Founder Takka Steel di depan toko" },
+  { src: "/photos/kegiatan-1.webp", alt: "Tim Takka Steel memuat material baja ke armada" },
+  { src: "/photos/kirim-istana.webp", alt: "Pengiriman material Takka Steel ke area Istana Bogor" },
+  { src: "/photos/kirim-wiremesh.webp", alt: "Armada Takka Steel memuat besi wiremesh" },
+  { src: "/photos/display-alderon.webp", alt: "Pengiriman pipa dan material bangunan oleh Takka Steel" },
 ];
 
 export default function TentangPage() {
@@ -94,7 +94,7 @@ export default function TentangPage() {
           <Reveal className="relative">
             <div className="relative aspect-[4/5] w-full max-w-md overflow-hidden bg-steel-100">
               <img
-                src="/photos/founder.jpg"
+                src="/photos/founder.webp"
                 alt={`${company.founderName} — Founder Takka Steel`}
                 className="h-full w-full object-cover"
               />
@@ -167,7 +167,7 @@ export default function TentangPage() {
           <Reveal delay={100} className="mt-10">
             <div className="relative overflow-hidden">
               <img
-                src="/photos/tim.jpg"
+                src="/photos/tim.webp"
                 alt="Tim Takka Steel — staf gudang, admin, sales, dan kurir berseragam"
                 className="h-auto w-full object-cover"
               />
@@ -229,7 +229,7 @@ export default function TentangPage() {
           <div className="mt-10 grid gap-px overflow-hidden border border-steel-800 bg-steel-800 md:grid-cols-2 lg:grid-cols-3">
             <Reveal className="relative aspect-[3/4] overflow-hidden bg-steel-900">
               <img
-                src="/photos/rak-baja.jpg"
+                src="/photos/rak-baja.webp"
                 alt="Stok besi dan baja ringan tertata rapi di rak toko Takka Steel"
                 className="h-full w-full object-cover"
               />
@@ -240,7 +240,7 @@ export default function TentangPage() {
             </Reveal>
             <Reveal delay={80} className="relative aspect-[3/4] overflow-hidden bg-steel-900">
               <img
-                src="/photos/kegiatan-2.jpg"
+                src="/photos/kegiatan-2.webp"
                 alt="Proses pemuatan pipa besi hollow ke armada Takka Steel"
                 className="h-full w-full object-cover"
               />
@@ -249,9 +249,9 @@ export default function TentangPage() {
                 <p className="mt-1 text-sm text-steel-300">Pengiriman cepat dan aman dengan kurir internal kami.</p>
               </div>
             </Reveal>
-            <Reveal delay={160} className="relative aspect-square overflow-hidden bg-steel-900 md:col-span-2 lg:col-span-1">
+            <Reveal delay={160} className="relative aspect-[3/4] overflow-hidden bg-steel-900">
               <img
-                src="/photos/kirim-istana.jpg"
+                src="/photos/kirim-istana.webp"
                 alt="Truk Takka Steel melakukan pengiriman di area Istana Bogor"
                 className="h-full w-full object-cover"
               />
@@ -319,11 +319,10 @@ export default function TentangPage() {
       </section>
 
       {/* ── Apa Kata Pelanggan ───────────────────────────────── */}
-      {/* ⚠️ PLACEHOLDER — ganti dengan testimoni nyata bila sudah ada. */}
       <section className="section bg-steel-50">
         <div className="container-px">
           <h2 className="max-w-2xl font-heading text-3xl font-extrabold leading-tight text-steel-900 md:text-4xl">
-            Apa kata pelanggan kami
+            Apa kata pelanggan kami?
           </h2>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {testimonials.map((t, i) => (

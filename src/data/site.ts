@@ -1,6 +1,5 @@
 /**
  * Why-choose-us value props, testimonials, partner logos and FAQ.
- * ⚠️ PLACEHOLDER DATA — edit freely.
  */
 
 export const valueProps = [
@@ -33,21 +32,21 @@ export const valueProps = [
 export const testimonials = [
   {
     quote:
-      "Material selalu datang tepat waktu dan sesuai pesanan. Tim Takka Steel sangat responsif saat kami butuh tambahan baja ringan mendadak.",
+      "Sudah beberapa kali membeli material di Takka Steel untuk kebutuhan proyek. Pelayanannya cepat, barang sesuai pesanan, kualitasnya bagus, dan pengirimannya selalu tepat waktu. Sangat puas.",
+    name: "Andi Pratama",
+    role: "Kontraktor",
+  },
+  {
+    quote:
+      "Takka Steel menjadi salah satu supplier yang paling kami percaya. Stok produknya lengkap, harga kompetitif, admin responsif, dan proses pemesanannya mudah. Sangat direkomendasikan.",
+    name: "Rina Wulandari",
+    role: "Pemilik Toko Bangunan",
+  },
+  {
+    quote:
+      "Pengalaman belanja di Takka Steel sangat memuaskan. Material yang dikirim sesuai pesanan, kualitasnya baik, dan pengirimannya cepat. Pasti akan kembali order untuk proyek berikutnya.",
     name: "Budi Santoso",
-    role: "Kontraktor, Proyek Perumahan Bogor",
-  },
-  {
-    quote:
-      "Harganya bersaing dan kualitas baja ringan serta atapnya bagus. Sudah beberapa kali order untuk proyek atap, tidak pernah kecewa.",
-    name: "Andi Wijaya",
-    role: "Pemilik CV Karya Mandiri",
-  },
-  {
-    quote:
-      "Pelayanannya ramah dan mau bantu hitung kebutuhan material. Cocok buat yang baru pertama kali bangun rumah.",
-    name: "Siti Rahmawati",
-    role: "Pemilik Rumah Tinggal",
+    role: "Mandor Proyek",
   },
 ];
 

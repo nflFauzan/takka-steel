@@ -12,7 +12,7 @@ export default function Logo({ light = false }: { light?: boolean }) {
     return (
       <Link href="/" className="group inline-flex items-center">
         <Image
-          src="/images/logo-white.png"
+          src="/images/logo-white.webp"
           alt={company.name}
           width={1080}
           height={1080}
@@ -27,7 +27,7 @@ export default function Logo({ light = false }: { light?: boolean }) {
   return (
     <Link href="/" className="inline-flex items-center">
       <Image
-        src="/images/logo-trimmed.png"
+        src="/images/logo-trimmed.webp"
         alt={company.name}
         width={1920}
         height={905}

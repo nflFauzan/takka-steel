@@ -76,37 +76,37 @@ export const departments: Department[] = [
     slug: "struktur-baja",
     name: "Struktur & Baja",
     tagline: "Baja ringan, besi struktural, plat & wiremesh",
-    image: "/products/baja-ringan.jpg",
+    image: "/products/baja-ringan.webp",
   },
   {
     slug: "atap-spandek",
     name: "Atap & Spandek",
     tagline: "Spandek, bondeck, genteng metal & nok",
-    image: "/products/atap-metal.png",
+    image: "/products/atap-metal.webp",
   },
   {
     slug: "atap-upvc",
     name: "Atap uPVC",
     tagline: "Alderon, Atlas & Takka — peredam panas & suara",
-    image: "/products/alderon.jpg",
+    image: "/products/alderon.webp",
   },
   {
     slug: "plafon-interior",
     name: "Plafon, Dinding & Interior",
     tagline: "Gypsum, GRC, PVC board, list & triplek",
-    image: "/products/plafond-pvc.png",
+    image: "/products/plafond-pvc.webp",
   },
   {
     slug: "pipa-saluran",
     name: "Pipa & Saluran Air",
     tagline: "Pipa PVC, besi, fitting & selang",
-    image: "/products/pipa.jpg",
+    image: "/products/pipa.webp",
   },
   {
     slug: "aksesoris-perkakas",
     name: "Aksesoris & Perkakas",
     tagline: "Baut, sekrup, kawat & material pendukung",
-    image: "/products/baut-screw.png",
+    image: "/products/baut-screw.webp",
   },
 ];
 
@@ -131,7 +131,7 @@ export const products: Product[] = [
     stock: "ready",
     featured: true,
     priceFrom: "Rp55.000",
-    image: "/products/baja-ringan.jpg",
+    image: "/products/baja-ringan.webp",
     summary:
       "Kanal C baja ringan profil C75×35 untuk rangka kuda-kuda atap — lebih kuat & ringan dibanding kayu, tahan rayap & karat.",
     description:
@@ -308,7 +308,7 @@ export const products: Product[] = [
     stock: "ready",
     featured: true,
     priceFrom: "Rp264.000",
-    image: "/products/cnp.png",
+    image: "/products/cnp.webp",
     summary:
       "Kanal C (CNP) baja hitam untuk gording & rangka atap berat — kekuatan & ketahanan tinggi, serbaguna.",
     description:
@@ -349,7 +349,7 @@ export const products: Product[] = [
     badge: "Per Batang",
     stock: "ready",
     priceFrom: "Rp42.000",
-    image: "/products/nako-polos.png",
+    image: "/products/nako-polos.webp",
     summary:
       "Besi nako (jalusi) untuk teralis & ventilasi — mudah dibentuk, multifungsi, dan harga terjangkau.",
     description:
@@ -435,7 +435,7 @@ export const products: Product[] = [
     badge: "Galvanis",
     stock: "ready",
     priceFrom: "Rp253.000",
-    image: "/products/plat.jpg",
+    image: "/products/plat.webp",
     summary:
       "Plat galvanis lembaran anti karat untuk talang, ducting & fabrikasi — kuat, serbaguna, dan ekonomis.",
     description:
@@ -502,7 +502,7 @@ export const products: Product[] = [
     stock: "ready",
     featured: true,
     priceFrom: "Rp483.000",
-    image: "/products/wiremesh.png",
+    image: "/products/wiremesh.webp",
     summary:
       "Anyaman tulangan siap pakai untuk cor dak & lantai — mempercepat pekerjaan, efisien dan ekonomis.",
     description:
@@ -522,7 +522,7 @@ export const products: Product[] = [
     department: "struktur-baja",
     badge: "Per Kg / Rol",
     stock: "ready",
-    image: "/products/kawat.png",
+    image: "/products/kawat.webp",
     summary:
       "Aneka kawat konstruksi: bendrat pengikat tulangan dan kawat las — tersedia per kg maupun rol.",
     description:
@@ -570,7 +570,7 @@ export const products: Product[] = [
     badge: "Warna",
     stock: "ready",
     featured: true,
-    image: "/products/atap-metal.png",
+    image: "/products/atap-metal.webp",
     summary:
       "Atap metal berwarna ringan & kuat dengan banyak pilihan warna — estetis untuk hunian & komersial.",
     description:
@@ -661,7 +661,7 @@ export const products: Product[] = [
     stock: "ready",
     featured: true,
     priceFrom: "Rp65.000",
-    image: "/products/bondeck.png",
+    image: "/products/bondeck.webp",
     summary:
       "Pelat baja bergelombang sebagai bekisting permanen sekaligus tulangan bawah lantai cor — kuat & efisien.",
     description:
@@ -686,7 +686,7 @@ export const products: Product[] = [
     stock: "ready",
     featured: true,
     priceFrom: "Rp21.500",
-    image: "/products/genteng-metal.png",
+    image: "/products/genteng-metal.webp",
     summary:
       "Genteng metal berpasir ringan menyerupai genteng konvensional — hemat waktu, kuat, dan rapi.",
     description:
@@ -752,7 +752,7 @@ export const products: Product[] = [
     department: "atap-spandek",
     badge: "Gelombang",
     stock: "ready",
-    image: "/products/asbes.png",
+    image: "/products/asbes.webp",
     summary:
       "Lembaran atap gelombang fiber semen yang ekonomis, meredam panas, dan mudah dipasang.",
     description:
@@ -773,7 +773,7 @@ export const products: Product[] = [
     brand: "Onduline",
     badge: "Bitumen",
     stock: "ready",
-    image: "/products/onduline.png",
+    image: "/products/onduline.webp",
     summary:
       "Atap bitumen bergelombang ringan & lentur — kedap air, senyap saat hujan, dengan warna tahan lama.",
     description:
@@ -796,7 +796,7 @@ export const products: Product[] = [
     badge: "Per Lembar",
     stock: "ready",
     priceFrom: "Rp11.000",
-    image: "/products/nok.png",
+    image: "/products/nok.webp",
     summary:
       "Penutup pertemuan atap (nok) untuk spandek & genteng metal — rapi, kuat, dan kedap bocor.",
     description:
@@ -821,7 +821,7 @@ export const products: Product[] = [
     stock: "ready",
     featured: true,
     priceFrom: "Rp149.000",
-    image: "/products/alderon.jpg",
+    image: "/products/alderon.webp",
     summary:
       "Atap uPVC berongga (twinwall) dengan peredaman panas & suara maksimal — premium dan tahan lama.",
     description:
@@ -956,7 +956,7 @@ export const products: Product[] = [
     badge: "Anti Air",
     stock: "ready",
     featured: true,
-    image: "/products/plafond-pvc.png",
+    image: "/products/plafond-pvc.webp",
     summary:
       "Panel plafon PVC anti air & anti rayap dengan beragam motif — rapi, ringan, dan mudah dibersihkan.",
     description:
@@ -977,7 +977,7 @@ export const products: Product[] = [
     badge: "9 mm",
     stock: "ready",
     priceFrom: "Rp48.000",
-    image: "/products/gypsum.png",
+    image: "/products/gypsum.webp",
     summary:
       "Papan gypsum permukaan halus untuk plafon & partisi — mudah dibentuk, tahan api, dan kedap suara.",
     description:
@@ -999,7 +999,7 @@ export const products: Product[] = [
     department: "plafon-interior",
     badge: "Profil",
     stock: "ready",
-    image: "/products/list-gypsum.png",
+    image: "/products/list-gypsum.webp",
     summary:
       "List gypsum dekoratif sebagai penutup pertemuan plafon & dinding — rapi dan menambah estetika.",
     description:
@@ -1019,7 +1019,7 @@ export const products: Product[] = [
     department: "plafon-interior",
     badge: "Profil",
     stock: "ready",
-    image: "/products/list-plafond.png",
+    image: "/products/list-plafond.webp",
     summary:
       "List plafond sebagai bingkai tepi plafon — merapikan sambungan dan mempercantik tampilan ruang.",
     description:
@@ -1039,7 +1039,7 @@ export const products: Product[] = [
     department: "plafon-interior",
     badge: "Anti Air",
     stock: "ready",
-    image: "/products/list-pvc.png",
+    image: "/products/list-pvc.webp",
     summary:
       "List PVC anti air & anti rayap untuk finishing plafon PVC — awet di area lembap dan mudah dibersihkan.",
     description:
@@ -1063,7 +1063,7 @@ export const products: Product[] = [
     stock: "ready",
     featured: true,
     priceFrom: "Rp64.000",
-    image: "/products/triplek.png",
+    image: "/products/triplek.webp",
     summary:
       "Triplek/plywood furniture permukaan halus & anti melengkung — kuat namun ringan untuk interior.",
     description:
@@ -1105,7 +1105,7 @@ export const products: Product[] = [
     badge: "Anti Air",
     stock: "ready",
     priceFrom: "Rp155.000",
-    image: "/products/pvc-board.png",
+    image: "/products/pvc-board.webp",
     summary:
       "Papan PVC foam anti air & rayap sebagai pengganti triplek untuk furnitur area basah — mudah dicetak.",
     description:
@@ -1127,7 +1127,7 @@ export const products: Product[] = [
     department: "plafon-interior",
     badge: "AAC",
     stock: "ready",
-    image: "/products/hebel.jpg",
+    image: "/products/hebel.webp",
     summary:
       "Bata ringan AAC presisi yang ringan & hemat — pemasangan cepat, meredam panas, dan kedap suara.",
     description:
@@ -1169,7 +1169,7 @@ export const products: Product[] = [
     department: "pipa-saluran",
     badge: "Galvanis",
     stock: "ready",
-    image: "/products/pipa.jpg",
+    image: "/products/pipa.webp",
     summary:
       "Pipa besi/galvanis untuk struktur ringan, railing & instalasi bertekanan — kuat dan tahan karat.",
     description:
@@ -1210,7 +1210,7 @@ export const products: Product[] = [
     department: "pipa-saluran",
     badge: "Fitting",
     stock: "ready",
-    image: "/products/aksesoris-pipa.png",
+    image: "/products/aksesoris-pipa.webp",
     summary:
       "Kelengkapan sambungan pipa: elbow, tee, sock, reducer & flange — untuk instalasi rapi dan rapat.",
     description:
@@ -1230,7 +1230,7 @@ export const products: Product[] = [
     department: "pipa-saluran",
     badge: "Per Meter / Rol",
     stock: "ready",
-    image: "/products/selang.png",
+    image: "/products/selang.webp",
     summary:
       "Aneka selang air (PVC, benang, spiral) untuk taman, cuci & distribusi air — lentur dan tahan lama.",
     description:
@@ -1252,7 +1252,7 @@ export const products: Product[] = [
     department: "aksesoris-perkakas",
     badge: "Per Pcs / Dus",
     stock: "ready",
-    image: "/products/baut-screw.png",
+    image: "/products/baut-screw.webp",
     summary:
       "Aneka baut, sekrup roofing, sekrup gypsum & dinabolt — pengencang lengkap untuk semua pemasangan.",
     description:
