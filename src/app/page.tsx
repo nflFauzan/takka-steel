@@ -2,6 +2,7 @@ import dynamic from "next/dynamic";
 import HeroVideo from "@/components/HeroVideo";
 import AboutSection from "@/components/AboutSection";
 import CategoryShowcase from "@/components/CategoryShowcase";
+import HomeBestsellers from "@/components/HomeBestsellers";
 import Reveal from "@/components/Reveal";
 import Icon, { type IconName } from "@/components/Icon";
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
@@ -24,6 +25,7 @@ export default function HomePage() {
       <HeroVideo />
       <AboutSection />
       <CategoryShowcase />
+      <HomeBestsellers />
       <OrderProcess />
       <TestimonialsSection />
       <FaqSection />

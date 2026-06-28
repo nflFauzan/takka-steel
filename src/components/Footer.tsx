@@ -2,7 +2,7 @@ import Link from "next/link";
 import Logo from "./Logo";
 import Icon from "./Icon";
 import { company, waLink } from "@/data/company";
-import { productCategories } from "@/data/products";
+import { departments } from "@/data/products";
 
 function ColHeading({ children }: { children: React.ReactNode }) {
   return (
@@ -55,12 +55,12 @@ export default function Footer() {
         </div>
 
         <div>
-          <ColHeading>Produk Unggulan</ColHeading>
+          <ColHeading>Kategori Produk</ColHeading>
           <ul className="mt-4 space-y-2 text-sm">
-            {productCategories.map((c) => (
-              <li key={c}>
-                <Link href="/produk" className="hover:text-white">
-                  {c}
+            {departments.map((d) => (
+              <li key={d.slug}>
+                <Link href={`/produk?dept=${d.slug}`} className="hover:text-white">
+                  {d.name}
                 </Link>
               </li>
             ))}

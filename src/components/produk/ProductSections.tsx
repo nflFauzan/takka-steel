@@ -10,17 +10,19 @@
  *  - ProductComparison — side-by-side spec variants
  */
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence, useReducedMotion, type Variants } from "framer-motion";
 import Icon, { type IconName } from "@/components/Icon";
 import {
   products,
   featuredProducts,
-  productCategories,
   comparisonGroups,
   stockLabel,
+  departments,
+  categoriesInDepartment,
   type Product,
+  type DepartmentSlug,
 } from "@/data/products";
 import { waLink } from "@/data/company";
 
@@ -184,25 +186,83 @@ function BentoTile({ product, hero, reduce }: { product: Product; hero?: boolean
 /*  FILTERABLE CATALOG                                                     */
 /* ====================================================================== */
 
+/**
+ * Local spelling/synonym map so customer-typed terms still match. Indonesian
+ * builders type phonetically ("holo", "galvalum") or by brand/use-case.
+ * Keys are what people type; values are a term that exists in the catalog.
+ */
+const SEARCH_SYNONYMS: Record<string, string> = {
+  holo: "hollow",
+  hollo: "hollow",
+  galvalum: "galvalume",
+  gipsum: "gypsum",
+  gibsum: "gypsum",
+  bondek: "bondeck",
+  bondex: "bondeck",
+  spandex: "spandek",
+  wermes: "wiremesh",
+  weremesh: "wiremesh",
+  triplex: "triplek",
+  pintu: "nako",
+  teralis: "nako",
+  dak: "bondeck",
+};
+
 export function ProductCatalog() {
   const reduce = useReducedMotion();
+  const [dept, setDept] = useState<DepartmentSlug | "all">("all");
   const [cat, setCat] = useState<string>("Semua");
   const [query, setQuery] = useState("");
 
+  // Deep-link support: /produk?dept=atap-spandek from homepage department cards.
+  useEffect(() => {
+    const param = new URLSearchParams(window.location.search).get("dept");
+    if (param && departments.some((d) => d.slug === param)) {
+      setDept(param as DepartmentSlug);
+      // jump the user to the catalog so the filtered result is in view
+      document.getElementById("katalog")?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, []);
+
+  // Category chips depend on the selected department.
+  const catChips = useMemo(() => {
+    const cats =
+      dept === "all"
+        ? Array.from(new Set(products.map((p) => p.category)))
+        : categoriesInDepartment(dept);
+    return ["Semua", ...cats];
+  }, [dept]);
+
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
+    const canon = SEARCH_SYNONYMS[q] ?? q; // map typo/synonym to a catalog term
     return products.filter((p) => {
+      const matchDept = dept === "all" || p.department === dept;
       const matchCat = cat === "Semua" || p.category === cat;
+      // Search across name, brand, summary, category AND use-cases so queries
+      // like "kanopi" or "dak" surface the right products.
+      const haystack = [
+        p.name,
+        p.brand ?? "",
+        p.summary,
+        p.category,
+        ...p.uses,
+      ]
+        .join(" ")
+        .toLowerCase();
       const matchQuery =
-        q === "" ||
-        p.name.toLowerCase().includes(q) ||
-        p.summary.toLowerCase().includes(q) ||
-        (p.brand ?? "").toLowerCase().includes(q);
-      return matchCat && matchQuery;
+        q === "" || haystack.includes(q) || haystack.includes(canon);
+      return matchDept && matchCat && matchQuery;
     });
-  }, [cat, query]);
+  }, [dept, cat, query]);
 
-  const chips = ["Semua", ...productCategories];
+  const activeDeptName =
+    dept === "all" ? null : departments.find((d) => d.slug === dept)?.name;
+
+  const selectDept = (d: DepartmentSlug | "all") => {
+    setDept(d);
+    setCat("Semua"); // reset sub-category when switching department
+  };
 
   return (
     <section id="katalog" className="scroll-mt-24 bg-white py-16 md:py-20">
@@ -210,63 +270,116 @@ export function ProductCatalog() {
         <div className="mb-8 max-w-2xl">
           <h2 className="h2 text-steel-900">Katalog material lengkap</h2>
           <p className="mt-3 text-steel-600">
-            Saring berdasarkan kategori atau cari nama produk. Klik produk untuk melihat spesifikasi lengkap.
+            Pilih departemen, saring kategori, atau cari nama produk. Klik produk untuk melihat spesifikasi lengkap.
           </p>
         </div>
 
-        {/* Controls */}
-        <div className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-          <div className="flex flex-wrap gap-2">
-            {chips.map((c) => {
-              const active = cat === c;
-              return (
+        {/* Sticky filter bar — stays in reach while the customer scrolls. */}
+        <div className="sticky top-20 z-30 mb-8 rounded-2xl border border-steel-100 bg-white/90 p-4 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-white/75">
+          {/* Row 1 — Departemen (level 1) + search */}
+          <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
+            <div className="min-w-0">
+              <span className="mb-2 block text-[11px] font-bold uppercase tracking-[0.16em] text-steel-400">
+                Kategori Utama
+              </span>
+              <div className="flex flex-wrap gap-2">
                 <button
-                  key={c}
                   type="button"
-                  onClick={() => setCat(c)}
+                  onClick={() => selectDept("all")}
                   className={`rounded-full px-4 py-2 text-sm font-bold transition ${
-                    active
+                    dept === "all"
                       ? "bg-steel-900 text-white shadow-sm"
                       : "border border-steel-200 bg-white text-steel-600 hover:border-steel-400 hover:text-steel-900"
                   }`}
                 >
-                  {c}
+                  Semua Produk
                 </button>
-              );
-            })}
+                {departments.map((d) => {
+                  const active = dept === d.slug;
+                  return (
+                    <button
+                      key={d.slug}
+                      type="button"
+                      onClick={() => selectDept(d.slug)}
+                      className={`rounded-full px-4 py-2 text-sm font-bold transition ${
+                        active
+                          ? "bg-steel-900 text-white shadow-sm"
+                          : "border border-steel-200 bg-white text-steel-600 hover:border-steel-400 hover:text-steel-900"
+                      }`}
+                    >
+                      {d.name}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className="relative w-full lg:w-72 lg:shrink-0">
+              <label htmlFor="cari-produk" className="sr-only">
+                Cari produk
+              </label>
+              <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-steel-400">
+                <Icon name="search" className="h-4 w-4" />
+              </span>
+              <input
+                id="cari-produk"
+                type="text"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Cari produk, mis. kanopi, dak, hollow…"
+                className="w-full rounded-full border border-steel-200 bg-white py-2.5 pl-9 pr-9 text-sm text-steel-900 placeholder:text-steel-400 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+              />
+              {query && (
+                <button
+                  type="button"
+                  onClick={() => setQuery("")}
+                  aria-label="Hapus pencarian"
+                  className="absolute right-2.5 top-1/2 -translate-y-1/2 text-steel-400 hover:text-steel-700"
+                >
+                  <Icon name="x" className="h-4 w-4" />
+                </button>
+              )}
+            </div>
           </div>
 
-          <div className="relative w-full lg:w-72">
-            <label htmlFor="cari-produk" className="sr-only">
-              Cari produk
-            </label>
-            <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-steel-400">
-              <Icon name="search" className="h-4 w-4" />
-            </span>
-            <input
-              id="cari-produk"
-              type="text"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Cari produk..."
-              className="w-full rounded-full border border-steel-200 bg-white py-2.5 pl-9 pr-9 text-sm text-steel-900 placeholder:text-steel-400 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
-            />
-            {query && (
-              <button
-                type="button"
-                onClick={() => setQuery("")}
-                aria-label="Hapus pencarian"
-                className="absolute right-2.5 top-1/2 -translate-y-1/2 text-steel-400 hover:text-steel-700"
-              >
-                <Icon name="x" className="h-4 w-4" />
-              </button>
-            )}
-          </div>
+          {/* Row 2 — Sub-kategori (level 2), only once a department is chosen */}
+          {dept !== "all" && (
+            <div className="mt-4 border-t border-steel-100 pt-4">
+              <span className="mb-2 block text-[11px] font-bold uppercase tracking-[0.16em] text-steel-400">
+                Sub-kategori {activeDeptName}
+              </span>
+              <div className="flex flex-wrap gap-2">
+                {catChips.map((c) => {
+                  const active = cat === c;
+                  return (
+                    <button
+                      key={c}
+                      type="button"
+                      onClick={() => setCat(c)}
+                      className={`rounded-full px-3.5 py-1.5 text-sm font-bold transition ${
+                        active
+                          ? "bg-accent text-white shadow-sm"
+                          : "border border-steel-200 bg-white text-steel-600 hover:border-accent hover:text-accent"
+                      }`}
+                    >
+                      {c === "Semua" ? "Semua Kategori" : c}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          )}
         </div>
 
         <p className="mb-6 text-sm text-steel-500">
           Menampilkan <span className="font-bold text-steel-900">{filtered.length}</span> produk
-          {cat !== "Semua" && <> di kategori <span className="font-bold text-steel-900">{cat}</span></>}.
+          {activeDeptName && (
+            <> di <span className="font-bold text-steel-900">{activeDeptName}</span></>
+          )}
+          {cat !== "Semua" && (
+            <> › <span className="font-bold text-steel-900">{cat}</span></>
+          )}
+          .
         </p>
 
         {filtered.length === 0 ? (
@@ -279,6 +392,7 @@ export function ProductCatalog() {
             <button
               type="button"
               onClick={() => {
+                setDept("all");
                 setCat("Semua");
                 setQuery("");
               }}
