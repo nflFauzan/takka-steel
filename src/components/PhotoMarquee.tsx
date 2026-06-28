@@ -47,7 +47,7 @@ export default function PhotoMarquee({
     return (
       <div className="container-px grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-3">
         {photos.map((p) => (
-          <div key={p.src} className="aspect-[4/3] overflow-hidden bg-steel-100">
+          <div key={p.src} className="aspect-[3/4] overflow-hidden bg-steel-100">
             <img
               src={p.src}
               alt={p.alt}
@@ -76,7 +76,7 @@ export default function PhotoMarquee({
         {doubled.map((p, i) => (
           <div
             key={`${p.src}-${i}`}
-            className="relative aspect-[4/3] w-[300px] flex-shrink-0 overflow-hidden bg-steel-100 md:w-[360px]"
+            className="relative aspect-[3/4] w-[260px] flex-shrink-0 overflow-hidden bg-steel-100 md:w-[300px]"
           >
             <img
               src={p.src}

@@ -15,9 +15,18 @@ export const metadata: Metadata = {
 const ACTIVITY_PHOTOS = [
   { src: "/photos/kegiatan-3.jpg", alt: "Gudang utama Takka Steel di Ciomas, Bogor" },
   { src: "/photos/kegiatan-1.jpg", alt: "Tim Takka Steel memuat material baja" },
+  { src: "/photos/kirim-istana.jpg", alt: "Pengiriman material baja oleh Takka Steel ke area Istana Bogor" },
+  { src: "/photos/rak-baja.jpg", alt: "Display rak besi hollow dan reng baja ringan di toko" },
   { src: "/photos/kegiatan-4.jpg", alt: "Armada pengiriman siap berangkat dari gudang" },
+  { src: "/photos/display-alderon.jpg", alt: "Display sampel warna atap UPVC Alderon" },
+  { src: "/photos/kirim-hollow.jpg", alt: "Armada truk Takka Steel memuat besi hollow" },
   { src: "/photos/kegiatan-2.jpg", alt: "Armada pengiriman Takka Steel di gudang" },
+  { src: "/photos/stok-grc.jpg", alt: "Stok papan GRC board melimpah di gudang" },
+  { src: "/photos/kirim-triplek.jpg", alt: "Pengiriman triplek menggunakan armada Takka Steel" },
   { src: "/photos/kegiatan-5.jpg", alt: "Armada pengiriman dalam perjalanan" },
+  { src: "/photos/kirim-semen.jpg", alt: "Pengiriman semen dan pipa paralon ke lokasi proyek" },
+  { src: "/photos/kirim-wiremesh.jpg", alt: "Truk pengangkut wiremesh bersiap kirim" },
+  { src: "/photos/stok-wiremesh.jpg", alt: "Stok besi beton wiremesh di area luar gudang" },
   { src: "/photos/tim.jpg", alt: "Tim profesional Takka Steel" },
 ];
 
@@ -230,37 +239,37 @@ export default function TentangPage() {
           </div>
 
           <div className="mt-10 grid gap-px overflow-hidden border border-steel-800 bg-steel-800 md:grid-cols-2 lg:grid-cols-3">
-            <Reveal className="relative aspect-[4/3] overflow-hidden bg-steel-900">
+            <Reveal className="relative aspect-[3/4] overflow-hidden bg-steel-900">
+              <img
+                src="/photos/rak-baja.jpg"
+                alt="Stok besi dan baja ringan tertata rapi di rak toko Takka Steel"
+                className="h-full w-full object-cover"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-steel-950 to-transparent p-5">
+                <p className="font-heading text-lg font-bold text-white">Pusat Material Lengkap</p>
+                <p className="mt-1 text-sm text-steel-300">Segala jenis produk baja dan bahan bangunan siap sedia.</p>
+              </div>
+            </Reveal>
+            <Reveal delay={80} className="relative aspect-[3/4] overflow-hidden bg-steel-900">
               <img
                 src="/photos/kegiatan-2.jpg"
-                alt="Armada pengiriman Takka Steel siap muat"
+                alt="Proses pemuatan pipa besi hollow ke armada Takka Steel"
                 className="h-full w-full object-cover"
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-steel-950 to-transparent p-5">
-                <p className="font-heading text-lg font-bold text-white">Armada Bermerek</p>
-                <p className="mt-1 text-sm text-steel-300">Truk Takka Steel siap antar pesanan.</p>
+                <p className="font-heading text-lg font-bold text-white">Armada Sendiri</p>
+                <p className="mt-1 text-sm text-steel-300">Pengiriman cepat dan aman dengan kurir internal kami.</p>
               </div>
             </Reveal>
-            <Reveal delay={80} className="relative aspect-[4/3] overflow-hidden bg-steel-900">
+            <Reveal delay={160} className="relative aspect-square overflow-hidden bg-steel-900 md:col-span-2 lg:col-span-1">
               <img
-                src="/photos/kegiatan-4.jpg"
-                alt="Material baja siap kirim dari gudang Takka Steel"
+                src="/photos/kirim-istana.jpg"
+                alt="Truk Takka Steel melakukan pengiriman di area Istana Bogor"
                 className="h-full w-full object-cover"
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-steel-950 to-transparent p-5">
-                <p className="font-heading text-lg font-bold text-white">Gudang Sentral</p>
-                <p className="mt-1 text-sm text-steel-300">Stok lengkap di Ciomas, Bogor.</p>
-              </div>
-            </Reveal>
-            <Reveal delay={160} className="relative aspect-[4/3] overflow-hidden bg-steel-900 md:col-span-2 lg:col-span-1">
-              <img
-                src="/photos/kegiatan-5.jpg"
-                alt="Armada Takka Steel dalam perjalanan pengiriman"
-                className="h-full w-full object-cover"
-              />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-steel-950 to-transparent p-5">
-                <p className="font-heading text-lg font-bold text-white">Jangkauan Luas</p>
-                <p className="mt-1 text-sm text-steel-300">Jabodetabek &amp; seluruh Indonesia.</p>
+                <p className="font-heading text-lg font-bold text-white">Proyek Prestisius</p>
+                <p className="mt-1 text-sm text-steel-300">Dipercaya melayani pengiriman proyek penting Jabodetabek.</p>
               </div>
             </Reveal>
           </div>
