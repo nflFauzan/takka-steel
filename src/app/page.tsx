@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+
 import HeroVideo from "@/components/HeroVideo";
 import AboutSection from "@/components/AboutSection";
 import CategoryShowcase from "@/components/CategoryShowcase";
@@ -8,14 +9,23 @@ import Icon, { type IconName } from "@/components/Icon";
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 import { company, waLink, waLink2, defaultWaMessage } from "@/data/company";
 import { faqs, testimonials as clientTestimonials, partners } from "@/data/site";
+import { MapErrorBoundary } from "@/components/ui/MapErrorBoundary";
+
+// ── Map loading skeleton ───────────────────────────────────────────────────
+function MapSkeleton() {
+  return (
+    <div className="flex h-full w-full flex-col items-center justify-center gap-3 rounded-2xl bg-steel-100 animate-pulse">
+      <div className="h-8 w-8 rounded-full bg-steel-300" />
+      <div className="h-3 w-24 rounded bg-steel-300" />
+    </div>
+  );
+}
 
 const InteractiveMap = dynamic(
   () => import("@/components/ui/InteractiveMap"),
   {
     ssr: false,
-    loading: () => (
-      <div className="flex h-full w-full animate-pulse items-center justify-center rounded-2xl bg-steel-100" />
-    ),
+    loading: () => <MapSkeleton />,
   }
 );
 
@@ -188,13 +198,15 @@ function LocationSection() {
             </a>
           </div>
           <div className="h-[300px] lg:h-[420px] rounded-2xl overflow-hidden border-4 border-white shadow-md">
-            <InteractiveMap
-              lat={parseFloat(company.geo.latitude)}
-              lng={parseFloat(company.geo.longitude)}
-              name={company.name}
-              address={company.address}
-              mapsLink={company.mapsLink}
-            />
+            <MapErrorBoundary mapsLink={company.mapsLink}>
+              <InteractiveMap
+                lat={parseFloat(company.geo.latitude)}
+                lng={parseFloat(company.geo.longitude)}
+                name={company.name}
+                address={company.address}
+                mapsLink={company.mapsLink}
+              />
+            </MapErrorBoundary>
           </div>
         </div>
       </div>

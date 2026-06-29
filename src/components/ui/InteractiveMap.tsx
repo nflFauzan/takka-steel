@@ -1,26 +1,20 @@
 "use client";
 
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { useEffect } from "react";
+import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
-import "leaflet/dist/leaflet.css";
+// leaflet.css is imported globally in globals.css — do NOT import here again
+// to avoid FOUC and Tailwind CSS-purge conflicts.
 
-// Fix webpack bundler breaking Leaflet's default icon path resolution
-delete (L.Icon.Default.prototype as any)._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
-  iconRetinaUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
-  shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
-});
-
-// Branded teardrop pin: blue body, gold ring, blue core
+// ── Branded teardrop pin: blue body, gold ring, blue core ─────────────────
 const brandIcon = new L.DivIcon({
   className: "",
   html: `<svg width="34" height="46" viewBox="0 0 34 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <filter id="shadow" x="-30%" y="-10%" width="160%" height="160%">
+    <filter id="ts-pin-shadow" x="-30%" y="-10%" width="160%" height="160%">
       <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#104FA6" flood-opacity="0.35"/>
     </filter>
     <path d="M17 1C8.163 1 1 8.163 1 17c0 12.5 16 28 16 28S33 29.5 33 17C33 8.163 25.837 1 17 1z"
-          fill="#104FA6" stroke="#ffffff" stroke-width="2" filter="url(#shadow)"/>
+          fill="#104FA6" stroke="#ffffff" stroke-width="2" filter="url(#ts-pin-shadow)"/>
     <circle cx="17" cy="17" r="7" fill="#F5CE02"/>
     <circle cx="17" cy="17" r="3.5" fill="#104FA6"/>
   </svg>`,
@@ -28,6 +22,44 @@ const brandIcon = new L.DivIcon({
   iconAnchor: [17, 46],
   popupAnchor: [0, -50],
 });
+
+// ── Bug 4 fix: invalidateSize after mount ─────────────────────────────────
+// react-leaflet renders the map synchronously, but Next.js hydration and CSS
+// transitions can cause the container size to be 0×0 at mount time.
+// Calling invalidateSize() after a tick forces Leaflet to recalculate and
+// load all visible tiles correctly.
+function MapResizer() {
+  const map = useMap();
+  useEffect(() => {
+    // Small delay ensures the CSS transition / parent layout has settled.
+    const id = setTimeout(() => {
+      map.invalidateSize();
+    }, 100);
+    return () => clearTimeout(id);
+  }, [map]);
+  return null;
+}
+
+// ── Bug 2 fix: disable drag on touch devices ──────────────────────────────
+// On mobile, Leaflet's touch-drag intercepts the page scroll gesture, making
+// it impossible to scroll past the map. We keep scrollWheelZoom off (already
+// set) and also disable dragging on narrow viewports.
+function MobileDragDisabler() {
+  const map = useMap();
+  useEffect(() => {
+    const update = () => {
+      if (window.innerWidth < 768) {
+        map.dragging.disable();
+      } else {
+        map.dragging.enable();
+      }
+    };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, [map]);
+  return null;
+}
 
 interface Props {
   lat: number;
@@ -58,6 +90,7 @@ export default function InteractiveMap({
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
+
       <Marker position={[lat, lng]} icon={brandIcon}>
         <Popup>
           <div style={{ fontFamily: "system-ui,sans-serif", minWidth: "195px", padding: "4px 0" }}>
@@ -87,6 +120,10 @@ export default function InteractiveMap({
           </div>
         </Popup>
       </Marker>
+
+      {/* Inner map utility components — must be children of MapContainer */}
+      <MapResizer />
+      <MobileDragDisabler />
     </MapContainer>
   );
 }

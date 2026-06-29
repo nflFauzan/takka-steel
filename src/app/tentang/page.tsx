@@ -401,7 +401,7 @@ export default function TentangPage() {
 
           <Reveal delay={120}>
             {/* Real Google Maps embed — not a placeholder */}
-            <div className="h-full min-h-[340px] w-full overflow-hidden border border-steel-200 bg-steel-100">
+            <div className="relative h-full min-h-[340px] w-full overflow-hidden border border-steel-200 bg-steel-100 isolate">
               <iframe
                 title={`Lokasi ${company.name}`}
                 src={company.mapsEmbedUrl}

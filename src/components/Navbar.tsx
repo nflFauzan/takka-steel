@@ -35,7 +35,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-40 transition-all duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled || open
           ? "bg-steel-900/95 shadow-lg shadow-black/10 backdrop-blur-md border-b border-white/[0.06]"
           : pathname === "/"
