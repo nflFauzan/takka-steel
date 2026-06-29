@@ -71,7 +71,7 @@ export default function KontakPage() {
             </p>
             <div className="mt-8 relative overflow-hidden rounded-2xl border-4 border-white shadow-md bg-steel-800 h-[450px]">
               {/* Map Placeholder matching the dark style in the image */}
-              <div className="absolute inset-0 opacity-50" style={{ backgroundImage: "url('/photos/kegiatan-2.webp')", backgroundSize: "cover", filter: "grayscale(100%) contrast(120%)" }}></div>
+              <div className="absolute inset-0 opacity-50" style={{ backgroundImage: "url('/photos/gudang-utama.webp')", backgroundSize: "cover", filter: "grayscale(100%) contrast(120%)" }}></div>
               <div className="absolute inset-0 bg-steel-900/40 mix-blend-multiply"></div>
               
               <div className="absolute inset-0 flex items-center justify-center">
