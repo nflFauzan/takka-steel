@@ -10,9 +10,16 @@
  *  - ProductComparison — side-by-side spec variants
  */
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useRef, useCallback } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import {
+  motion,
+  AnimatePresence,
+  useReducedMotion,
+  useMotionValue,
+  animate,
+  type AnimationPlaybackControls,
+} from "framer-motion";
 import Icon, { type IconName } from "@/components/Icon";
 import {
   products,
@@ -99,28 +106,113 @@ export function TrustStrip() {
 }
 
 /* ====================================================================== */
-/*  FEATURED GALLERY — infinite editorial marquee                         */
+/*  FEATURED GALLERY — draggable + auto-play marquee                      */
 /* ====================================================================== */
 
 /**
- * Continuous right-to-left marquee. The track renders the card set TWICE and
- * the CSS keyframe (globals.css → `marquee-x`) translates it by -50%, so the
- * second copy lands exactly where the first began — a seamless, never-snapping
- * loop. Hovering the viewport pauses the animation (CSS `:hover` preserves the
- * current offset, so it resumes in place on mouse-leave). Movement is pure
- * GPU translate3d; per-card hover handles the lift / zoom / shadow.
- *
- * `--marquee-duration` scales with the number of cards so density (not card
- * count) sets the perceived speed; bigger number = slower, more premium drift.
+ * Continuous right-to-left slider built on Framer Motion's drag API.
+ * Auto-play animates the x MotionValue from 0 → -(trackWidth/2), then
+ * instantly resets to 0 for a seamless loop (the track renders items twice).
+ * The user can grab and drag at any time — auto-play pauses on drag-start
+ * and resumes 1.5 s after release. Hover also pauses auto-play (desktop).
+ * Link navigation is suppressed if the pointer travelled > 5 px (drag intent).
  */
 export function ProductBento() {
   const items = featuredProducts;
+  const reduce = useReducedMotion();
+
+  const loop = [...items, ...items]; // duplicate for seamless wrap
+
+  // --- motion state (ALL hooks before any early return) -------------------
+  const x = useMotionValue(0);
+  const animRef = useRef<AnimationPlaybackControls | null>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const isDragging = useRef(false);
+  const dragDeltaRef = useRef(0);
+  const resumeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const isHovered = useRef(false);
+  const hasEverDragged = useRef(false);
+  const [hintVisible, setHintVisible] = useState(true);
+
+  const stopAnim = useCallback(() => {
+    animRef.current?.stop();
+    animRef.current = null;
+  }, []);
+
+  // Animate the x MotionValue directly — drag also controls the same
+  // MotionValue so they cooperate instead of fighting (unlike useAnimationControls
+  // which animates via the `animate` prop and blocks drag gesture recognition).
+  const runLoop = useCallback(() => {
+    if (reduce || !trackRef.current || isDragging.current || isHovered.current) return;
+    const halfW = trackRef.current.scrollWidth / 2;
+    const currentX = x.get();
+    const speed = 120;
+    const remaining = halfW + currentX; // currentX is 0…-halfW
+    if (remaining <= 0) {
+      x.set(0);
+      runLoop();
+      return;
+    }
+    animRef.current = animate(x, -halfW, {
+      duration: remaining / speed,
+      ease: "linear",
+      onComplete: () => {
+        x.set(0);
+        animRef.current = null;
+        if (!isDragging.current && !isHovered.current) runLoop();
+      },
+    });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [reduce, x]);
+
+  useEffect(() => {
+    if (items.length === 0) return;
+    const t = setTimeout(() => runLoop(), 300);
+    return () => {
+      clearTimeout(t);
+      stopAnim();
+      if (resumeTimer.current) clearTimeout(resumeTimer.current);
+    };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Early return AFTER all hooks
   if (items.length === 0) return null;
 
-  // ~7s of travel per card keeps the drift slow and editorial regardless of
-  // how many flagship products are configured.
-  const duration = `${Math.max(items.length * 7, 40)}s`;
-  const loop = [...items, ...items]; // duplicated set → seamless wrap
+  // --- event handlers -----------------------------------------------------
+  const handleHoverStart = () => {
+    isHovered.current = true;
+    stopAnim();
+  };
+  const handleHoverEnd = () => {
+    isHovered.current = false;
+    if (!isDragging.current) runLoop();
+  };
+  const handleDragStart = () => {
+    isDragging.current = true;
+    dragDeltaRef.current = 0;
+    stopAnim(); // stop auto-play so drag can take full control of x
+    if (resumeTimer.current) clearTimeout(resumeTimer.current);
+    if (!hasEverDragged.current) {
+      hasEverDragged.current = true;
+      setHintVisible(false);
+    }
+  };
+  const handleDrag = (_: unknown, info: { offset: { x: number } }) => {
+    dragDeltaRef.current = Math.abs(info.offset.x);
+  };
+  const handleDragEnd = () => {
+    isDragging.current = false;
+    // Clamp: don’t let the track go past the right edge
+    const cur = x.get();
+    if (cur > 0) x.set(0);
+    resumeTimer.current = setTimeout(() => {
+      if (!isDragging.current && !isHovered.current) runLoop();
+    }, 1500);
+  };
+
+  // Loose left constraint — user can drag both directions freely
+  const dragConstraints = { left: -999999, right: 0 };
 
   return (
     <section className="overflow-hidden bg-steel-50 py-20 md:py-28">
@@ -139,41 +231,76 @@ export function ProductBento() {
         </div>
       </div>
 
-      {/* Full-bleed viewport so the track extends past the page gutters and the
-          edge cards crop into a natural "peek". `group/gal` drives the spotlight:
-          hovering anywhere dims every card except the active one. The vertical
-          padding gives the scaled-up card room before `overflow-hidden` clips. */}
-      <div className="marquee-viewport group/gal relative mt-14 overflow-hidden py-12">
-        {/* Edge fades — soften the crop into the background for an editorial feel. */}
+      {/* Drag hint — fades out after first drag */}
+      <div
+        className="container-px mt-6 flex items-center gap-2 transition-opacity duration-500"
+        style={{ opacity: hintVisible ? 1 : 0, pointerEvents: "none" }}
+        aria-hidden="true"
+      >
+        <svg viewBox="0 0 20 20" className="h-4 w-4 text-steel-400" fill="none" stroke="currentColor" strokeWidth={1.5}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.5v13M6 6.5l3.75-3 3.75 3M6 17l3.75 3 3.75-3" />
+        </svg>
+        <span className="text-xs text-steel-400">Geser untuk menjelajahi produk</span>
+      </div>
+
+      {/* Full-bleed viewport. py-12 gives lift room for hover:scale effect. */}
+      <div
+        className="group/gal relative mt-6 overflow-hidden py-12 select-none"
+        onMouseEnter={handleHoverStart}
+        onMouseLeave={handleHoverEnd}
+      >
+        {/* Edge fades */}
         <div className="pointer-events-none absolute inset-y-0 left-0 z-20 w-16 bg-gradient-to-r from-steel-50 to-transparent md:w-28" />
         <div className="pointer-events-none absolute inset-y-0 right-0 z-20 w-16 bg-gradient-to-l from-steel-50 to-transparent md:w-28" />
 
-        <div
-          className="marquee-track flex w-max gap-6 md:gap-8"
-          style={{ ["--marquee-duration" as string]: duration }}
+        <motion.div
+          ref={trackRef}
+          style={{ x, cursor: "grab" }}
+          drag="x"
+          dragConstraints={dragConstraints}
+          dragElastic={0.05}
+          dragMomentum={false}
+          onDragStart={handleDragStart}
+          onDrag={handleDrag}
+          onDragEnd={handleDragEnd}
+          className="flex w-max gap-6 md:gap-8"
+          whileDrag={{ cursor: "grabbing" }}
         >
           {loop.map((p, i) => (
             <GalleryCard
               key={`${p.slug}-${i}`}
               product={p}
               ariaHidden={i >= items.length}
+              dragDeltaRef={dragDeltaRef}
             />
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 }
 
-function GalleryCard({ product, ariaHidden }: { product: Product; ariaHidden: boolean }) {
+function GalleryCard({
+  product,
+  ariaHidden,
+  dragDeltaRef,
+}: {
+  product: Product;
+  ariaHidden: boolean;
+  dragDeltaRef: React.RefObject<number>;
+}) {
+  // Suppress navigation if the user actually dragged (> 5 px)
+  const handleClick = (e: React.MouseEvent) => {
+    if ((dragDeltaRef.current ?? 0) > 5) e.preventDefault();
+  };
+
   return (
     <Link
       href={`/produk/${product.slug}`}
       aria-hidden={ariaHidden}
       tabIndex={ariaHidden ? -1 : undefined}
-      /* Spotlight unit. When the gallery (group/gal) is hovered or focused, every
-         card dims + desaturates; the active card overrides that with `!` and
-         lifts/scales over its neighbours (centre origin, raised z-index). */
+      onClick={handleClick}
+      draggable={false}
       className="group/card relative block w-[280px] shrink-0 rounded-3xl transition-all duration-500 ease-out focus:outline-none focus-visible:outline-none sm:w-[320px] lg:w-[360px]
         group-hover/gal:opacity-50 group-hover/gal:saturate-[0.8]
         group-focus-within/gal:opacity-50 group-focus-within/gal:saturate-[0.8]
@@ -185,11 +312,12 @@ function GalleryCard({ product, ariaHidden }: { product: Product; ariaHidden: bo
           src={product.image}
           alt={ariaHidden ? "" : product.name}
           loading="lazy"
+          draggable={false}
           className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover/card:scale-[1.04] group-focus-visible/card:scale-[1.04]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-steel-950/45 via-transparent to-transparent" />
 
-        {/* Editorial category pills, top-left (brand + category). */}
+        {/* Editorial category pills */}
         <div className="absolute left-4 top-4 flex flex-wrap gap-2">
           {product.brand && (
             <span className="rounded-full bg-white/90 px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-steel-800 backdrop-blur">
@@ -201,7 +329,7 @@ function GalleryCard({ product, ariaHidden }: { product: Product; ariaHidden: bo
           </span>
         </div>
 
-        {/* "View" disc — decorative affordance, fades + scales in on hover/focus. */}
+        {/* View disc */}
         <div className="pointer-events-none absolute inset-0 grid place-items-center">
           <span
             aria-hidden="true"
@@ -212,7 +340,7 @@ function GalleryCard({ product, ariaHidden }: { product: Product; ariaHidden: bo
         </div>
       </div>
 
-      {/* Meta below the image — title + category only (editorial, no shop cues). */}
+      {/* Meta */}
       <div className="mt-5 px-1">
         <h3 className="truncate font-heading text-lg font-extrabold tracking-tight text-steel-900 transition-colors group-hover/card:text-accent">
           {product.name}

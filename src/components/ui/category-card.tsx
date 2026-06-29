@@ -2,18 +2,24 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 /**
  * Category card — adapted from the 21st.dev `product-card-2` reference to
  * Takka Steel's design system (navy/gold, no shadcn tokens). Categories have
  * no price, so the price/offer block is replaced by a tagline + hover accent.
+ *
+ * NOTE: The old motion.div whileHover wrapper was removed so this card is safe
+ * to nest inside a parent draggable slider — framer-motion gesture listeners on
+ * child elements intercept pointer events before the parent drag can fire.
+ * The lift effect is now a plain CSS transition on the Link itself.
  */
 export interface CategoryCardProps {
   name: string;
   tagline: string;
   image: string;
   href?: string;
+  /** Pass true when inside a draggable slider to suppress link navigation on drag */
+  dragDeltaRef?: React.RefObject<number>;
 }
 
 export function CategoryCard({
@@ -21,6 +27,7 @@ export function CategoryCard({
   tagline,
   image,
   href = "/produk",
+  dragDeltaRef,
 }: CategoryCardProps) {
   // Stock-photo hosts can rate-limit a burst of requests; retry with backoff
   // (cache-busted) a couple of times before settling on the navy fallback.
@@ -40,15 +47,17 @@ export function CategoryCard({
     }
   };
 
+  const handleClick = (e: React.MouseEvent) => {
+    if (dragDeltaRef && (dragDeltaRef.current ?? 0) > 5) e.preventDefault();
+  };
+
   return (
-    <motion.div
-      whileHover={{ y: -6 }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      className="h-full"
-    >
+    <div className="h-full">
       <Link
         href={href}
-        className="group flex h-full flex-col overflow-hidden rounded-xl border border-steel-100 bg-white shadow-sm transition-shadow duration-300 hover:shadow-card-hover"
+        onClick={handleClick}
+        draggable={false}
+        className="group flex h-full flex-col overflow-hidden rounded-xl border border-steel-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover"
       >
         {/* Real photo when provided, else a premium navy placeholder tile */}
         <div className="relative aspect-[4/3] w-full overflow-hidden bg-gradient-to-br from-steel-800 to-steel-950">
@@ -58,6 +67,7 @@ export function CategoryCard({
                 src={src}
                 alt={name}
                 loading="lazy"
+                draggable={false}
                 referrerPolicy="no-referrer"
                 onError={handleError}
                 className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -98,6 +108,6 @@ export function CategoryCard({
           <span className="mt-3 block h-[3px] w-5 origin-left rounded-full bg-gold transition-transform duration-300 ease-out group-hover:scale-x-[2.4]" />
         </div>
       </Link>
-    </motion.div>
+    </div>
   );
 }

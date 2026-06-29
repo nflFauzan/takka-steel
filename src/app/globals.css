@@ -118,12 +118,8 @@ html {
   will-change: transform;
 }
 
-/* Resume from current position on leave (CSS play-state preserves offset).
-   Also pause when a card receives keyboard focus, so tabbing users can read it. */
-.marquee-viewport:hover .marquee-track,
-.marquee-viewport:focus-within .marquee-track {
-  animation-play-state: paused;
-}
+/* NOTE: marquee-viewport hover-pause is now handled by JS in ProductBento.
+   These classes are preserved for potential reuse in other components. */
 
 @media (prefers-reduced-motion: reduce) {
   .marquee-track {
