@@ -4,6 +4,7 @@ import Link from "next/link";
 import Icon from "@/components/Icon";
 import { waLink } from "@/data/company";
 import { useTina } from "tinacms/dist/react";
+import Image from "next/image";
 
 export default function ProductDetailClient({ query, variables, data, relatedProducts }: any) {
   // Pass the data to useTina so it becomes editable in the admin
@@ -31,12 +32,13 @@ export default function ProductDetailClient({ query, variables, data, relatedPro
 
           {/* Hero Detail */}
           <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr] items-center">
-            <div className="rounded-2xl overflow-hidden shadow-md bg-white p-2">
+            <div className="relative rounded-2xl overflow-hidden shadow-md bg-white p-2 h-[400px]">
               {product.image ? (
-                <img
+                <Image
                   src={product.image}
                   alt={product.name}
-                  className="h-[400px] w-full rounded-xl object-cover"
+                  fill
+                  className="rounded-xl object-cover"
                 />
               ) : null}
             </div>
@@ -176,12 +178,13 @@ export default function ProductDetailClient({ query, variables, data, relatedPro
                   href={`/produk/${slug}`}
                   className="group flex flex-col overflow-hidden rounded-xl border border-steel-100 bg-white shadow-sm transition hover:shadow-md"
                 >
-                  <div className="h-48 overflow-hidden bg-steel-100">
+                  <div className="relative h-48 overflow-hidden bg-steel-100">
                     {rel.image ? (
-                      <img
+                      <Image
                         src={rel.image}
                         alt={rel.name}
-                        className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                        fill
+                        className="object-cover transition duration-500 group-hover:scale-105"
                       />
                     ) : null}
                   </div>

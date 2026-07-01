@@ -12,6 +12,7 @@
 
 import { useEffect, useMemo, useState, useRef, useCallback } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   motion,
   AnimatePresence,
@@ -307,12 +308,13 @@ function GalleryCard({
     >
       <div className="relative aspect-[3/4] overflow-hidden rounded-3xl bg-steel-100 shadow-card ring-1 ring-steel-900/5 transition-shadow duration-500 ease-out group-hover/card:shadow-card-hover group-focus-visible/card:ring-2 group-focus-visible/card:ring-gold">
         {product.image ? (
-          <img
+          <Image
             src={product.image}
             alt={ariaHidden ? "" : product.name}
-            loading="lazy"
+            fill
+            sizes="(max-width: 640px) 280px, (max-width: 1024px) 320px, 360px"
             draggable={false}
-            className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover/card:scale-[1.04] group-focus-visible/card:scale-[1.04]"
+            className="object-cover transition-transform duration-700 ease-out group-hover/card:scale-[1.04] group-focus-visible/card:scale-[1.04]"
           />
         ) : null}
         <div className="absolute inset-0 bg-gradient-to-t from-steel-950/45 via-transparent to-transparent" />
@@ -601,11 +603,12 @@ function CatalogCard({ product }: { product: Product }) {
     >
       <div className="relative h-44 overflow-hidden bg-steel-100">
         {product.image ? (
-          <img
+          <Image
             src={product.image}
             alt={product.name}
-            loading="lazy"
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
           />
         ) : null}
         <div className="absolute inset-0 bg-gradient-to-t from-steel-950/30 to-transparent" />

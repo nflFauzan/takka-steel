@@ -1,22 +1,21 @@
+// tina/config.ts
 import { defineConfig } from "tinacms";
-
-// Your hosting provider likely exposes this as an environment variable
-const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
-
-export default defineConfig({
+var branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
+var config_default = defineConfig({
   branch,
-  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID || "dummy-client-id", // Get this from tina.io
-  token: process.env.TINA_TOKEN || "dummy-token", // Get this from tina.io
-
+  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID || "dummy-client-id",
+  // Get this from tina.io
+  token: process.env.TINA_TOKEN || "dummy-token",
+  // Get this from tina.io
   build: {
     outputFolder: "admin",
-    publicFolder: "public",
+    publicFolder: "public"
   },
   media: {
     tina: {
       mediaRoot: "products",
-      publicFolder: "public",
-    },
+      publicFolder: "public"
+    }
   },
   schema: {
     collections: [
@@ -24,11 +23,12 @@ export default defineConfig({
         name: "products",
         label: "Produk",
         path: "content/products",
-        format: "json", // using json to match the original structure more closely, but md is fine too
+        format: "json",
+        // using json to match the original structure more closely, but md is fine too
         ui: {
           router: ({ document }) => {
             return `/produk/${document._sys.filename}`;
-          },
+          }
         },
         fields: [
           {
@@ -36,13 +36,13 @@ export default defineConfig({
             name: "name",
             label: "Nama Produk",
             isTitle: true,
-            required: true,
+            required: true
           },
           {
             type: "string",
             name: "category",
             label: "Kategori (contoh: Baja Ringan)",
-            required: true,
+            required: true
           },
           {
             type: "string",
@@ -54,57 +54,57 @@ export default defineConfig({
               "atap-upvc",
               "plafon-interior",
               "pipa-saluran",
-              "aksesoris-perkakas",
+              "aksesoris-perkakas"
             ],
-            required: true,
+            required: true
           },
           {
             type: "string",
             name: "brand",
-            label: "Merk / Brand",
+            label: "Merk / Brand"
           },
           {
             type: "string",
             name: "badge",
-            label: "Badge / Label (contoh: Galvalume)",
+            label: "Badge / Label (contoh: Galvalume)"
           },
           {
             type: "string",
             name: "stock",
             label: "Status Stok",
             options: ["ready", "indent"],
-            required: true,
+            required: true
           },
           {
             type: "boolean",
             name: "featured",
-            label: "Produk Unggulan?",
+            label: "Produk Unggulan?"
           },
           {
             type: "string",
             name: "priceFrom",
-            label: "Harga Mulai Dari",
+            label: "Harga Mulai Dari"
           },
           {
             type: "image",
             name: "image",
-            label: "Foto Produk",
+            label: "Foto Produk"
           },
           {
             type: "string",
             name: "summary",
             label: "Ringkasan Singkat (Muncul di Card)",
             ui: {
-              component: "textarea",
-            },
+              component: "textarea"
+            }
           },
           {
             type: "string",
             name: "description",
             label: "Deskripsi Lengkap",
             ui: {
-              component: "textarea",
-            },
+              component: "textarea"
+            }
           },
           {
             type: "object",
@@ -113,16 +113,16 @@ export default defineConfig({
             list: true,
             fields: [
               { type: "string", name: "label", label: "Label (contoh: Panjang)" },
-              { type: "string", name: "value", label: "Nilai (contoh: 6 meter)" },
-            ],
+              { type: "string", name: "value", label: "Nilai (contoh: 6 meter)" }
+            ]
           },
           {
             type: "string",
             name: "uses",
             label: "Kegunaan / Aplikasi",
-            list: true,
-          },
-        ],
+            list: true
+          }
+        ]
       },
       {
         name: "articles",
@@ -131,8 +131,8 @@ export default defineConfig({
         format: "md",
         ui: {
           router: ({ document }) => {
-            return `/artikel/${document._sys.filename}`; // assuming there's an artikel route
-          },
+            return `/artikel/${document._sys.filename}`;
+          }
         },
         fields: [
           {
@@ -140,41 +140,44 @@ export default defineConfig({
             name: "title",
             label: "Judul Artikel",
             isTitle: true,
-            required: true,
+            required: true
           },
           {
             type: "string",
             name: "excerpt",
             label: "Ringkasan (Excerpt)",
             ui: {
-              component: "textarea",
-            },
+              component: "textarea"
+            }
           },
           {
             type: "datetime",
             name: "date",
             label: "Tanggal Posting",
-            required: true,
+            required: true
           },
           {
             type: "string",
             name: "author",
             label: "Penulis",
-            required: true,
+            required: true
           },
           {
             type: "image",
             name: "image",
-            label: "Gambar Utama (Bisa link URL atau file)",
+            label: "Gambar Utama (Bisa link URL atau file)"
           },
           {
             type: "rich-text",
             name: "body",
             label: "Isi Artikel",
-            isBody: true,
-          },
-        ],
-      },
-    ],
-  },
+            isBody: true
+          }
+        ]
+      }
+    ]
+  }
 });
+export {
+  config_default as default
+};

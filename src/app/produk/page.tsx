@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import client from "../../../tina/__generated__/client";
 import ProdukClientPage from "./ProdukClientPage";
 
+export const revalidate = 0; // Disable caching so live edits show up immediately
+
 export const metadata: Metadata = {
   title: "Katalog Produk",
   description:

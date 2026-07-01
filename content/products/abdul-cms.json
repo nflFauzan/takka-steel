@@ -1,0 +1,22 @@
+{
+  "name": "abdul cms gokil",
+  "category": "cms baja",
+  "department": "aksesoris-perkakas",
+  "brand": "abdul baja",
+  "badge": "Fitting",
+  "stock": "ready",
+  "featured": true,
+  "priceFrom": "1",
+  "image": "/products/si-abdul.jpeg",
+  "summary": "abdul adalah sosok anomali kayumanis",
+  "description": "sosok asli anomali tazkia",
+  "specs": [
+    {
+      "label": "10cm",
+      "value": "5 meter"
+    }
+  ],
+  "uses": [
+    "aplikasi mutabaah"
+  ]
+}

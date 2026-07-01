@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import client from "../../../../tina/__generated__/client";
 import ProductDetailClient from "./ProductDetailClient";
 
+export const revalidate = 0; // Disable caching so live edits show up immediately
+
 export async function generateStaticParams() {
   try {
     const productsResponse = await client.queries.productsConnection();

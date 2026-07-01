@@ -1,0 +1,30 @@
+fragment ProductsParts on Products {
+  __typename
+  name
+  category
+  department
+  brand
+  badge
+  stock
+  featured
+  priceFrom
+  image
+  summary
+  description
+  specs {
+    __typename
+    label
+    value
+  }
+  uses
+}
+
+fragment ArticlesParts on Articles {
+  __typename
+  title
+  excerpt
+  date
+  author
+  image
+  body
+}
