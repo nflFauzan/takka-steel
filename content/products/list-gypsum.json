@@ -1,0 +1,34 @@
+{
+  "name": "List Gypsum",
+  "category": "List / Profil",
+  "department": "plafon-interior",
+  "badge": "Profil",
+  "stock": "ready",
+  "image": "/products/list-gypsum.webp",
+  "summary": "List gypsum dekoratif sebagai penutup pertemuan plafon & dinding — rapi dan menambah estetika.",
+  "description": "List gypsum berfungsi sebagai lis profil dekoratif pada pertemuan plafon dan dinding. Memberikan kesan rapi dan estetis, mudah dipasang, tersedia dalam beragam motif dan ukuran.",
+  "specs": [
+    {
+      "label": "Material",
+      "value": "Gypsum"
+    },
+    {
+      "label": "Fungsi",
+      "value": "List plafon dekoratif"
+    },
+    {
+      "label": "Motif",
+      "value": "Beragam pilihan"
+    },
+    {
+      "label": "Satuan",
+      "value": "Per batang"
+    }
+  ],
+  "uses": [
+    "Lis plafon",
+    "Pertemuan dinding-plafon",
+    "Dekorasi interior",
+    "Finishing"
+  ]
+}

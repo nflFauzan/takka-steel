@@ -1,0 +1,35 @@
+{
+  "name": "PVC Foam Board",
+  "category": "Board & Panel",
+  "department": "plafon-interior",
+  "badge": "Anti Air",
+  "stock": "ready",
+  "priceFrom": "Rp155.000",
+  "image": "/products/pvc-board.webp",
+  "summary": "Papan PVC foam anti air & rayap sebagai pengganti triplek untuk furnitur area basah — mudah dicetak.",
+  "description": "PVC Foam Board sebagai pengganti kayu/triplek untuk furnitur dan partisi, khususnya area basah. Permukaan halus dan rapi, tahan air dan anti rayap, tahan bahan kimia, mudah dipasang dan dicetak, dengan harga terjangkau.",
+  "specs": [
+    {
+      "label": "Tebal",
+      "value": "5 mm & 18 mm"
+    },
+    {
+      "label": "Ukuran",
+      "value": "120 × 240 cm"
+    },
+    {
+      "label": "Sifat",
+      "value": "Tahan air & anti rayap"
+    },
+    {
+      "label": "Aplikasi",
+      "value": "Furnitur area basah"
+    }
+  ],
+  "uses": [
+    "Kitchen set",
+    "Furnitur kamar mandi",
+    "Partisi",
+    "Pelapis dinding"
+  ]
+}

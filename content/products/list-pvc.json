@@ -1,0 +1,34 @@
+{
+  "name": "List PVC",
+  "category": "List / Profil",
+  "department": "plafon-interior",
+  "badge": "Anti Air",
+  "stock": "ready",
+  "image": "/products/list-pvc.webp",
+  "summary": "List PVC anti air & anti rayap untuk finishing plafon PVC — awet di area lembap dan mudah dibersihkan.",
+  "description": "List PVC sebagai profil penutup dan finishing untuk plafon PVC. Anti air dan anti rayap, tidak mudah lapuk, cocok untuk area lembap, mudah dipasang dan dibersihkan.",
+  "specs": [
+    {
+      "label": "Material",
+      "value": "PVC"
+    },
+    {
+      "label": "Sifat",
+      "value": "Anti air & rayap"
+    },
+    {
+      "label": "Fungsi",
+      "value": "Finishing plafon PVC"
+    },
+    {
+      "label": "Satuan",
+      "value": "Per batang"
+    }
+  ],
+  "uses": [
+    "Finishing plafon PVC",
+    "Area lembap",
+    "Lis dinding",
+    "Dekorasi"
+  ]
+}

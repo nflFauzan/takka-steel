@@ -1,0 +1,35 @@
+{
+  "name": "Besi UNP (Kanal U)",
+  "category": "Besi Struktural",
+  "department": "struktur-baja",
+  "badge": "Struktural",
+  "stock": "ready",
+  "priceFrom": "Rp220.000",
+  "image": "",
+  "summary": "Kanal U (UNP) untuk rangka & dudukan struktur — kekuatan tinggi, serbaguna, dan mudah difabrikasi.",
+  "description": "Besi UNP berprofil kanal U untuk rangka, dudukan mesin, dan elemen struktur. Kekuatan struktur tinggi, kuat dan kokoh, serbaguna, dan mudah dalam proses fabrikasi.",
+  "specs": [
+    {
+      "label": "Profil",
+      "value": "Kanal U (UNP)"
+    },
+    {
+      "label": "Material",
+      "value": "Baja struktural"
+    },
+    {
+      "label": "Panjang",
+      "value": "6 m per batang"
+    },
+    {
+      "label": "Aplikasi",
+      "value": "Rangka & dudukan"
+    }
+  ],
+  "uses": [
+    "Rangka struktur",
+    "Dudukan mesin",
+    "Tangga industri",
+    "Fabrikasi"
+  ]
+}

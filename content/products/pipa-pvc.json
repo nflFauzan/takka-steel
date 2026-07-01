@@ -1,0 +1,34 @@
+{
+  "name": "Pipa PVC",
+  "category": "Pipa",
+  "department": "pipa-saluran",
+  "badge": "Saluran Air",
+  "stock": "ready",
+  "image": "/products/pipa-pvc.webp",
+  "summary": "Pipa PVC untuk instalasi air bersih & buang — ringan, anti karat, dan mudah disambung.",
+  "description": "Pipa PVC untuk instalasi air bersih, air buang, dan saluran. Ringan, anti karat, tahan bahan kimia, dan mudah disambung. Tersedia beragam diameter sesuai kebutuhan instalasi.",
+  "specs": [
+    {
+      "label": "Material",
+      "value": "PVC"
+    },
+    {
+      "label": "Fungsi",
+      "value": "Air bersih & buang"
+    },
+    {
+      "label": "Diameter",
+      "value": "Beragam ukuran"
+    },
+    {
+      "label": "Sifat",
+      "value": "Anti karat & ringan"
+    }
+  ],
+  "uses": [
+    "Instalasi air bersih",
+    "Saluran air buang",
+    "Drainase",
+    "Talang"
+  ]
+}

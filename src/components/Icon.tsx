@@ -28,7 +28,9 @@ export type IconName =
   | "x"
   | "chevron";
 
-const paths: Record<IconName, JSX.Element> = {
+import type { ReactNode } from "react";
+
+const paths: Record<IconName, ReactNode> = {
   truck: (
     <path d="M3 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v8H3V7Zm12 3h3l3 3v2a1 1 0 0 1-1 1h-1m-4 0H7m-2 0a2 2 0 1 0 4 0 2 2 0 0 0-4 0Zm10 0a2 2 0 1 0 4 0 2 2 0 0 0-4 0Z" />
   ),

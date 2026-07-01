@@ -1,0 +1,35 @@
+{
+  "name": "Besi Beton Sertifikat (SNI)",
+  "category": "Besi Struktural",
+  "department": "struktur-baja",
+  "badge": "SNI",
+  "stock": "ready",
+  "priceFrom": "Rp29.000",
+  "image": "",
+  "summary": "Besi beton berstandar SNI untuk proyek struktural yang menuntut sertifikasi & kekuatan terjamin.",
+  "description": "Besi beton bersertifikat SNI dengan dimensi dan mutu terjamin untuk proyek struktural. Kekuatan tarik tinggi, daya lekat tinggi dengan beton, mudah dibentuk dan dipasang, tersedia berbagai ukuran.",
+  "specs": [
+    {
+      "label": "Standar",
+      "value": "SNI bersertifikat"
+    },
+    {
+      "label": "Jenis",
+      "value": "Polos / ulir"
+    },
+    {
+      "label": "Panjang",
+      "value": "Per batang"
+    },
+    {
+      "label": "Ukuran",
+      "value": "Beragam diameter"
+    }
+  ],
+  "uses": [
+    "Proyek bersertifikat",
+    "Struktur gedung",
+    "Tulangan utama",
+    "Cor beton"
+  ]
+}

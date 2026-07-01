@@ -1,0 +1,36 @@
+{
+  "name": "Besi WF (6 m & 12 m)",
+  "category": "Besi Struktural",
+  "department": "struktur-baja",
+  "brand": "Hot Rolled",
+  "badge": "Struktural",
+  "stock": "ready",
+  "priceFrom": "Rp945.000",
+  "image": "",
+  "summary": "Besi WF (Wide Flange) hot rolled untuk struktur utama bangunan — kekuatan struktur tinggi & serbaguna.",
+  "description": "Besi WF dari hot rolled steel untuk balok dan kolom struktur bangunan bertingkat, gudang, dan pabrik. Kekuatan struktur tinggi, kuat dan kokoh, serbaguna, serta mudah dalam proses fabrikasi.",
+  "specs": [
+    {
+      "label": "Bahan",
+      "value": "Hot Rolled Steel"
+    },
+    {
+      "label": "Berat",
+      "value": "148 – 440 kg"
+    },
+    {
+      "label": "Panjang",
+      "value": "6 m & 12 m"
+    },
+    {
+      "label": "Aplikasi",
+      "value": "Balok & kolom struktur"
+    }
+  ],
+  "uses": [
+    "Struktur baja gudang",
+    "Pabrik",
+    "Bangunan bertingkat",
+    "Jembatan"
+  ]
+}

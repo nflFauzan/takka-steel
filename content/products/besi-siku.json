@@ -1,0 +1,34 @@
+{
+  "name": "Besi Siku",
+  "category": "Besi Struktural",
+  "department": "struktur-baja",
+  "badge": "Struktural",
+  "stock": "ready",
+  "image": "",
+  "summary": "Besi siku (L) untuk rangka, sambungan & dudukan — kuat, kokoh, efisien dan serbaguna.",
+  "description": "Besi siku berprofil L untuk rangka, bracket, sambungan, dan dudukan. Kuat dan kokoh, serbaguna, efisien dan ekonomis, tersedia dalam berbagai ukuran untuk menjaga stabilitas struktur.",
+  "specs": [
+    {
+      "label": "Profil",
+      "value": "Siku (L)"
+    },
+    {
+      "label": "Material",
+      "value": "Baja struktural"
+    },
+    {
+      "label": "Panjang",
+      "value": "6 m per batang"
+    },
+    {
+      "label": "Ukuran",
+      "value": "Beragam pilihan"
+    }
+  ],
+  "uses": [
+    "Rangka & bracket",
+    "Sambungan struktur",
+    "Dudukan",
+    "Pagar"
+  ]
+}

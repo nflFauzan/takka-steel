@@ -1,0 +1,35 @@
+{
+  "name": "Atap Onduline (Bitumen)",
+  "category": "Atap Lain",
+  "department": "atap-spandek",
+  "brand": "Onduline",
+  "badge": "Bitumen",
+  "stock": "ready",
+  "image": "/products/onduline.webp",
+  "summary": "Atap bitumen bergelombang ringan & lentur — kedap air, senyap saat hujan, dengan warna tahan lama.",
+  "description": "Atap Onduline dari bahan bitumen bergelombang yang ringan, lentur, dan kedap air. Senyap saat hujan, tidak berkarat, mudah dipasang mengikuti lengkung atap, dengan warna yang tahan lama — cocok untuk hunian dan area tropis.",
+  "specs": [
+    {
+      "label": "Material",
+      "value": "Bitumen bergelombang"
+    },
+    {
+      "label": "Sifat",
+      "value": "Ringan, lentur, kedap air"
+    },
+    {
+      "label": "Warna",
+      "value": "Merah, hijau, cokelat, hitam"
+    },
+    {
+      "label": "Keunggulan",
+      "value": "Senyap & anti karat"
+    }
+  ],
+  "uses": [
+    "Atap rumah",
+    "Kanopi melengkung",
+    "Gazebo",
+    "Renovasi atap"
+  ]
+}

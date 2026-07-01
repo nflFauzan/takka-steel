@@ -1,0 +1,35 @@
+{
+  "name": "Plat Bordes",
+  "category": "Plat Besi",
+  "department": "struktur-baja",
+  "badge": "Anti Selip",
+  "stock": "ready",
+  "priceFrom": "Rp613.000",
+  "image": "",
+  "summary": "Plat besi bermotif (bordes) anti selip untuk tangga & lantai injak — kuat, kokoh, dan serbaguna.",
+  "description": "Plat bordes dengan permukaan bermotif anti selip untuk anak tangga, lantai injak, dan platform. Kuat dan kokoh, serbaguna, efisien dan ekonomis, tersedia dalam berbagai ukuran untuk menjaga stabilitas struktur.",
+  "specs": [
+    {
+      "label": "Tebal",
+      "value": "1,8 – 4,0 mm"
+    },
+    {
+      "label": "Ukuran",
+      "value": "120 × 240 cm"
+    },
+    {
+      "label": "Permukaan",
+      "value": "Bermotif anti selip"
+    },
+    {
+      "label": "Aplikasi",
+      "value": "Tangga & lantai injak"
+    }
+  ],
+  "uses": [
+    "Anak tangga",
+    "Lantai injak",
+    "Platform mesin",
+    "Jembatan kecil"
+  ]
+}

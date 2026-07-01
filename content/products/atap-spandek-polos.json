@@ -1,0 +1,36 @@
+{
+  "name": "Atap Spandek Polos",
+  "category": "Spandek",
+  "department": "atap-spandek",
+  "brand": "Zincalume",
+  "badge": "Galvalume",
+  "stock": "ready",
+  "priceFrom": "Rp26.500",
+  "image": "",
+  "summary": "Spandek zincalume polos yang ringan, kuat, dan ekonomis untuk gudang, pabrik, dan carport.",
+  "description": "Atap spandek polos dari plat zincalume (aluminium & seng) yang ringan, tahan karat, dan ekonomis. Tahan rayap, tahan lama dan kuat, pemasangan mudah dan murah, cocok untuk atap gudang, pabrik, garasi, hingga hunian.",
+  "specs": [
+    {
+      "label": "Bahan",
+      "value": "Plat Zincalume"
+    },
+    {
+      "label": "Tebal",
+      "value": "0,30 & 0,35 mm"
+    },
+    {
+      "label": "Panjang",
+      "value": "4 m, 5 m, 6 m"
+    },
+    {
+      "label": "Keunggulan",
+      "value": "Ringan & ekonomis"
+    }
+  ],
+  "uses": [
+    "Atap gudang",
+    "Atap pabrik",
+    "Carport",
+    "Bangunan komersial"
+  ]
+}

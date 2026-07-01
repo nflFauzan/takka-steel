@@ -1,0 +1,34 @@
+{
+  "name": "Perkakas & Material Pendukung",
+  "category": "Perkakas",
+  "department": "aksesoris-perkakas",
+  "badge": "Pelengkap",
+  "stock": "ready",
+  "image": "",
+  "summary": "Gunting baja, mata bor, gerinda, cat besi/kayu & thinner — perkakas pendukung lengkap dalam satu tempat.",
+  "description": "Lengkapi kebutuhan pertukangan dalam satu tempat: gunting baja ringan, mata bor, mesin gerinda, cat besi/kayu, hingga thinner. Belanja material baja dan perkakas pendukungnya sekaligus di Takka Steel.",
+  "specs": [
+    {
+      "label": "Alat potong",
+      "value": "Gunting baja, gerinda"
+    },
+    {
+      "label": "Mata bor",
+      "value": "Beragam ukuran"
+    },
+    {
+      "label": "Finishing",
+      "value": "Cat besi/kayu, thinner"
+    },
+    {
+      "label": "Fungsi",
+      "value": "Pendukung pemasangan"
+    }
+  ],
+  "uses": [
+    "Pemotongan baja ringan",
+    "Pengeboran",
+    "Finishing & cat",
+    "Perawatan alat"
+  ]
+}

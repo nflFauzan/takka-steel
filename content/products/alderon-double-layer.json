@@ -1,0 +1,37 @@
+{
+  "name": "Atap Alderon Double Layer",
+  "category": "Alderon",
+  "department": "atap-upvc",
+  "brand": "Alderon",
+  "badge": "uPVC",
+  "stock": "ready",
+  "featured": true,
+  "priceFrom": "Rp149.000",
+  "image": "/products/alderon.webp",
+  "summary": "Atap uPVC berongga (twinwall) dengan peredaman panas & suara maksimal — premium dan tahan lama.",
+  "description": "Atap uPVC Alderon double layer berongga (twinwall) memberikan insulasi panas dan peredaman suara terbaik di kelasnya. Tahan korosi dan bahan kimia, tidak menghantarkan panas seperti logam, dan jauh lebih senyap saat hujan.",
+  "specs": [
+    {
+      "label": "Material",
+      "value": "uPVC double layer (twinwall)"
+    },
+    {
+      "label": "Tebal",
+      "value": "10 mm"
+    },
+    {
+      "label": "Lebar efektif",
+      "value": "83 cm"
+    },
+    {
+      "label": "Warna",
+      "value": "Putih, biru, abu"
+    }
+  ],
+  "uses": [
+    "Kanopi premium",
+    "Atap rumah",
+    "Foodcourt",
+    "Area komersial"
+  ]
+}

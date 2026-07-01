@@ -1,0 +1,36 @@
+{
+  "name": "Genteng Metal Koko Roof",
+  "category": "Genteng Metal",
+  "department": "atap-spandek",
+  "brand": "Koko Roof",
+  "badge": "Coral / Warna",
+  "stock": "ready",
+  "priceFrom": "Rp33.000",
+  "image": "",
+  "summary": "Genteng metal Koko Roof (coral & warna) — ringan, kuat, dan rapi dengan tampilan modern.",
+  "description": "Genteng metal Koko Roof tersedia tipe coral dan warna. Hemat waktu dan biaya, kuat dan kokoh, struktur rapi, praktis dipasang, dengan perawatan minim. Pilihan ekonomis untuk atap hunian.",
+  "specs": [
+    {
+      "label": "Panjang efektif",
+      "value": "56 cm"
+    },
+    {
+      "label": "Lebar efektif",
+      "value": "80 cm"
+    },
+    {
+      "label": "Warna",
+      "value": "Cokelat & hitam"
+    },
+    {
+      "label": "Tipe",
+      "value": "Coral / Warna"
+    }
+  ],
+  "uses": [
+    "Atap rumah",
+    "Perumahan",
+    "Renovasi atap",
+    "Ruko"
+  ]
+}

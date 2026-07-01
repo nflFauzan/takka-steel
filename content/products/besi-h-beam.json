@@ -1,0 +1,36 @@
+{
+  "name": "Besi H-Beam (6 m & 12 m)",
+  "category": "Besi Struktural",
+  "department": "struktur-baja",
+  "brand": "Hot Rolled",
+  "badge": "Struktural",
+  "stock": "ready",
+  "priceFrom": "Rp1.507.500",
+  "image": "",
+  "summary": "Besi H-Beam untuk kolom & balok beban berat — kekuatan struktur tinggi, kokoh, dan serbaguna.",
+  "description": "Besi H-Beam untuk struktur kolom dan balok dengan beban berat. Kekuatan struktur tinggi, kuat dan kokoh, serbaguna, serta mudah difabrikasi untuk berbagai kebutuhan konstruksi skala besar.",
+  "specs": [
+    {
+      "label": "Bahan",
+      "value": "Hot Rolled Steel"
+    },
+    {
+      "label": "Profil",
+      "value": "H-Beam"
+    },
+    {
+      "label": "Panjang",
+      "value": "6 m & 12 m"
+    },
+    {
+      "label": "Aplikasi",
+      "value": "Kolom & balok berat"
+    }
+  ],
+  "uses": [
+    "Kolom struktur",
+    "Bangunan bertingkat",
+    "Gudang bentang lebar",
+    "Pabrik"
+  ]
+}

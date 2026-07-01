@@ -1,0 +1,36 @@
+{
+  "name": "Hollow Plafond",
+  "category": "Baja Ringan",
+  "department": "struktur-baja",
+  "brand": "Galvanis",
+  "badge": "Galvanis",
+  "stock": "ready",
+  "priceFrom": "Rp8.000",
+  "image": "",
+  "summary": "Hollow khusus rangka plafon — hemat waktu & biaya, kuat, kokoh, dan rapi tanpa pengelasan.",
+  "description": "Hollow plafond untuk rangka plafon gypsum & PVC. Hemat waktu dan biaya, kuat dan kokoh, struktur lebih rapi, praktis dalam pemasangan, tidak memerlukan pengelasan, dengan biaya perawatan minim.",
+  "specs": [
+    {
+      "label": "Fungsi",
+      "value": "Rangka plafon"
+    },
+    {
+      "label": "Finishing",
+      "value": "Galvanis"
+    },
+    {
+      "label": "Keunggulan",
+      "value": "Rapi, tanpa las"
+    },
+    {
+      "label": "Satuan",
+      "value": "Per batang"
+    }
+  ],
+  "uses": [
+    "Rangka plafon",
+    "Drop ceiling",
+    "Partisi interior",
+    "Sekat ruang"
+  ]
+}

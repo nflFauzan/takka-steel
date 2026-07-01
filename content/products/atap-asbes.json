@@ -1,0 +1,34 @@
+{
+  "name": "Atap Asbes / Fiber Semen",
+  "category": "Atap Lain",
+  "department": "atap-spandek",
+  "badge": "Gelombang",
+  "stock": "ready",
+  "image": "/products/asbes.webp",
+  "summary": "Lembaran atap gelombang fiber semen yang ekonomis, meredam panas, dan mudah dipasang.",
+  "description": "Atap asbes/fiber semen bergelombang sebagai penutup atap ekonomis untuk gudang, garasi, dan bangunan semi permanen. Meredam panas, tidak menghantarkan listrik, kuat, dan mudah dipasang.",
+  "specs": [
+    {
+      "label": "Bentuk",
+      "value": "Lembaran gelombang"
+    },
+    {
+      "label": "Material",
+      "value": "Fiber semen"
+    },
+    {
+      "label": "Keunggulan",
+      "value": "Ekonomis, peredam panas"
+    },
+    {
+      "label": "Aplikasi",
+      "value": "Atap ekonomis"
+    }
+  ],
+  "uses": [
+    "Atap gudang",
+    "Garasi",
+    "Bangunan semi permanen",
+    "Kandang"
+  ]
+}

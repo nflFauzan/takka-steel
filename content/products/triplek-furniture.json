@@ -1,0 +1,36 @@
+{
+  "name": "Triplek Furniture",
+  "category": "Board & Panel",
+  "department": "plafon-interior",
+  "badge": "Plywood",
+  "stock": "ready",
+  "featured": true,
+  "priceFrom": "Rp64.000",
+  "image": "/products/triplek.webp",
+  "summary": "Triplek/plywood furniture permukaan halus & anti melengkung — kuat namun ringan untuk interior.",
+  "description": "Triplek furniture (plywood, melamin, blokmin) dengan permukaan halus dan rapi untuk pembuatan furnitur dan interior. Mudah dibentuk dan dipasang, efisien dan ekonomis, anti melengkung, ringan tapi kokoh.",
+  "specs": [
+    {
+      "label": "Tebal",
+      "value": "3 – 18 mm"
+    },
+    {
+      "label": "Ukuran",
+      "value": "120 × 240 cm"
+    },
+    {
+      "label": "Jenis",
+      "value": "Plywood, Melamin, Blokmin"
+    },
+    {
+      "label": "Permukaan",
+      "value": "Halus, anti melengkung"
+    }
+  ],
+  "uses": [
+    "Furnitur & lemari",
+    "Partisi interior",
+    "Backdrop",
+    "Pelapis"
+  ]
+}

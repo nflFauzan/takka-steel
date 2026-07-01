@@ -22,8 +22,6 @@ import {
 } from "framer-motion";
 import Icon, { type IconName } from "@/components/Icon";
 import {
-  products,
-  featuredProducts,
   comparisonGroups,
   stockLabel,
   departments,
@@ -117,8 +115,8 @@ export function TrustStrip() {
  * and resumes 1.5 s after release. Hover also pauses auto-play (desktop).
  * Link navigation is suppressed if the pointer travelled > 5 px (drag intent).
  */
-export function ProductBento() {
-  const items = featuredProducts;
+export function ProductBento({ products }: { products: Product[] }) {
+  const items = products.filter(p => p.featured) || [];
   const reduce = useReducedMotion();
 
   const loop = [...items, ...items]; // duplicate for seamless wrap
@@ -308,13 +306,15 @@ function GalleryCard({
         focus-visible:z-10 focus-visible:-translate-y-1.5 focus-visible:scale-[1.05] focus-visible:!opacity-100 focus-visible:!saturate-100"
     >
       <div className="relative aspect-[3/4] overflow-hidden rounded-3xl bg-steel-100 shadow-card ring-1 ring-steel-900/5 transition-shadow duration-500 ease-out group-hover/card:shadow-card-hover group-focus-visible/card:ring-2 group-focus-visible/card:ring-gold">
-        <img
-          src={product.image}
-          alt={ariaHidden ? "" : product.name}
-          loading="lazy"
-          draggable={false}
-          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover/card:scale-[1.04] group-focus-visible/card:scale-[1.04]"
-        />
+        {product.image ? (
+          <img
+            src={product.image}
+            alt={ariaHidden ? "" : product.name}
+            loading="lazy"
+            draggable={false}
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover/card:scale-[1.04] group-focus-visible/card:scale-[1.04]"
+          />
+        ) : null}
         <div className="absolute inset-0 bg-gradient-to-t from-steel-950/45 via-transparent to-transparent" />
 
         {/* Editorial category pills */}
@@ -377,7 +377,7 @@ const SEARCH_SYNONYMS: Record<string, string> = {
   dak: "bondeck",
 };
 
-export function ProductCatalog() {
+export function ProductCatalog({ products }: { products: Product[] }) {
   const reduce = useReducedMotion();
   const [dept, setDept] = useState<DepartmentSlug | "all">("all");
   const [cat, setCat] = useState<string>("Semua");
@@ -600,12 +600,14 @@ function CatalogCard({ product }: { product: Product }) {
       className="group flex h-full flex-col overflow-hidden rounded-2xl border border-steel-100 bg-white shadow-card transition hover:-translate-y-1 hover:shadow-card-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2"
     >
       <div className="relative h-44 overflow-hidden bg-steel-100">
-        <img
-          src={product.image}
-          alt={product.name}
-          loading="lazy"
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
+        {product.image ? (
+          <img
+            src={product.image}
+            alt={product.name}
+            loading="lazy"
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : null}
         <div className="absolute inset-0 bg-gradient-to-t from-steel-950/30 to-transparent" />
       </div>
       <div className="flex flex-1 flex-col p-5">

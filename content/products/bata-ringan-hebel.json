@@ -1,0 +1,34 @@
+{
+  "name": "Bata Ringan (Hebel)",
+  "category": "Dinding",
+  "department": "plafon-interior",
+  "badge": "AAC",
+  "stock": "ready",
+  "image": "/products/hebel.webp",
+  "summary": "Bata ringan AAC presisi yang ringan & hemat — pemasangan cepat, meredam panas, dan kedap suara.",
+  "description": "Bata ringan (hebel/AAC) dengan dimensi presisi yang ringan dan hemat material perekat. Pemasangan lebih cepat, meredam panas dan suara, tahan api, serta menghasilkan dinding yang rapi dan rata.",
+  "specs": [
+    {
+      "label": "Material",
+      "value": "AAC (autoclaved aerated concrete)"
+    },
+    {
+      "label": "Keunggulan",
+      "value": "Presisi & ringan"
+    },
+    {
+      "label": "Sifat",
+      "value": "Peredam panas & suara"
+    },
+    {
+      "label": "Aplikasi",
+      "value": "Dinding bangunan"
+    }
+  ],
+  "uses": [
+    "Dinding rumah",
+    "Partisi bata",
+    "Pagar",
+    "Bangunan komersial"
+  ]
+}

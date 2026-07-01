@@ -1,0 +1,35 @@
+{
+  "name": "Plat Strip",
+  "category": "Plat Besi",
+  "department": "struktur-baja",
+  "badge": "Per Batang",
+  "stock": "ready",
+  "priceFrom": "Rp14.000",
+  "image": "",
+  "summary": "Plat strip besi pipih multifungsi untuk pengikat, bracket & teralis — mudah dibentuk dan dipotong.",
+  "description": "Plat strip besi pipih untuk pengikat, bracket, teralis, dan penguat. Mudah dibentuk dan dipotong, multifungsi, tersedia beragam ukuran, mudah dipasang dengan harga terjangkau.",
+  "specs": [
+    {
+      "label": "Lebar",
+      "value": "19 / 30 / 38 mm"
+    },
+    {
+      "label": "Panjang",
+      "value": "2 m & 6 m"
+    },
+    {
+      "label": "Material",
+      "value": "Baja strip"
+    },
+    {
+      "label": "Aplikasi",
+      "value": "Pengikat & bracket"
+    }
+  ],
+  "uses": [
+    "Bracket & pengikat",
+    "Teralis",
+    "Penguat sambungan",
+    "Kerangka"
+  ]
+}

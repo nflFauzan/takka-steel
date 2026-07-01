@@ -1,0 +1,37 @@
+{
+  "name": "Bondeck / Floordeck",
+  "category": "Bondeck",
+  "department": "atap-spandek",
+  "brand": "Bondek",
+  "badge": "Galvalume",
+  "stock": "ready",
+  "featured": true,
+  "priceFrom": "Rp65.000",
+  "image": "/products/bondeck.webp",
+  "summary": "Pelat baja bergelombang sebagai bekisting permanen sekaligus tulangan bawah lantai cor — kuat & efisien.",
+  "description": "Bondeck (floordeck) adalah pelat zincalume berprofil yang berfungsi sebagai bekisting permanen sekaligus tulangan bawah pada lantai beton bertingkat. Efisiensi waktu & tenaga, lebih ekonomis, struktur lebih kuat, permukaan bawah rapi, dan mengurangi limbah konstruksi.",
+  "specs": [
+    {
+      "label": "Bahan",
+      "value": "Plat Zincalume (galvalume)"
+    },
+    {
+      "label": "Tebal",
+      "value": "0,65 & 0,75 mm"
+    },
+    {
+      "label": "Lebar efektif",
+      "value": "1 meter"
+    },
+    {
+      "label": "Panjang",
+      "value": "4 m, 5 m, 6 m"
+    }
+  ],
+  "uses": [
+    "Dak lantai cor",
+    "Mezzanine",
+    "Lantai bertingkat",
+    "Bangunan komersial"
+  ]
+}

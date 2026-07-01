@@ -1,0 +1,35 @@
+{
+  "name": "Plafon PVC",
+  "category": "Plafon",
+  "department": "plafon-interior",
+  "badge": "Anti Air",
+  "stock": "ready",
+  "featured": true,
+  "image": "/products/plafond-pvc.webp",
+  "summary": "Panel plafon PVC anti air & anti rayap dengan beragam motif — rapi, ringan, dan mudah dibersihkan.",
+  "description": "Plafon PVC berupa panel modular yang anti air, anti rayap, dan tidak mudah lapuk. Tersedia beragam motif (polos, kayu, marmer), ringan, mudah dipasang dan dibersihkan — ideal untuk area lembap seperti dapur dan kamar mandi.",
+  "specs": [
+    {
+      "label": "Material",
+      "value": "PVC panel"
+    },
+    {
+      "label": "Motif",
+      "value": "Polos, kayu, marmer"
+    },
+    {
+      "label": "Sifat",
+      "value": "Anti air & rayap"
+    },
+    {
+      "label": "Aplikasi",
+      "value": "Plafon interior"
+    }
+  ],
+  "uses": [
+    "Plafon ruang",
+    "Dapur & kamar mandi",
+    "Teras",
+    "Renovasi plafon"
+  ]
+}

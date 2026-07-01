@@ -1,0 +1,36 @@
+{
+  "name": "Atap Alderon Single Layer",
+  "category": "Alderon",
+  "department": "atap-upvc",
+  "brand": "Alderon",
+  "badge": "uPVC",
+  "stock": "ready",
+  "priceFrom": "Rp75.000",
+  "image": "",
+  "summary": "Atap uPVC single layer yang kuat, anti karat, dan meredam panas — efisien untuk kanopi & carport.",
+  "description": "Atap uPVC Alderon single layer tahan terhadap korosi dan bahan kimia, tidak menghantarkan panas seperti logam, serta lebih senyap saat hujan. Pilihan efisien untuk kanopi, carport, dan teras.",
+  "specs": [
+    {
+      "label": "Material",
+      "value": "uPVC single layer"
+    },
+    {
+      "label": "Tebal",
+      "value": "6 mm"
+    },
+    {
+      "label": "Panjang",
+      "value": "4 m, 5 m, 6 m"
+    },
+    {
+      "label": "Warna",
+      "value": "Putih, biru, abu"
+    }
+  ],
+  "uses": [
+    "Kanopi",
+    "Carport",
+    "Atap teras",
+    "Area basah"
+  ]
+}

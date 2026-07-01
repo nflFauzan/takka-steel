@@ -1,0 +1,37 @@
+{
+  "name": "Wiremesh",
+  "category": "Wiremesh & Kawat",
+  "department": "struktur-baja",
+  "brand": "Hot Rolled",
+  "badge": "Per Lembar",
+  "stock": "ready",
+  "featured": true,
+  "priceFrom": "Rp483.000",
+  "image": "/products/wiremesh.webp",
+  "summary": "Anyaman tulangan siap pakai untuk cor dak & lantai — mempercepat pekerjaan, efisien dan ekonomis.",
+  "description": "Wiremesh adalah anyaman besi tulangan siap pasang untuk pengecoran plat lantai, dak, dan jalan. Mempercepat proses pekerjaan, daya lekat tinggi dengan beton, efisien dan ekonomis, serta tersedia dalam berbagai ukuran.",
+  "specs": [
+    {
+      "label": "Bahan",
+      "value": "Hot Rolled Steel"
+    },
+    {
+      "label": "Diameter",
+      "value": "6 / 8 / 10 mm"
+    },
+    {
+      "label": "Ukuran",
+      "value": "2,1 × 5,4 m"
+    },
+    {
+      "label": "Bentuk",
+      "value": "Lembaran & roll"
+    }
+  ],
+  "uses": [
+    "Cor plat lantai",
+    "Dak beton",
+    "Cor jalan & halaman",
+    "Lantai gudang"
+  ]
+}

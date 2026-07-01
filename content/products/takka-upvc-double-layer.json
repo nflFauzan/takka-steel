@@ -1,0 +1,36 @@
+{
+  "name": "Atap Takka uPVC Double Layer",
+  "category": "Takka uPVC",
+  "department": "atap-upvc",
+  "brand": "TAKKA",
+  "badge": "uPVC",
+  "stock": "ready",
+  "priceFrom": "Rp110.000",
+  "image": "",
+  "summary": "Atap uPVC double layer label TAKKA — peredaman panas & suara baik dengan harga bersaing.",
+  "description": "Atap Takka uPVC double layer berongga dengan peredaman panas dan suara yang baik serta harga bersaing. Tahan karat dan korosi, ringan, dan tahan lama untuk kanopi dan atap hunian.",
+  "specs": [
+    {
+      "label": "Material",
+      "value": "uPVC double layer"
+    },
+    {
+      "label": "Tebal",
+      "value": "10 mm"
+    },
+    {
+      "label": "Lebar efektif",
+      "value": "83 cm"
+    },
+    {
+      "label": "Warna",
+      "value": "Putih"
+    }
+  ],
+  "uses": [
+    "Kanopi",
+    "Atap rumah",
+    "Carport",
+    "Area komersial"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Reng Baja Ringan",
+  "category": "Baja Ringan",
+  "department": "struktur-baja",
+  "brand": "Galvalume",
+  "badge": "Galvalume",
+  "stock": "ready",
+  "priceFrom": "Rp18.000",
+  "image": "",
+  "summary": "Reng baja ringan galvalume sebagai dudukan penutup atap di atas rangka truss — presisi, ringan, dan anti karat.",
+  "description": "Reng baja ringan berfungsi sebagai penopang genteng atau penutup atap di atas rangka kuda-kuda. Lebih kuat dan ringan dibanding kayu, tahan rayap dan api, serta tidak memerlukan pengelasan. Profil presisi memastikan jarak reng yang konsisten.",
+  "specs": [
+    {
+      "label": "Profil",
+      "value": "Reng baja ringan"
+    },
+    {
+      "label": "Lapisan",
+      "value": "Galvalume"
+    },
+    {
+      "label": "Keunggulan",
+      "value": "Tahan rayap, anti karat"
+    },
+    {
+      "label": "Panjang",
+      "value": "6 m per batang"
+    }
+  ],
+  "uses": [
+    "Dudukan genteng",
+    "Penopang spandek",
+    "Rangka atap",
+    "Plafon ekspos"
+  ]
+}

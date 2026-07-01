@@ -1,0 +1,35 @@
+{
+  "name": "Plat Galvanis",
+  "category": "Plat Besi",
+  "department": "struktur-baja",
+  "badge": "Galvanis",
+  "stock": "ready",
+  "priceFrom": "Rp253.000",
+  "image": "/products/plat.webp",
+  "summary": "Plat galvanis lembaran anti karat untuk talang, ducting & fabrikasi — kuat, serbaguna, dan ekonomis.",
+  "description": "Plat galvanis lembaran dengan lapisan seng anti karat untuk talang, ducting, penutup, dan fabrikasi ringan. Kuat dan kokoh, serbaguna, efisien dan ekonomis, tersedia berbagai ukuran dan cocok untuk berbagai aplikasi.",
+  "specs": [
+    {
+      "label": "Tebal",
+      "value": "0,8 – 2,0 mm"
+    },
+    {
+      "label": "Ukuran",
+      "value": "120 × 240 cm"
+    },
+    {
+      "label": "Lapisan",
+      "value": "Galvanis (anti karat)"
+    },
+    {
+      "label": "Aplikasi",
+      "value": "Talang, ducting, fabrikasi"
+    }
+  ],
+  "uses": [
+    "Talang air",
+    "Ducting",
+    "Penutup & flashing",
+    "Fabrikasi ringan"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Atap Spandek Pasir",
+  "category": "Spandek",
+  "department": "atap-spandek",
+  "brand": "Zincalume",
+  "badge": "Peredam Panas",
+  "stock": "ready",
+  "priceFrom": "Rp35.000",
+  "image": "",
+  "summary": "Spandek dilapis pasir silika yang meredam panas & suara hujan — tampilan estetis dan tahan lama.",
+  "description": "Atap spandek pasir dari plat zincalume yang dilapisi pasir silika sehingga meredam suara hujan lebih baik dan mengurangi panas dibanding spandek polos. Tahan rayap, tahan lama dan kuat, estetis, dengan biaya perawatan minim.",
+  "specs": [
+    {
+      "label": "Bahan",
+      "value": "Zincalume + pasir silika"
+    },
+    {
+      "label": "Tebal",
+      "value": "0,35 & 0,45 mm"
+    },
+    {
+      "label": "Warna",
+      "value": "Merah, hitam, cokelat, hijau, biru"
+    },
+    {
+      "label": "Panjang",
+      "value": "4 m, 5 m, 6 m"
+    }
+  ],
+  "uses": [
+    "Atap rumah",
+    "Atap teras",
+    "Kanopi",
+    "Bangunan komersial"
+  ]
+}

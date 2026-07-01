@@ -1,0 +1,35 @@
+{
+  "name": "Plat Eyser / Hitam",
+  "category": "Plat Besi",
+  "department": "struktur-baja",
+  "badge": "Lembaran",
+  "stock": "ready",
+  "priceFrom": "Rp231.000",
+  "image": "",
+  "summary": "Plat besi hitam (eyser) lembaran untuk base plate, gusset & fabrikasi — kuat dan serbaguna.",
+  "description": "Plat eyser/hitam lembaran untuk base plate, pelat sambung (gusset), dan kebutuhan fabrikasi. Kuat dan kokoh, serbaguna, efisien dan ekonomis, tersedia berbagai ukuran dan cocok untuk berbagai aplikasi.",
+  "specs": [
+    {
+      "label": "Tebal",
+      "value": "0,7 – 4,0 mm"
+    },
+    {
+      "label": "Ukuran",
+      "value": "120 × 240 cm"
+    },
+    {
+      "label": "Material",
+      "value": "Baja hitam (eyser)"
+    },
+    {
+      "label": "Aplikasi",
+      "value": "Base plate & fabrikasi"
+    }
+  ],
+  "uses": [
+    "Base plate kolom",
+    "Pelat sambung",
+    "Fabrikasi",
+    "Penguat struktur"
+  ]
+}

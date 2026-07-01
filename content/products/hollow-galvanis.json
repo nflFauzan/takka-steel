@@ -1,0 +1,36 @@
+{
+  "name": "Besi Hollow Galvanis",
+  "category": "Baja Ringan",
+  "department": "struktur-baja",
+  "brand": "Galvanis",
+  "badge": "Galvanis",
+  "stock": "ready",
+  "priceFrom": "Rp38.000",
+  "image": "",
+  "summary": "Besi hollow galvanis kotak untuk rangka plafon & partisi — tahan karat & korosi, kuat namun ringan.",
+  "description": "Besi hollow galvanis dengan penampang kotak untuk rangka plafon gypsum/PVC dan partisi/sekat ruangan. Tahan karat & korosi, kuat dan ringan, mudah dipasang & dibentuk, serta ramah anggaran.",
+  "specs": [
+    {
+      "label": "Bentuk",
+      "value": "Hollow kotak"
+    },
+    {
+      "label": "Finishing",
+      "value": "Galvanis"
+    },
+    {
+      "label": "Keunggulan",
+      "value": "Tahan karat & korosi"
+    },
+    {
+      "label": "Panjang",
+      "value": "4 m per batang"
+    }
+  ],
+  "uses": [
+    "Rangka plafon",
+    "Partisi & sekat",
+    "Drop ceiling",
+    "Pagar ringan"
+  ]
+}

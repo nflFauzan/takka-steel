@@ -1,0 +1,34 @@
+{
+  "name": "Pipa Besi / Galvanis",
+  "category": "Pipa",
+  "department": "pipa-saluran",
+  "badge": "Galvanis",
+  "stock": "ready",
+  "image": "/products/pipa.webp",
+  "summary": "Pipa besi/galvanis untuk struktur ringan, railing & instalasi bertekanan — kuat dan tahan karat.",
+  "description": "Pipa besi/galvanis untuk kebutuhan struktur ringan, railing, tiang, dan instalasi air bertekanan. Kuat, tahan karat berkat lapisan galvanis, dan mudah difabrikasi.",
+  "specs": [
+    {
+      "label": "Material",
+      "value": "Besi galvanis"
+    },
+    {
+      "label": "Bentuk",
+      "value": "Pipa bulat"
+    },
+    {
+      "label": "Sifat",
+      "value": "Tahan karat"
+    },
+    {
+      "label": "Aplikasi",
+      "value": "Struktur & instalasi"
+    }
+  ],
+  "uses": [
+    "Railing & pagar",
+    "Tiang",
+    "Instalasi air",
+    "Rangka ringan"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Kawat Expanda (Expanded Metal)",
+  "category": "Wiremesh & Kawat",
+  "department": "struktur-baja",
+  "brand": "FF 2028",
+  "badge": "Per Lembar",
+  "stock": "ready",
+  "priceFrom": "Rp210.000",
+  "image": "",
+  "summary": "Lembaran expanded metal untuk plester, pagar & dekorasi — anti karat, kuat, dan mudah dipasang.",
+  "description": "Kawat expanda (expanded metal) untuk penguat plesteran, pagar, ventilasi, dan elemen dekoratif. Tahan cuaca, efisien dan ekonomis, mudah dipasang, memberi ventilasi & pencahayaan alami, serta anti karat.",
+  "specs": [
+    {
+      "label": "Tipe",
+      "value": "FF 2028"
+    },
+    {
+      "label": "Ukuran",
+      "value": "240 × 120 cm"
+    },
+    {
+      "label": "Sifat",
+      "value": "Anti karat, tahan cuaca"
+    },
+    {
+      "label": "Aplikasi",
+      "value": "Plester, pagar, dekorasi"
+    }
+  ],
+  "uses": [
+    "Penguat plesteran",
+    "Pagar & teralis",
+    "Ventilasi",
+    "Dekorasi fasad"
+  ]
+}

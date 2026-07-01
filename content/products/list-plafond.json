@@ -1,0 +1,34 @@
+{
+  "name": "List Plafond",
+  "category": "List / Profil",
+  "department": "plafon-interior",
+  "badge": "Profil",
+  "stock": "ready",
+  "image": "/products/list-plafond.webp",
+  "summary": "List plafond sebagai bingkai tepi plafon — merapikan sambungan dan mempercantik tampilan ruang.",
+  "description": "List plafond digunakan sebagai bingkai tepi plafon untuk merapikan sambungan antara plafon dan dinding. Ringan, mudah dipasang, dan memberikan tampilan akhir yang rapi.",
+  "specs": [
+    {
+      "label": "Fungsi",
+      "value": "Bingkai tepi plafon"
+    },
+    {
+      "label": "Pemasangan",
+      "value": "Mudah & cepat"
+    },
+    {
+      "label": "Motif",
+      "value": "Beragam pilihan"
+    },
+    {
+      "label": "Satuan",
+      "value": "Per batang"
+    }
+  ],
+  "uses": [
+    "Bingkai plafon",
+    "Finishing tepi",
+    "Dekorasi interior",
+    "Renovasi"
+  ]
+}

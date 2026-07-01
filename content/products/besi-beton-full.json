@@ -1,0 +1,35 @@
+{
+  "name": "Besi Beton Full (Banci)",
+  "category": "Besi Struktural",
+  "department": "struktur-baja",
+  "badge": "Tulangan",
+  "stock": "ready",
+  "priceFrom": "Rp26.000",
+  "image": "",
+  "summary": "Besi beton untuk tulangan cor — kekuatan tarik tinggi, daya lekat baik, dan harga ekonomis.",
+  "description": "Besi beton (full/banci) sebagai tulangan beton untuk kolom, balok, dan plat lantai. Kekuatan tarik tinggi, daya lekat tinggi dengan beton, mudah dibentuk dan dipasang, serta tersedia dalam berbagai ukuran.",
+  "specs": [
+    {
+      "label": "Jenis",
+      "value": "Beton polos"
+    },
+    {
+      "label": "Keunggulan",
+      "value": "Daya lekat tinggi"
+    },
+    {
+      "label": "Panjang",
+      "value": "Per batang"
+    },
+    {
+      "label": "Ukuran",
+      "value": "Beragam diameter"
+    }
+  ],
+  "uses": [
+    "Tulangan kolom & balok",
+    "Plat lantai",
+    "Sloof",
+    "Cor beton"
+  ]
+}

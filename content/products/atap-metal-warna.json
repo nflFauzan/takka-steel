@@ -1,0 +1,36 @@
+{
+  "name": "Atap Metal / Spandek Warna",
+  "category": "Spandek",
+  "department": "atap-spandek",
+  "brand": "Zincalume",
+  "badge": "Warna",
+  "stock": "ready",
+  "featured": true,
+  "image": "/products/atap-metal.webp",
+  "summary": "Atap metal berwarna ringan & kuat dengan banyak pilihan warna — estetis untuk hunian & komersial.",
+  "description": "Atap metal/spandek berwarna dari plat zincalume yang ringan, kuat, dan tahan karat dengan beragam pilihan warna. Tampilan estetis, pemasangan mudah dan murah, serta perawatan minim untuk atap rumah hingga bangunan komersial.",
+  "specs": [
+    {
+      "label": "Bahan",
+      "value": "Plat Zincalume"
+    },
+    {
+      "label": "Warna",
+      "value": "Merah, biru, hijau, dll"
+    },
+    {
+      "label": "Panjang",
+      "value": "4 m, 5 m, 6 m"
+    },
+    {
+      "label": "Keunggulan",
+      "value": "Ringan, anti karat"
+    }
+  ],
+  "uses": [
+    "Atap rumah",
+    "Atap teras & carport",
+    "Gudang",
+    "Bangunan komersial"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Besi Hollow Stainless",
+  "category": "Baja Ringan",
+  "department": "struktur-baja",
+  "brand": "Stainless",
+  "badge": "Stainless",
+  "stock": "ready",
+  "priceFrom": "Rp57.000",
+  "image": "",
+  "summary": "Hollow stainless anti karat & korosi untuk aplikasi yang menuntut tampilan rapi dan tahan lama.",
+  "description": "Besi hollow stainless yang tahan karat & korosi, kuat namun ringan, serbaguna, dan mudah dipasang & dibentuk. Pilihan untuk railing, kanopi, dan elemen ekspos yang membutuhkan ketahanan dan estetika.",
+  "specs": [
+    {
+      "label": "Bentuk",
+      "value": "Hollow kotak"
+    },
+    {
+      "label": "Material",
+      "value": "Stainless steel"
+    },
+    {
+      "label": "Keunggulan",
+      "value": "Tahan karat & korosi"
+    },
+    {
+      "label": "Panjang",
+      "value": "6 m per batang"
+    }
+  ],
+  "uses": [
+    "Railing tangga",
+    "Kanopi minimalis",
+    "Pagar",
+    "Elemen ekspos"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "name": "GRC Board & Plank",
+  "category": "Board & Panel",
+  "department": "plafon-interior",
+  "badge": "Tahan Cuaca",
+  "stock": "ready",
+  "priceFrom": "Rp17.000",
+  "image": "",
+  "summary": "Papan GRC tahan cuaca & api untuk plafon, dinding & lisplang — ringan tapi kokoh dan tahan lama.",
+  "description": "GRC Board & Plank (glassfibre reinforced cement) untuk plafon, dinding partisi, lisplang, dan fasad. Permukaan halus, tahan cuaca, tahan api dan tidak mudah terbakar, ringan tapi kokoh, serta ramah lingkungan.",
+  "specs": [
+    {
+      "label": "Tebal",
+      "value": "4 mm"
+    },
+    {
+      "label": "Jenis",
+      "value": "Polos, serat, board"
+    },
+    {
+      "label": "Panjang",
+      "value": "240 / 244 / 300 cm"
+    },
+    {
+      "label": "Lebar",
+      "value": "10 – 30 cm"
+    }
+  ],
+  "uses": [
+    "Lisplang",
+    "Plafon luar",
+    "Dinding partisi",
+    "Fasad"
+  ]
+}

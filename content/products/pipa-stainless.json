@@ -1,0 +1,35 @@
+{
+  "name": "Pipa Stainless",
+  "category": "Pipa",
+  "department": "pipa-saluran",
+  "badge": "Stainless",
+  "stock": "ready",
+  "priceFrom": "Rp78.000",
+  "image": "",
+  "summary": "Pipa stainless anti karat & korosi untuk railing dan elemen ekspos — kuat, ringan, dan estetis.",
+  "description": "Pipa stainless yang tahan karat dan korosi, kuat namun ringan, serbaguna, dan mudah dipasang & dibentuk. Pilihan untuk railing, handrail, dan elemen ekspos yang menuntut tampilan bersih dan tahan lama.",
+  "specs": [
+    {
+      "label": "Material",
+      "value": "Stainless steel"
+    },
+    {
+      "label": "Bentuk",
+      "value": "Pipa bulat"
+    },
+    {
+      "label": "Sifat",
+      "value": "Tahan karat & korosi"
+    },
+    {
+      "label": "Aplikasi",
+      "value": "Railing & ekspos"
+    }
+  ],
+  "uses": [
+    "Railing tangga",
+    "Handrail",
+    "Pagar minimalis",
+    "Elemen ekspos"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Atap Atlas Double Layer",
+  "category": "Atlas",
+  "department": "atap-upvc",
+  "brand": "Atlas",
+  "badge": "uPVC",
+  "stock": "ready",
+  "priceFrom": "Rp115.000",
+  "image": "",
+  "summary": "Atap uPVC Atlas double layer — alternatif twinwall ekonomis dengan peredaman panas & suara baik.",
+  "description": "Atap uPVC Atlas double layer berongga sebagai alternatif twinwall yang ekonomis dengan peredaman panas dan suara yang baik. Tahan karat dan korosi, ringan, dan tahan lama.",
+  "specs": [
+    {
+      "label": "Material",
+      "value": "uPVC double layer"
+    },
+    {
+      "label": "Tebal",
+      "value": "10 mm"
+    },
+    {
+      "label": "Lebar efektif",
+      "value": "83 cm"
+    },
+    {
+      "label": "Warna",
+      "value": "Putih, biru"
+    }
+  ],
+  "uses": [
+    "Kanopi",
+    "Atap rumah",
+    "Carport",
+    "Area komersial"
+  ]
+}

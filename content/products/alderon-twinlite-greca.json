@@ -1,0 +1,36 @@
+{
+  "name": "Atap Alderon Twinlite Greca",
+  "category": "Alderon",
+  "department": "atap-upvc",
+  "brand": "Alderon",
+  "badge": "Transparan",
+  "stock": "ready",
+  "priceFrom": "Rp223.000",
+  "image": "",
+  "summary": "uPVC twinwall transparan (greca) yang meneruskan cahaya alami namun tetap meredam panas.",
+  "description": "Alderon Twinlite Greca adalah uPVC twinwall transparan yang meneruskan cahaya alami sekaligus meredam panas. Cocok untuk skylight kanopi dan area yang membutuhkan pencahayaan tanpa silau dan panas berlebih.",
+  "specs": [
+    {
+      "label": "Material",
+      "value": "uPVC twinwall"
+    },
+    {
+      "label": "Tebal",
+      "value": "10 mm"
+    },
+    {
+      "label": "Lebar efektif",
+      "value": "75 cm"
+    },
+    {
+      "label": "Warna",
+      "value": "Transparan"
+    }
+  ],
+  "uses": [
+    "Skylight kanopi",
+    "Pencahayaan alami",
+    "Teras",
+    "Area transisi"
+  ]
+}

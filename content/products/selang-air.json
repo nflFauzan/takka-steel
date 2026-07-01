@@ -1,0 +1,34 @@
+{
+  "name": "Selang Air",
+  "category": "Aksesoris Pipa",
+  "department": "pipa-saluran",
+  "badge": "Per Meter / Rol",
+  "stock": "ready",
+  "image": "/products/selang.webp",
+  "summary": "Aneka selang air (PVC, benang, spiral) untuk taman, cuci & distribusi air — lentur dan tahan lama.",
+  "description": "Aneka selang air mulai dari selang PVC bening, selang berserat (benang), hingga selang spiral untuk kebutuhan taman, cuci kendaraan, dan distribusi air. Lentur, kuat, dan tahan lama. Tersedia per meter maupun per rol.",
+  "specs": [
+    {
+      "label": "Jenis",
+      "value": "PVC, benang, spiral"
+    },
+    {
+      "label": "Sifat",
+      "value": "Lentur & tahan lama"
+    },
+    {
+      "label": "Satuan",
+      "value": "Per meter / rol"
+    },
+    {
+      "label": "Aplikasi",
+      "value": "Taman & distribusi air"
+    }
+  ],
+  "uses": [
+    "Penyiraman taman",
+    "Cuci kendaraan",
+    "Distribusi air",
+    "Industri ringan"
+  ]
+}

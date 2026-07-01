@@ -1,0 +1,34 @@
+{
+  "name": "Baut & Sekrup (Screw)",
+  "category": "Pengencang",
+  "department": "aksesoris-perkakas",
+  "badge": "Per Pcs / Dus",
+  "stock": "ready",
+  "image": "/products/baut-screw.webp",
+  "summary": "Aneka baut, sekrup roofing, sekrup gypsum & dinabolt — pengencang lengkap untuk semua pemasangan.",
+  "description": "Kelengkapan pengencang: baut & mur, sekrup roofing (atap), sekrup gypsum, dan dinabolt. Material kuat dan tahan karat untuk pemasangan rangka baja ringan, atap, plafon, dan angkur ke beton.",
+  "specs": [
+    {
+      "label": "Jenis",
+      "value": "Baut, sekrup, dinabolt"
+    },
+    {
+      "label": "Aplikasi",
+      "value": "Rangka, atap, plafon"
+    },
+    {
+      "label": "Material",
+      "value": "Tahan karat"
+    },
+    {
+      "label": "Satuan",
+      "value": "Pcs / dus"
+    }
+  ],
+  "uses": [
+    "Pemasangan atap",
+    "Rangka baja ringan",
+    "Plafon & partisi",
+    "Angkur beton"
+  ]
+}

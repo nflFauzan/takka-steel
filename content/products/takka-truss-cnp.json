@@ -1,0 +1,37 @@
+{
+  "name": "TAKKA TRUSS (Profil C75 × 35)",
+  "category": "Baja Ringan",
+  "department": "struktur-baja",
+  "brand": "TAKKA",
+  "badge": "Galvalume",
+  "stock": "ready",
+  "featured": true,
+  "priceFrom": "Rp55.000",
+  "image": "/products/baja-ringan.webp",
+  "summary": "Kanal C baja ringan profil C75×35 untuk rangka kuda-kuda atap — lebih kuat & ringan dibanding kayu, tahan rayap & karat.",
+  "description": "TAKKA TRUSS adalah profil kanal C (C75×35) baja ringan galvalume sebagai rangka utama kuda-kuda atap. Kualitas material konsisten, tahan rayap selamanya, tahan api, dan tidak memerlukan pengelasan sehingga pemasangan lebih mudah, cepat, dan murah. Tidak perlu dicat karena lebih tahan karat.",
+  "specs": [
+    {
+      "label": "Profil",
+      "value": "Kanal C (C75 × 35)"
+    },
+    {
+      "label": "Lapisan",
+      "value": "Galvalume (AZ)"
+    },
+    {
+      "label": "Keunggulan",
+      "value": "Tahan rayap & api, anti karat"
+    },
+    {
+      "label": "Panjang",
+      "value": "6 m per batang"
+    }
+  ],
+  "uses": [
+    "Kuda-kuda atap",
+    "Rangka baja ringan",
+    "Kanopi",
+    "Mezzanine ringan"
+  ]
+}

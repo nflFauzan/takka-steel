@@ -1,0 +1,34 @@
+{
+  "name": "Aksesoris & Fitting Pipa",
+  "category": "Aksesoris Pipa",
+  "department": "pipa-saluran",
+  "badge": "Fitting",
+  "stock": "ready",
+  "image": "/products/aksesoris-pipa.webp",
+  "summary": "Kelengkapan sambungan pipa: elbow, tee, sock, reducer & flange — untuk instalasi rapi dan rapat.",
+  "description": "Aneka aksesoris dan fitting pipa: elbow, tee, sock, reducer, dop, dan flange untuk melengkapi instalasi pipa air. Memastikan sambungan rapi, rapat, dan sesuai jalur instalasi.",
+  "specs": [
+    {
+      "label": "Jenis",
+      "value": "Elbow, tee, sock, reducer"
+    },
+    {
+      "label": "Material",
+      "value": "PVC / besi"
+    },
+    {
+      "label": "Fungsi",
+      "value": "Sambungan pipa"
+    },
+    {
+      "label": "Ukuran",
+      "value": "Beragam diameter"
+    }
+  ],
+  "uses": [
+    "Sambungan pipa",
+    "Belokan instalasi",
+    "Percabangan",
+    "Penyambung"
+  ]
+}

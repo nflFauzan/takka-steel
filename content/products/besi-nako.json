@@ -1,0 +1,35 @@
+{
+  "name": "Besi Nako",
+  "category": "Besi Struktural",
+  "department": "struktur-baja",
+  "badge": "Per Batang",
+  "stock": "ready",
+  "priceFrom": "Rp42.000",
+  "image": "/products/nako-polos.webp",
+  "summary": "Besi nako (jalusi) untuk teralis & ventilasi — mudah dibentuk, multifungsi, dan harga terjangkau.",
+  "description": "Besi nako tipe 8/10/12 untuk teralis jendela, pagar, dan ventilasi. Mudah dibentuk dan dipotong, multifungsi, tersedia beragam ukuran, mudah dipasang dengan harga terjangkau.",
+  "specs": [
+    {
+      "label": "Tipe",
+      "value": "8, 10, 12"
+    },
+    {
+      "label": "Ukuran",
+      "value": "8×8, 10×10, 12×12 mm"
+    },
+    {
+      "label": "Panjang",
+      "value": "6 m per batang"
+    },
+    {
+      "label": "Aplikasi",
+      "value": "Teralis & ventilasi"
+    }
+  ],
+  "uses": [
+    "Teralis jendela",
+    "Pagar",
+    "Ventilasi",
+    "Kerangka dekoratif"
+  ]
+}

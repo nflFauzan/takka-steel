@@ -1,0 +1,35 @@
+{
+  "name": "Nok Atap (Spandek & Genteng Metal)",
+  "category": "Nok & Aksesoris Atap",
+  "department": "atap-spandek",
+  "badge": "Per Lembar",
+  "stock": "ready",
+  "priceFrom": "Rp11.000",
+  "image": "/products/nok.webp",
+  "summary": "Penutup pertemuan atap (nok) untuk spandek & genteng metal — rapi, kuat, dan kedap bocor.",
+  "description": "Nok atap sebagai penutup pertemuan bidang atap (bubungan) untuk spandek pasir/polos dan genteng metal Koko/Ultima. Hemat waktu dan biaya, kuat dan kokoh, rapi, praktis dipasang, mencegah kebocoran pada sambungan atap.",
+  "specs": [
+    {
+      "label": "Tipe",
+      "value": "Nok spandek & genteng metal"
+    },
+    {
+      "label": "Fungsi",
+      "value": "Penutup bubungan"
+    },
+    {
+      "label": "Warna",
+      "value": "Menyesuaikan atap"
+    },
+    {
+      "label": "Satuan",
+      "value": "Per lembar / meter"
+    }
+  ],
+  "uses": [
+    "Bubungan atap",
+    "Sambungan bidang atap",
+    "Anti bocor",
+    "Finishing atap"
+  ]
+}

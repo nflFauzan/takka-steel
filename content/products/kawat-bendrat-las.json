@@ -1,0 +1,34 @@
+{
+  "name": "Kawat Bendrat & Las",
+  "category": "Wiremesh & Kawat",
+  "department": "struktur-baja",
+  "badge": "Per Kg / Rol",
+  "stock": "ready",
+  "image": "/products/kawat.webp",
+  "summary": "Aneka kawat konstruksi: bendrat pengikat tulangan dan kawat las — tersedia per kg maupun rol.",
+  "description": "Kelengkapan kawat untuk konstruksi: kawat bendrat untuk mengikat tulangan besi dan kawat las untuk pengelasan. Praktis, ekonomis, dan tersedia per kilogram maupun per rol sesuai kebutuhan.",
+  "specs": [
+    {
+      "label": "Kawat bendrat",
+      "value": "Pengikat tulangan"
+    },
+    {
+      "label": "Kawat las",
+      "value": "Untuk pengelasan"
+    },
+    {
+      "label": "Satuan",
+      "value": "Kg / rol"
+    },
+    {
+      "label": "Aplikasi",
+      "value": "Pengikat & las"
+    }
+  ],
+  "uses": [
+    "Mengikat tulangan",
+    "Pengelasan",
+    "Pagar & kandang",
+    "Serbaguna"
+  ]
+}

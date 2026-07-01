@@ -1,0 +1,37 @@
+{
+  "name": "Genteng Metal Pasir",
+  "category": "Genteng Metal",
+  "department": "atap-spandek",
+  "brand": "Genteng Metal",
+  "badge": "Berpasir",
+  "stock": "ready",
+  "featured": true,
+  "priceFrom": "Rp21.500",
+  "image": "/products/genteng-metal.webp",
+  "summary": "Genteng metal berpasir ringan menyerupai genteng konvensional — hemat waktu, kuat, dan rapi.",
+  "description": "Genteng metal berpasir memberikan tampilan estetis menyerupai genteng tanah liat namun jauh lebih ringan dan tahan lama. Hemat waktu dan biaya, kuat dan kokoh, struktur rapi, praktis dalam pemasangan, dengan biaya perawatan minim.",
+  "specs": [
+    {
+      "label": "Tipe",
+      "value": "Genteng metal berpasir"
+    },
+    {
+      "label": "Permukaan",
+      "value": "Lapis pasir"
+    },
+    {
+      "label": "Warna",
+      "value": "Beragam pilihan"
+    },
+    {
+      "label": "Satuan",
+      "value": "Per lembar / multi-roof"
+    }
+  ],
+  "uses": [
+    "Atap rumah tinggal",
+    "Perumahan",
+    "Renovasi atap",
+    "Villa"
+  ]
+}

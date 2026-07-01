@@ -1,0 +1,36 @@
+{
+  "name": "Atap Spandek Transparan",
+  "category": "Spandek",
+  "department": "atap-spandek",
+  "brand": "Polycarbonate",
+  "badge": "Transparan",
+  "stock": "ready",
+  "priceFrom": "Rp85.000",
+  "image": "",
+  "summary": "Lembaran transparan dari polycarbonate resin untuk pencahayaan alami pada atap spandek.",
+  "description": "Atap spandek transparan dari polycarbonate resin untuk memasukkan cahaya alami pada area beratap. Tahan lama dan kuat, meredam suara, mengurangi panas, dan dipasang berselang dengan spandek untuk skylight hemat energi.",
+  "specs": [
+    {
+      "label": "Bahan",
+      "value": "Polycarbonate Resin"
+    },
+    {
+      "label": "Tebal",
+      "value": "0,30 & 0,35 mm"
+    },
+    {
+      "label": "Warna",
+      "value": "Transparan"
+    },
+    {
+      "label": "Panjang",
+      "value": "4 m, 5 m, 6 m"
+    }
+  ],
+  "uses": [
+    "Skylight",
+    "Pencahayaan alami",
+    "Kanopi",
+    "Area jemur"
+  ]
+}

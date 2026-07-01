@@ -1,0 +1,36 @@
+{
+  "name": "Besi CNP Hitam (Kanal C)",
+  "category": "Besi Struktural",
+  "department": "struktur-baja",
+  "badge": "Struktural",
+  "stock": "ready",
+  "featured": true,
+  "priceFrom": "Rp264.000",
+  "image": "/products/cnp.webp",
+  "summary": "Kanal C (CNP) baja hitam untuk gording & rangka atap berat — kekuatan & ketahanan tinggi, serbaguna.",
+  "description": "Besi CNP hitam berprofil kanal C untuk gording, rangka atap baja konvensional, dan struktur. Kekuatan dan ketahanan tinggi, multifungsi, mudah dipasang dan difabrikasi, dengan biaya lebih efisien.",
+  "specs": [
+    {
+      "label": "Profil",
+      "value": "Kanal C (CNP)"
+    },
+    {
+      "label": "Material",
+      "value": "Baja hitam"
+    },
+    {
+      "label": "Panjang",
+      "value": "6 m per batang"
+    },
+    {
+      "label": "Aplikasi",
+      "value": "Gording & rangka atap"
+    }
+  ],
+  "uses": [
+    "Gording atap",
+    "Rangka baja",
+    "Purlin",
+    "Struktur ringan"
+  ]
+}

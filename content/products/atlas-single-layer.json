@@ -1,0 +1,36 @@
+{
+  "name": "Atap Atlas Single Layer",
+  "category": "Atlas",
+  "department": "atap-upvc",
+  "brand": "Atlas",
+  "badge": "uPVC",
+  "stock": "ready",
+  "priceFrom": "Rp61.000",
+  "image": "",
+  "summary": "Atap uPVC Atlas single layer yang ringan & anti karat — pilihan hemat untuk kanopi dan teras.",
+  "description": "Atap uPVC Atlas single layer yang ringan, anti karat, dan meredam panas. Pilihan paling hemat di lini uPVC untuk kanopi, carport, dan teras.",
+  "specs": [
+    {
+      "label": "Material",
+      "value": "uPVC single layer"
+    },
+    {
+      "label": "Tebal",
+      "value": "10 mm"
+    },
+    {
+      "label": "Panjang",
+      "value": "4 m, 5 m, 6 m"
+    },
+    {
+      "label": "Warna",
+      "value": "Putih"
+    }
+  ],
+  "uses": [
+    "Kanopi",
+    "Carport",
+    "Teras",
+    "Area basah"
+  ]
+}

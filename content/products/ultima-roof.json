@@ -1,0 +1,36 @@
+{
+  "name": "Genteng Metal Ultima Roof",
+  "category": "Genteng Metal",
+  "department": "atap-spandek",
+  "brand": "Ultima Roof",
+  "badge": "Coral / Warna",
+  "stock": "ready",
+  "priceFrom": "Rp44.000",
+  "image": "",
+  "summary": "Genteng metal Ultima Roof (coral & warna) dengan modul lebih panjang — efisien dan tahan lama.",
+  "description": "Genteng metal Ultima Roof tersedia tipe coral dan warna dengan panjang efektif lebih besar. Hemat waktu dan biaya, kuat dan kokoh, rapi, praktis dipasang, dengan perawatan minim.",
+  "specs": [
+    {
+      "label": "Panjang efektif",
+      "value": "72 cm"
+    },
+    {
+      "label": "Lebar efektif",
+      "value": "80 cm"
+    },
+    {
+      "label": "Warna",
+      "value": "Cokelat & hitam"
+    },
+    {
+      "label": "Tipe",
+      "value": "Coral / Warna"
+    }
+  ],
+  "uses": [
+    "Atap rumah",
+    "Perumahan",
+    "Renovasi atap",
+    "Villa"
+  ]
+}

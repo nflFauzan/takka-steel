@@ -1,0 +1,35 @@
+{
+  "name": "Papan Gypsum",
+  "category": "Plafon",
+  "department": "plafon-interior",
+  "badge": "9 mm",
+  "stock": "ready",
+  "priceFrom": "Rp48.000",
+  "image": "/products/gypsum.webp",
+  "summary": "Papan gypsum permukaan halus untuk plafon & partisi — mudah dibentuk, tahan api, dan kedap suara.",
+  "description": "Papan gypsum dengan permukaan halus dan rapi untuk plafon dan partisi interior. Mudah dibentuk dan dipasang, efisien dan ekonomis, tahan terhadap api, ramah lingkungan, dan membantu meredam suara.",
+  "specs": [
+    {
+      "label": "Tebal",
+      "value": "9 mm"
+    },
+    {
+      "label": "Ukuran",
+      "value": "120 × 240 cm"
+    },
+    {
+      "label": "Berat",
+      "value": "± 16 kg"
+    },
+    {
+      "label": "Warna",
+      "value": "Putih"
+    }
+  ],
+  "uses": [
+    "Plafon interior",
+    "Partisi & sekat",
+    "Drop ceiling",
+    "Backdrop"
+  ]
+}
