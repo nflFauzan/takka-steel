@@ -1,4 +1,4 @@
-import dynamic from "next/dynamic";
+
 
 import HeroVideo from "@/components/HeroVideo";
 import AboutSection from "@/components/AboutSection";
@@ -9,25 +9,8 @@ import Icon, { type IconName } from "@/components/Icon";
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 import { company, waLink, waLink2, defaultWaMessage } from "@/data/company";
 import { faqs, testimonials as clientTestimonials, partners } from "@/data/site";
-import { MapErrorBoundary } from "@/components/ui/MapErrorBoundary";
 
-// ── Map loading skeleton ───────────────────────────────────────────────────
-function MapSkeleton() {
-  return (
-    <div className="flex h-full w-full flex-col items-center justify-center gap-3 rounded-2xl bg-steel-100 animate-pulse">
-      <div className="h-8 w-8 rounded-full bg-steel-300" />
-      <div className="h-3 w-24 rounded bg-steel-300" />
-    </div>
-  );
-}
 
-const InteractiveMap = dynamic(
-  () => import("@/components/ui/InteractiveMap"),
-  {
-    ssr: false,
-    loading: () => <MapSkeleton />,
-  }
-);
 
 export default function HomePage() {
   return (
@@ -197,16 +180,14 @@ function LocationSection() {
               Petunjuk Arah <Icon name="arrow" className="h-4 w-4 ml-2" />
             </a>
           </div>
-          <div className="h-[300px] lg:h-[420px] rounded-2xl overflow-hidden border-4 border-white shadow-md">
-            <MapErrorBoundary mapsLink={company.mapsLink}>
-              <InteractiveMap
-                lat={parseFloat(company.geo.latitude)}
-                lng={parseFloat(company.geo.longitude)}
-                name={company.name}
-                address={company.address}
-                mapsLink={company.mapsLink}
-              />
-            </MapErrorBoundary>
+          <div className="h-[300px] lg:h-[420px] rounded-2xl overflow-hidden border-4 border-white shadow-md bg-steel-100 isolate">
+            <iframe
+              title={`Lokasi ${company.name}`}
+              src={company.mapsEmbedUrl}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="h-full w-full border-0"
+            />
           </div>
         </div>
       </div>
